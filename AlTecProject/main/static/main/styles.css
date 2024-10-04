@@ -25,3 +25,10 @@ body {
     background-color: #e0e0e0; /* Цвет при наведении */
     text-decoration: none; /* Убрать подчеркивание при наведении */
 }
+
+img {
+    user-select: none; /* Запретить выделение текста */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+}
+
