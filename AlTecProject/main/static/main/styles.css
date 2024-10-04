@@ -1,0 +1,27 @@
+body {
+    background-color: #EFFBFF;
+    font-family: Inter, sans-serif;
+}
+
+.header, .footer {
+    background-color: white;
+    padding: 10px 10px; /* Отступы для кнопок */
+}
+
+.nav-link {
+    display: inline-block; /* Чтобы добавить отступы */
+    padding: 10px 15px; /* Отступы для кнопок */
+    background-color: #F7F7F7; /* Цвет фона кнопок */
+    border-radius: 20px; /* Овальная форма */
+    color: #000000; /* Цвет текста */
+    text-decoration: none;
+    transition: background-color 0.3s; /* Плавный переход */
+    width: 150px; /* Фиксированная ширина */
+    text-align: center; /* Центрирование текста */
+    font-weight: bold; /* Делаем шрифт жирным */
+}
+
+.nav-link:hover {
+    background-color: #e0e0e0; /* Цвет при наведении */
+    text-decoration: none; /* Убрать подчеркивание при наведении */
+}
