@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроено отображение переходов">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены информацинные блоки на страницу контакты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/main/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/main/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
       <workItem from="1728029172012" duration="2328000" />
       <workItem from="1728149590799" duration="194000" />
       <workItem from="1728202859892" duration="2919000" />
-      <workItem from="1728223634959" duration="4038000" />
+      <workItem from="1728223634959" duration="6266000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -94,7 +94,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727975706066</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Добавлены информацинные блоки на страницу контакты">
+      <option name="closed" value="true" />
+      <created>1728229008194</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728229008194</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +113,7 @@
     <MESSAGE value="Добавлена главная страница" />
     <MESSAGE value="Добавлен шаблон для сайта и страница контакты" />
     <MESSAGE value="Настроено отображение переходов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Настроено отображение переходов" />
+    <MESSAGE value="Добавлены информацинные блоки на страницу контакты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены информацинные блоки на страницу контакты" />
   </component>
 </project>

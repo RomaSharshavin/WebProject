@@ -32,6 +32,7 @@ img {
     -moz-user-select: none; /* Firefox */
 }
 
+
 .containerInfo {
     background-color: white;
     border-radius: 8px; /* Скругление краёв */
@@ -54,9 +55,28 @@ img {
 }
 
 .contactsPage{
-    overflow: hidden;
+    margin-top: 20px;
 }
 
+.flex-container {
+    display: flex; /* Включаем flexbox */
+    justify-content: space-between; /* Раздвигаем элементы по горизонтали */
+}
+
+.flex-item {
+    flex: 1; /* вес элементов равен */
+    margin-right: 20px; /* Отступ между блоками  */
+}
+
+
+.map{
+    margin-top: -100px;
+    margin-right: 40px;
+    width: 500px;
+    height: auto;
+    min-height: 500px;
+    background: black;
+}
 
 
 
