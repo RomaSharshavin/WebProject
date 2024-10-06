@@ -32,3 +32,31 @@ img {
     -moz-user-select: none; /* Firefox */
 }
 
+.containerInfo {
+    background-color: white;
+    border-radius: 8px; /* Скругление краёв */
+    padding: 20px; /* Внутренние отступы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+    position: relative;
+    max-width: 630px; /* Ширина */
+    margin: 13px 0 5px 20px;
+}
+
+.containerInfo table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.containerInfo td {
+    padding: 5px; /* Отступы ячеек */
+    text-align: left; /* Выравнивание текста */
+    font-size: 14px;
+}
+
+.contactsPage{
+    overflow: hidden;
+}
+
+
+
+
