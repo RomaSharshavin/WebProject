@@ -6,6 +6,14 @@
 Контакты
 {% endblock %}
 
+{% block breadcrumb %}
+<nav class="breadcrumb">
+    <a href="#">Главная</a> &gt;
+    <a href="#">Категория</a> &gt;
+    <span>Текущая страница</span>
+</nav>
+{% endblock %}
+
 {% block content %}
     <h2 style="margin-left: 20px">Контакты</h2>
     <div class="contactsPage">
@@ -16,7 +24,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>Адресс:</td>
+                                <td>Адрес:</td>
                                 <td>195027, г. Санкт-Петербург, ул. Магнитогорская, д. 51, лит. Е, офис 313</td>
                             </tr>
                             <tr>
@@ -36,7 +44,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>Адресс:</td>
+                                <td>Адрес:</td>
                                 <td>142111, Московская область, г. Подольск, ул. Окружная, 2В, стр. 1</td>
                             </tr>
                             <tr>
@@ -66,5 +74,6 @@
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="{% static 'js/map.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/breadcrumb.js' %}" type="text/javascript"></script>
 {% endblock %}
 

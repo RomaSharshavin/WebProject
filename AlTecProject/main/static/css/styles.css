@@ -1,6 +1,8 @@
 body {
     background-color: #EFFBFF;
     font-family: Inter, sans-serif;
+    position: fixed;
+    width: 100%;
 }
 
 .header, .footer {
@@ -65,13 +67,35 @@ img {
 
 .flex-item {
     flex: 1; /* вес элементов равен */
-    margin-right: 60px; /* Отступ между блоками  */
 }
 
 .map {
     width: 500px;
     height: 450px;
     margin-right: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
     flex-shrink: 0;
 }
+
+
+.breadcrumb {
+    font-family: Inter, sans-serif; /* Установите ваш шрифт */
+    padding: 10px 0; /* Внутренние отступы */
+    font-size: 14px; /* Размер шрифта */
+    color: #000; /* Цвет текста */
+}
+
+.breadcrumb a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #007bff; /* Цвет для ссылок */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.breadcrumb span {
+    color: #6c757d; /* Цвет для текущей страницы */
+}
+
+
