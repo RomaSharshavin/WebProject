@@ -69,9 +69,9 @@ img {
 }
 
 .map {
-    width: 500px; /* Ширина карты */
-    height: 450px; /* Высота карты */
-    margin-right: 20px; /* Отступ справа от карты */
+    width: 500px;
+    height: 450px;
+    margin-right: 20px;
     margin-top: 40px;
-    flex-shrink: 0; /* Не сокращать карту при необходимости */
+    flex-shrink: 0;
 }
