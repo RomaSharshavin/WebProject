@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены информацинные блоки на страницу контакты">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/main/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/main/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,12 +105,25 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start Project" />
     <MESSAGE value="Добавлена главная страница" />
     <MESSAGE value="Добавлен шаблон для сайта и страница контакты" />
     <MESSAGE value="Настроено отображение переходов" />
     <MESSAGE value="Добавлены информацинные блоки на страницу контакты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены информацинные блоки на страницу контакты" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Добавлены картографические метки на странице контакты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены картографические метки на странице контакты" />
   </component>
 </project>
