@@ -65,18 +65,13 @@ img {
 
 .flex-item {
     flex: 1; /* вес элементов равен */
-    margin-right: 20px; /* Отступ между блоками  */
+    margin-right: 60px; /* Отступ между блоками  */
 }
 
-
-.map{
-    margin-top: -100px;
-    margin-right: 40px;
-    width: 500px;
-    height: auto;
-    min-height: 500px;
-    background: black;
+.map {
+    width: 500px; /* Ширина карты */
+    height: 450px; /* Высота карты */
+    margin-right: 20px; /* Отступ справа от карты */
+    margin-top: 40px;
+    flex-shrink: 0; /* Не сокращать карту при необходимости */
 }
-
-
-

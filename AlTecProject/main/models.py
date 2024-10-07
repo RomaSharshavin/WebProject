@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+
+class News(models.Model):
+    title = models.CharField('Новость', max_length=50)
+    text = models.TextField('Описание')
+
+    def __str__(self):
+        return self.title

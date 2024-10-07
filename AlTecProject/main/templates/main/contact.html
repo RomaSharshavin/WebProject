@@ -1,4 +1,6 @@
 {% extends 'main/base.html' %}
+{% load static %}
+
 
 {% block title %}
 Контакты
@@ -58,11 +60,13 @@
                 </div>
             </div>
 
-            {% load yamaps %} {% yamaps address "width: 500px; height: 500px;" %} {% yamaps_init %}
+            <div class="flex-item map" id="map" style="margin-top: -90px;">
+
+            </div> <!-- Здесь будет Яндекс.Карта -->
         </div>
     </div>
 
-    <script src="http://api-maps.yandex.ru/1.1/index.xml?key={c484c9fe-4876-4b9f-ba34-2838a2b877f2}" type="text/javascript"></script>
-
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="{% static 'js/map.js' %}" type="text/javascript"></script>
 {% endblock %}
 
