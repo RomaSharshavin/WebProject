@@ -7,9 +7,15 @@ function init() {
     });
 
     // Добавление метки
-    var myPlacemark = new ymaps.Placemark([59.939374, 30.433026], {
+    var myPlacemarkSPB = new ymaps.Placemark([59.939374, 30.433026], {
         balloonContent: 'ООО "Ал-Тек"'
     });
 
-    myMap.geoObjects.add(myPlacemark);
+    myMap.geoObjects.add(myPlacemarkSPB);
+
+    var myPlacemarkMosk = new ymaps.Placemark([55.468244,37.574444], {
+        balloonContent: 'Офис в Московской обл.'
+    });
+
+    myMap.geoObjects.add(myPlacemarkMosk);
 }
