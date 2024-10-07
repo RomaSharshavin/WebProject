@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены картографические метки на странице контакты" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены информацинные блоки на страницу контакты">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/main/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/main/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -98,46 +102,11 @@
       <option name="project" value="LOCAL" />
       <updated>1728229008194</updated>
     </task>
-    <task id="LOCAL-00006" summary="Добавлены картографические метки на странице контакты">
-      <option name="closed" value="true" />
-      <created>1728299644836</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1728299644836</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Добавлены картографические метки на странице контакты">
-      <option name="closed" value="true" />
-      <created>1728300966187</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1728300966187</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Добавлены картографические метки на странице контакты">
-      <option name="closed" value="true" />
-      <created>1728302828320</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1728302828320</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start Project" />
@@ -145,7 +114,6 @@
     <MESSAGE value="Добавлен шаблон для сайта и страница контакты" />
     <MESSAGE value="Настроено отображение переходов" />
     <MESSAGE value="Добавлены информацинные блоки на страницу контакты" />
-    <MESSAGE value="Добавлены картографические метки на странице контакты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены картографические метки на странице контакты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены информацинные блоки на страницу контакты" />
   </component>
 </project>
