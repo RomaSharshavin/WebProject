@@ -1,74 +1,87 @@
+/* основной экран */
 body {
     background-color: #EFFBFF;
     font-family: Inter, sans-serif;
     position: fixed;
+    margin: 0;
+    padding: 0;
     width: 100%;
 }
 
+/* стили для шапки и подвала */
 .header, .footer {
     background-color: white;
-    padding: 10px 10px; /* Отступы для кнопок */
+    padding: 5px 15px;
 }
 
+/* стили для навигационных ссылок */
 .nav-link {
-    display: inline-block; /* Чтобы добавить отступы */
-    padding: 10px 15px; /* Отступы для кнопок */
-    background-color: #F7F7F7; /* Цвет фона кнопок */
-    border-radius: 20px; /* Овальная форма */
-    color: #000000; /* Цвет текста */
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #F7F7F7;
+    border-radius: 20px;
+    color: #000000;
     text-decoration: none;
-    transition: background-color 0.3s; /* Плавный переход */
-    width: 150px; /* Фиксированная ширина */
-    text-align: center; /* Центрирование текста */
-    font-weight: bold; /* Делаем шрифт жирным */
+    transition: background-color 0.3s;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
 }
 
+/* эффекты наведения на ссылки */
 .nav-link:hover {
-    background-color: #e0e0e0; /* Цвет при наведении */
-    text-decoration: none; /* Убрать подчеркивание при наведении */
+    background-color: #e0e0e0;
+    text-decoration: none;
 }
 
+/* отключение выделения изображений */
 img {
-    user-select: none; /* Запретить выделение текста */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
-
+/* основной контейнер информации */
 .containerInfo {
     background-color: white;
-    border-radius: 8px; /* Скругление краёв */
-    padding: 20px; /* Внутренние отступы */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    max-width: 630px; /* Ширина */
+    max-width: 630px;
     margin: 13px 0 5px 20px;
 }
 
+/* стили таблицы внутри контейнера информации */
 .containerInfo table {
     width: 100%;
     border-collapse: collapse;
 }
 
+/* стили для ячеек таблицы */
 .containerInfo td {
-    padding: 5px; /* Отступы ячеек */
-    text-align: left; /* Выравнивание текста */
+    padding: 5px;
+    text-align: left;
     font-size: 14px;
 }
 
-.contactsPage{
+/* отступ для страницы контактов */
+.contactsPage {
     margin-top: 20px;
 }
 
+/* flex-контейнер для распределения элементов */
 .flex-container {
-    display: flex; /* Включаем flexbox */
-    justify-content: space-between; /* Раздвигаем элементы по горизонтали */
+    display: flex;
+    justify-content: space-between;
 }
 
+/* flex-элемент с равным весом */
 .flex-item {
-    flex: 1; /* вес элементов равен */
+    flex: 1;
 }
 
+/* стили для карты */
 .map {
     width: 500px;
     height: 450px;
@@ -77,45 +90,85 @@ img {
     flex-shrink: 0;
 }
 
-
+/* стили для хлебных крошек */
 .breadcrumb {
-    font-family: Inter, sans-serif; /* Установите ваш шрифт */
-    padding: 10px 0; /* Внутренние отступы */
-    font-size: 14px; /* Размер шрифта */
-    color: #000; /* Цвет текста */
+    font-family: Inter, sans-serif;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #000;
 }
 
+/* ссылки в хлебных крошках */
 .breadcrumb a {
-    text-decoration: none; /* Убираем подчеркивание */
-    color: #007bff; /* Цвет для ссылок */
+    text-decoration: none;
+    color: #007bff;
 }
 
+/* эффект наведения на ссылки в хлебных крошках */
 .breadcrumb a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+    text-decoration: underline;
 }
 
+/* текущая страница в хлебных крошках */
 .breadcrumb span {
-    color: #6c757d; /* Цвет для текущей страницы */
+    color: #6c757d;
 }
 
+/* стили для подвала */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/* полный контейнер для центрированных элементов */
+.full-width-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* стили для гифки */
 .styled-gif {
-        max-width: 100%; /* Ограничивает ширину изображения */
-        height: auto; /* Сохраняет пропорции изображения */
-        max-height: 400px; /* Максимальная высота */
-        border: 2px solid #000; /* Добавляет черную рамку */
-        border-radius: 10px; /* Скругляет края рамки */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляет тень */
-        margin-top: 30px; /* Расстояние сверху */
-        display: block; /* Центрирует изображение */
-        margin-left: auto; /* Центрирует изображение */
-        margin-right: auto; /* Центрирует изображение */
-    }
+    width: 100%;
+    max-height: calc(80vh - 50px);
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+}
 
-    .equipment-description {
-        text-align: center; /* Центрирует текст */
-        font-size: 25px; /* Размер шрифта */
-        font-family: 'Roboto', sans-serif; /* Используйте Roboto из Google Fonts */
-        margin-top: 10px; /* Расстояние сверху */
-        color: #333; /* Цвет текста */
-    }
+/* стиль для текста на главном экране с анимацией */
+.equipment-description {
+    margin-bottom: 130px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Jura', sans-serif;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    animation: flyIn 0.6s forwards;
+}
 
+/* анимация появления текста */
+@keyframes flyIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
