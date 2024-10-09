@@ -14,6 +14,11 @@ body {
     padding: 5px 15px;
 }
 
+/* стили для названия страниц */
+h2, h5 {
+    font-family: 'Jura', sans-serif;
+}
+
 /* стили для навигационных ссылок */
 .nav-link {
     display: inline-block;
@@ -68,6 +73,7 @@ img {
 /* отступ для страницы контактов */
 .contactsPage {
     margin-top: 20px;
+    padding: 20px;
 }
 
 /* flex-контейнер для распределения элементов */
