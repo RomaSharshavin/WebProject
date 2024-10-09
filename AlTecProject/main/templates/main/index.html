@@ -1,9 +1,13 @@
 {% extends "main/base.html" %}
 
+{% load static %}
+
 {% block title %}
 Главная страница
 {% endblock %}
 
+
 {% block content %}
-    <p>Главная страница</p>
+    <img src="{% static 'images/altec.gif' %}" alt="Altec GIF" class="styled-gif">
+    <p class="equipment-description"><strong>Оборудование для автомойки всех типов</strong></p>
 {% endblock %}

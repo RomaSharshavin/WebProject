@@ -98,4 +98,24 @@ img {
     color: #6c757d; /* Цвет для текущей страницы */
 }
 
+.styled-gif {
+        max-width: 100%; /* Ограничивает ширину изображения */
+        height: auto; /* Сохраняет пропорции изображения */
+        max-height: 400px; /* Максимальная высота */
+        border: 2px solid #000; /* Добавляет черную рамку */
+        border-radius: 10px; /* Скругляет края рамки */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляет тень */
+        margin-top: 30px; /* Расстояние сверху */
+        display: block; /* Центрирует изображение */
+        margin-left: auto; /* Центрирует изображение */
+        margin-right: auto; /* Центрирует изображение */
+    }
+
+    .equipment-description {
+        text-align: center; /* Центрирует текст */
+        font-size: 25px; /* Размер шрифта */
+        font-family: 'Roboto', sans-serif; /* Используйте Roboto из Google Fonts */
+        margin-top: 10px; /* Расстояние сверху */
+        color: #333; /* Цвет текста */
+    }
 
