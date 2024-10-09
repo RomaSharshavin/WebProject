@@ -90,30 +90,6 @@ img {
     flex-shrink: 0;
 }
 
-/* стили для хлебных крошек */
-.breadcrumb {
-    font-family: Inter, sans-serif;
-    padding: 10px 0;
-    font-size: 14px;
-    color: #000;
-}
-
-/* ссылки в хлебных крошках */
-.breadcrumb a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-/* эффект наведения на ссылки в хлебных крошках */
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
-/* текущая страница в хлебных крошках */
-.breadcrumb span {
-    color: #6c757d;
-}
-
 /* стили для подвала */
 .footer {
     position: fixed;
