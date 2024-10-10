@@ -19,6 +19,7 @@ body {
 /* стили для названия страниц */
 h2, h5 {
     font-family: 'Jura', sans-serif;
+    margin-left: 20px
 }
 
 /* стили для навигационных ссылок */
@@ -160,82 +161,6 @@ img {
     }
 }
 
-/* контейнер для карточки */
-.contact-card {
-    max-width: 400px;
-    padding: 20px;
-    background-color: #ffffff; /* Белый фон карточки */
-    border: 1px solid #ccc; /* Светло-серая рамка */
-    border-radius: 8px; /* Закругленные углы */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
-    transition: transform 0.3s; /* Анимация при наведении */
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeIn 0.5s forwards; /* Эффект появления */
-}
 
-.contact-card:hover {
-    transform: scale(1.02); /* Увеличение при наведении */
-}
-
-/* стили для заголовка карточки */
-h2 {
-    text-align: center;
-    color: #1e90ff; /* Синий цвет заголовка */
-    margin-bottom: 20px; /* Отступ снизу */
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    font-weight: bold; /* Жирный текст для меток */
-    margin-bottom: 5px;
-    display: block;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc; /* Светло-серая рамка для полей ввода */
-    border-radius: 4px; /* Закругленные углы */
-    transition: border 0.3s; /* Анимация изменения рамки */
-    font-size: 16px; /* Размер шрифта */
-}
-
-input:focus, textarea:focus {
-    border-color: #1e90ff; /* Синий цвет рамки при фокусе */
-    outline: none; /* Без обводки */
-}
-
-textarea {
-    resize: none; /* Отключение изменения размера */
-    height: 100px; /* Фиксированная высота для textarea */
-}
-
-.submit-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #1e90ff; /* Синий цвет кнопки */
-    color: white; /* Белый текст */
-    border: none;
-    border-radius: 4px; /* Закругленные углы */
-    cursor: pointer;
-    transition: background 0.3s; /* Анимация цвета кнопки */
-    font-size: 16px; /* Размер шрифта */
-}
-
-.submit-button:hover {
-    background-color: #1c77cc; /* Темнее при наведении */
-}
-
-/* Анимация появления карточки */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 
