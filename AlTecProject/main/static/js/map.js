@@ -2,7 +2,7 @@ ymaps.ready(init);
 function init() {
     var myMap = new ymaps.Map("map", {
         center: [57.58239091081727, 34.56004699233066], // Координаты центра карты (Санкт-Петербург)
-        zoom: 5, // Уровень увеличения
+        zoom: 3, // Уровень увеличения
         controls: ['zoomControl'] // Элементы управления
     });
 
