@@ -14,22 +14,28 @@
 <div class="containerInfo write-to-us">
     <form action="/send_message/" method="post">
         {% csrf_token %}
-        <div class="form-group">
-            <label for="name">Ваше имя</label>
-            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+
+        <div class="form-group flex-group">
+            <div class="flex-item">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+            </div>
+            <div class="flex-item">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="phone">Телефон</label>
-            <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
-        </div>
+
         <div class="form-group">
             <label for="email">Электронная почта</label>
             <input type="email" id="email" name="email" placeholder="Введите вашу почту" required>
         </div>
+
         <div class="form-group">
             <label for="question">Ваш вопрос</label>
             <textarea id="question" name="question" placeholder="Введите ваш вопрос" required></textarea>
         </div>
+
         <button type="submit" class="send-button">Отправить</button>
     </form>
 </div>
