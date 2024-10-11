@@ -1,4 +1,4 @@
-const texts = {% autoescape off %}{{ texts|safe }}{% endautoescape %};
+const texts = JSON.parse(document.getElementById('texts-data').textContent);
 let currentIndex = 0;
 
 function changeText(direction) {
@@ -8,5 +8,5 @@ function changeText(direction) {
     } else if (currentIndex >= texts.length) {
         currentIndex = 0; // Циклический переход вправо
     }
-    document.getElementById('text-content').innerHTML = `<p>${texts[currentIndex]}</p>`; // Обновляем текст
+    document.getElementById('text-content').innerHTML = texts[currentIndex]; // Обновляем текст
 }

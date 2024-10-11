@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 import os
 
@@ -46,17 +47,21 @@ def format_text(text):
 
 
 def partners_page(request):
-    texts_dir = "media/texts"  # Убедитесь, что путь правильный
+    texts_dir = "media/texts"
     texts = []
 
-    for i in range(1, 4):  # Предполагаем, что у вас 3 файла
+    for i in range(1, 4):
         file_path = os.path.join(texts_dir, f"text{i}.txt")
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
-                formatted_content = format_text(content)  # Форматируем текст
+                formatted_content = format_text(content)
                 texts.append(formatted_content)
         except FileNotFoundError:
+            print(f"Файл не найден: {file_path}")
             texts.append(f"<p>Файл text{i}.txt не найден.</p>")
+
+    if not texts:  # Проверяем, если texts пусто
+        raise Http404("Нет текстов для отображения.")
 
     return render(request, 'main/partners.html', {'texts': texts})
