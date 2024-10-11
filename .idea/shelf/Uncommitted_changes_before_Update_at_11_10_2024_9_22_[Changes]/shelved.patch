@@ -1,0 +1,308 @@
+Index: AlTecProject/main/templates/main/contact.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'main/base.html' %}\r\n{% load static %}\r\n\r\n\r\n{% block title %}\r\nКонтакты\r\n{% endblock %}\r\n\r\n{% block breadcrumb %}\r\n{% endblock %}\r\n\r\n{% block content %}\r\n    <h2 style=\"margin-left: 20px\"><strong>Контакты</strong></h2>\r\n    <div class=\"contactsPage\">\r\n        <h5 style=\"margin-left: 20px; margin-top: 20px\"><strong>ООО \"Ал-Тек\"</strong></h5>\r\n        <div class=\"flex-container\">\r\n            <div class=\"flex-item\">\r\n                <div class=\"containerInfo\">\r\n                    <table>\r\n                        <tbody>\r\n                            <tr>\r\n                                <td>Адрес:</td>\r\n                                <td>195027, г. Санкт-Петербург, ул. Магнитогорская, д. 51, лит. Е, офис 313</td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Тел/факс:</td>\r\n                                <td>+7 (812) 441-36-59</td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>E-mail:</td>\r\n                                <td><a href=\"mailto:info@al-tec.ru\">info@al-tec.ru</a></td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n                <h5 style=\"margin-left: 20px; margin-top: 20px\"><strong>Офис в Московской обл.</strong></h5>\r\n                <div class=\"containerInfo\">\r\n                    <table>\r\n                        <tbody>\r\n                            <tr>\r\n                                <td>Адрес:</td>\r\n                                <td>142111, Московская область, г. Подольск, ул. Окружная, 2В, стр. 1</td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Телефон:</td>\r\n                                <td>+7 (909) 913-53-03</td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Факс:</td>\r\n                                <td>+7 (495) 504-04-13</td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>E-mail:</td>\r\n                                <td><a href=\"mailto:info@avtomoyki.ru\">info@avtomoyki.ru</a></td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"flex-item map\" id=\"map\" style=\"margin-top: -90px;\"></div>\r\n        </div>\r\n    </div>\r\n\r\n    <script src=\"https://api-maps.yandex.ru/2.1/?lang=ru_RU\" type=\"text/javascript\"></script>\r\n    <script src=\"{% static 'js/map.js' %}\" type=\"text/javascript\"></script>\r\n{% endblock %}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AlTecProject/main/templates/main/contact.html b/AlTecProject/main/templates/main/contact.html
+--- a/AlTecProject/main/templates/main/contact.html	(revision cedb7708ffa0eb6056eb7f88437ff051e11119e4)
++++ b/AlTecProject/main/templates/main/contact.html	(date 1728595265531)
+@@ -9,6 +9,10 @@
+ {% block breadcrumb %}
+ {% endblock %}
+ 
++{% block head %}
++    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
++{% endblock %}
++
+ {% block content %}
+     <h2 style="margin-left: 20px"><strong>Контакты</strong></h2>
+     <div class="contactsPage">
+@@ -61,8 +65,6 @@
+             <div class="flex-item map" id="map" style="margin-top: -90px;"></div>
+         </div>
+     </div>
+-
+-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+     <script src="{% static 'js/map.js' %}" type="text/javascript"></script>
+ {% endblock %}
+ 
+Index: AlTecProject/main/templates/main/base.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!doctype html>\r\n<html lang=\"ru\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">\r\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n    <link href=\"https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap\" rel=\"stylesheet\">\r\n    <title>{% block title %}{% endblock %}</title>\r\n    {% load static %}\r\n    <link rel=\"stylesheet\" href=\"{% static 'css/styles.css' %}\">\r\n</head>\r\n<body>\r\n    <header class=\"header\">\r\n        <div class=\"d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom\">\r\n            <a href=\"{% url 'index' %}\" class=\"d-flex align-items-center text-decoration-none\">\r\n                <img src=\"{% static 'images/logo.png' %}\" alt=\"Лого\" style=\"height: 70px; user-select: none;\">\r\n            </a>\r\n            <nav class=\"d-inline-flex mt-2 mt-md-0 ms-md-auto\">\r\n                <a class=\"me-3 nav-link\" href=\"{% url 'production' %}\">Производство</a>\r\n                <a class=\"me-3 nav-link\" href=\"{% url 'service' %}\">Продукция</a>\r\n                <a class=\"me-3 nav-link\" href=\"{% url 'sertificate' %}\">Сертификаты</a>\r\n                <a class=\"me-3 nav-link\" href=\"{% url 'news' %}\">Новости</a>\r\n            </nav>\r\n        </div>\r\n    </header>\r\n\r\n    {% block breadcrumb %}{% endblock %}\r\n\r\n    {% block content %}{% endblock %}\r\n\r\n    <footer class=\"footer mt-4\">\r\n        <div class=\"d-flex justify-content-start py-3\">\r\n            <a class=\"me-3 nav-link\" href=\"{% url 'about' %}\">О компании</a>\r\n            <a class=\"me-3 nav-link\" href=\"{% url 'contact' %}\">Контакты</a>\r\n            <a class=\"me-3 nav-link\" href=\"{% url 'write' %}\">Написать нам</a>\r\n            <a class=\"me-3 nav-link\" href=\"{% url 'faq' %}\">FAQ</a>\r\n        </div>\r\n    </footer>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AlTecProject/main/templates/main/base.html b/AlTecProject/main/templates/main/base.html
+--- a/AlTecProject/main/templates/main/base.html	(revision cedb7708ffa0eb6056eb7f88437ff051e11119e4)
++++ b/AlTecProject/main/templates/main/base.html	(date 1728595231036)
+@@ -11,6 +11,9 @@
+     <title>{% block title %}{% endblock %}</title>
+     {% load static %}
+     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
++    {% block head %}
++    {% endblock %}
++    <link rel="stylesheet" href="{% static 'css/stylesNews.css' %}">
+ </head>
+ <body>
+     <header class="header">
+Index: AlTecProject/main/static/js/map.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>ymaps.ready(init);\r\nfunction init() {\r\n    var myMap = new ymaps.Map(\"map\", {\r\n        center: [57.58239091081727, 34.56004699233066], // Координаты центра карты (Санкт-Петербург)\r\n        zoom: 3, // Уровень увеличения\r\n        controls: ['zoomControl'] // Элементы управления\r\n    });\r\n\r\n    // Добавление метки для Санкт-Петербурга\r\n    var myPlacemarkSPB = new ymaps.Placemark([59.939374, 30.433026], {\r\n        balloonContent: 'ООО \"Ал-Тек\"'\r\n    });\r\n\r\n    myMap.geoObjects.add(myPlacemarkSPB);\r\n\r\n    // Удалите следующие строки, чтобы не добавлять метку в Москве\r\n    // var myPlacemarkMosk = new ymaps.Placemark([55.468244, 37.574444], {\r\n    //     balloonContent: 'Офис в Московской обл.'\r\n    // });\r\n    // myMap.geoObjects.add(myPlacemarkMosk);\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AlTecProject/main/static/js/map.js b/AlTecProject/main/static/js/map.js
+--- a/AlTecProject/main/static/js/map.js	(revision cedb7708ffa0eb6056eb7f88437ff051e11119e4)
++++ b/AlTecProject/main/static/js/map.js	(date 1728595525532)
+@@ -1,21 +1,22 @@
+ ymaps.ready(init);
+ function init() {
+     var myMap = new ymaps.Map("map", {
+-        center: [57.58239091081727, 34.56004699233066], // Координаты центра карты (Санкт-Петербург)
+-        zoom: 3, // Уровень увеличения
++        center: [59.9386, 30.3141], // Координаты центра карты (Санкт-Петербург)
++        zoom: 9, // Уровень увеличения
+         controls: ['zoomControl'] // Элементы управления
+     });
+ 
+     // Добавление метки для Санкт-Петербурга
+     var myPlacemarkSPB = new ymaps.Placemark([59.939374, 30.433026], {
+-        balloonContent: 'ООО "Ал-Тек"'
++        balloonContent: 'ул. Магнитогорская, д. 51, лит. Е, офис 313"'
+     });
+ 
+     myMap.geoObjects.add(myPlacemarkSPB);
+ 
+-    // Удалите следующие строки, чтобы не добавлять метку в Москве
+-    // var myPlacemarkMosk = new ymaps.Placemark([55.468244, 37.574444], {
+-    //     balloonContent: 'Офис в Московской обл.'
+-    // });
+-    // myMap.geoObjects.add(myPlacemarkMosk);
++
++    myPlacemarkSPB.events.add("click", function () {
++        myMap.setCenter([59.939374, 30.433026], 14, {
++            duration: 2000 // Указываем продолжительность анимации в миллисекундах
++        });
++    });
+ }
+\ No newline at end of file
+Index: AlTecProject/main/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.db import models\r\n\r\n\r\nclass News(models.Model):\r\n    title = models.CharField('Новость', max_length=50)\r\n    text = models.TextField('Описание')\r\n\r\n    def __str__(self):\r\n        return self.title\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AlTecProject/main/models.py b/AlTecProject/main/models.py
+--- a/AlTecProject/main/models.py	(revision cedb7708ffa0eb6056eb7f88437ff051e11119e4)
++++ b/AlTecProject/main/models.py	(date 1728593404660)
+@@ -4,6 +4,7 @@
+ class News(models.Model):
+     title = models.CharField('Новость', max_length=50)
+     text = models.TextField('Описание')
++    created_at = models.DateTimeField(auto_now_add=True)
+ 
+     def __str__(self):
+         return self.title
+Index: AlTecProject/main/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render\r\n\r\n\r\ndef index(request):\r\n    return render(request, 'main/index.html')\r\n\r\n\r\ndef contact(request):\r\n    return render(request, 'main/contact.html')\r\n\r\n\r\ndef faq(request):\r\n    return render(request, 'main/faq.html')\r\n\r\n\r\ndef production(request):\r\n    return render(request, 'main/production.html')\r\n\r\n\r\ndef service(request):\r\n    return render(request, 'main/service.html')\r\n\r\n\r\ndef sertificate(request):\r\n    return render(request, 'main/sertificate.html')\r\n\r\n\r\ndef write(request):\r\n    return render(request, 'main/write.html')\r\n\r\n\r\ndef news(request):\r\n    return render(request, 'main/news.html')\r\n\r\n\r\ndef about(request):\r\n    return render(request, 'main/about.html')
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AlTecProject/main/views.py b/AlTecProject/main/views.py
+--- a/AlTecProject/main/views.py	(revision cedb7708ffa0eb6056eb7f88437ff051e11119e4)
++++ b/AlTecProject/main/views.py	(date 1728591633398)
+@@ -1,4 +1,5 @@
+ from django.shortcuts import render
++from .models import News
+ 
+ 
+ def index(request):
+@@ -30,8 +31,9 @@
+ 
+ 
+ def news(request):
+-    return render(request, 'main/news.html')
++    news_items = News.objects.all()
++    return render(request, 'main/news.html', {'news_items': news_items})
+ 
+ 
+ def about(request):
+-    return render(request, 'main/about.html')
+\ No newline at end of file
++    return render(request, 'main/about.html')
+Index: AlTecProject/main/templates/main/news.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'main/base.html' %}\r\n\r\n{% block title %}\r\nНовости\r\n{% endblock %}\r\n\r\n{% block content %}\r\n    <h2 style=\"margin-left: 20px\">Контакты</h2>\r\n{% endblock %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AlTecProject/main/templates/main/news.html b/AlTecProject/main/templates/main/news.html
+--- a/AlTecProject/main/templates/main/news.html	(revision cedb7708ffa0eb6056eb7f88437ff051e11119e4)
++++ b/AlTecProject/main/templates/main/news.html	(date 1728595155433)
+@@ -5,5 +5,15 @@
+ {% endblock %}
+ 
+ {% block content %}
+-    <h2 style="margin-left: 20px">Контакты</h2>
++    <h2 style="margin-left: 20px">Новости</h2>
++    <div class="news-container">
++        {% for news in news_items %}
++            <div class="news-item">
++                <h3>{{ news.title }}</h3>
++                <p>{{ news.created_at }}</p>
++            </div>
++        {% empty %}
++            <p>Нет новостей на данный момент.</p>
++        {% endfor %}
++    </div>
+ {% endblock %}
+\ No newline at end of file
+Index: AlTecProject/main/static/css/stylesNews.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AlTecProject/main/static/css/stylesNews.css b/AlTecProject/main/static/css/stylesNews.css
+new file mode 100644
+--- /dev/null	(date 1728593622706)
++++ b/AlTecProject/main/static/css/stylesNews.css	(date 1728593622706)
+@@ -0,0 +1,52 @@
++:root{
++    --news-item-width: calc(33.33% - 10px); /* Ширина блока */
++    --news-item-count: 2; /* Количество блоков в строке */
++}
++
++.news-container {
++    display: flex;
++    flex-wrap: wrap;
++    padding: 20px 20px;
++    justify-content: space-between;
++    box-sizing: border-box; /* Учёт общей ширины */
++}
++
++.news-item {
++    width: var(--news-item-width); /* Учитываем отступы для корректного размещения */
++    background-color: #f9f9f9;
++    padding: 15px;
++    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
++    border: 2px solid #ddd;
++    border-radius: 10px;
++    margin-bottom: 20px;
++    overflow: hidden;
++}
++
++.news-item h3 {
++    white-space: nowrap; /* Не переносим заголовок */
++    overflow: hidden;
++    text-overflow: ellipsis; /* Дтроеточие если текст не помещается */
++}
++
++.news-item p {
++    overflow: hidden;
++    text-overflow: ellipsis;
++    display: -webkit-box;
++    -webkit-line-clamp: 3; /* Количество строк в блоке */
++    -webkit-box-orient: vertical;
++}
++
++/* Настройки для разных размеров экрана */
++@media (max-width: 768px) {
++    :root {
++        --news-item-width: calc(50% - 10px); /* 2 блока в строке на экранах менее 768px */
++        --news-item-count: 2;
++    }
++}
++
++@media (max-width: 480px) {
++    :root {
++        --news-item-width: 100%; /* 1 блок для телефонов */
++        --news-item-count: 1;
++    }
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6f696253-39e3-4d8e-a9dd-70c34222bf6f\" name=\"Changes\" comment=\"Добавлены информацинные блоки на страницу контакты\">\r\n      <change beforePath=\"$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2mvvoHe4ZTVTZlyHUcfAasEScvA\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;JavaScript Debug.base.html.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6f696253-39e3-4d8e-a9dd-70c34222bf6f\" name=\"Changes\" comment=\"\" />\r\n      <created>1727970038208</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1727970038208</updated>\r\n      <workItem from=\"1727970039749\" duration=\"4865000\" />\r\n      <workItem from=\"1727977149675\" duration=\"1591000\" />\r\n      <workItem from=\"1728029172012\" duration=\"2328000\" />\r\n      <workItem from=\"1728149590799\" duration=\"194000\" />\r\n      <workItem from=\"1728202859892\" duration=\"2919000\" />\r\n      <workItem from=\"1728223634959\" duration=\"6266000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Start Project\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1727970290911</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1727970290911</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Добавлена главная страница\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1727973199891</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1727973199891</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Добавлен шаблон для сайта и страница контакты\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1727974624030</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1727974624030</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Настроено отображение переходов\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1727975706066</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1727975706066</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Добавлены информацинные блоки на страницу контакты\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1728229008194</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1728229008194</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Start Project\" />\r\n    <MESSAGE value=\"Добавлена главная страница\" />\r\n    <MESSAGE value=\"Добавлен шаблон для сайта и страница контакты\" />\r\n    <MESSAGE value=\"Настроено отображение переходов\" />\r\n    <MESSAGE value=\"Добавлены информацинные блоки на страницу контакты\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\" />\r\n    <MESSAGE value=\"Добавлены картографические метки на странице контакты\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Добавлены картографические метки на странице контакты\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision cedb7708ffa0eb6056eb7f88437ff051e11119e4)
++++ b/.idea/workspace.xml	(date 1728627761611)
+@@ -4,8 +4,16 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены информацинные блоки на страницу контакты">
+-      <change beforePath="$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py" afterDir="false" />
++    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Исправлен запуск локального сервера">
++      <change afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesNews.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AlTecProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/db.sqlite3" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AlTecProject/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/models.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -37,6 +45,11 @@
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+ }</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\user\PycharmProjects\AlTec\AlTecProject\main\static\images" />
++    </key>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -58,6 +71,9 @@
+       <workItem from="1728149590799" duration="194000" />
+       <workItem from="1728202859892" duration="2919000" />
+       <workItem from="1728223634959" duration="6266000" />
++      <workItem from="1728460947242" duration="3771000" />
++      <workItem from="1728583348861" duration="318000" />
++      <workItem from="1728590379592" duration="5522000" />
+     </task>
+     <task id="LOCAL-00001" summary="Start Project">
+       <option name="closed" value="true" />
+@@ -99,7 +115,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1728229008194</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="Исправлен запуск локального сервера">
++      <option name="closed" value="true" />
++      <created>1728303318962</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1728303318962</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -124,6 +148,7 @@
+     <MESSAGE value="Добавлены информацинные блоки на страницу контакты" />
+     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+     <MESSAGE value="Добавлены картографические метки на странице контакты" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены картографические метки на странице контакты" />
++    <MESSAGE value="Исправлен запуск локального сервера" />
++    <option name="LAST_COMMIT_MESSAGE" value="Исправлен запуск локального сервера" />
+   </component>
+ </project>
+\ No newline at end of file
