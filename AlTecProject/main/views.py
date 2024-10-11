@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import News
 
 
 def index(request):
@@ -30,7 +31,8 @@ def write(request):
 
 
 def news(request):
-    return render(request, 'main/news.html')
+    news_items = News.objects.all()
+    return render(request, 'main/news.html', {'news_items': news_items})
 
 
 def about(request):

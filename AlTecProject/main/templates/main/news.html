@@ -4,6 +4,23 @@
 Новости
 {% endblock %}
 
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/stylesNews.css' %}">
+{% endblock %}
+
+
 {% block content %}
-    <h2 style="margin-left: 20px">Контакты</h2>
+    <h2 style="margin-left: 20px">Новости</h2>
+    <div class="news-container">
+        {% for news in news_items %}
+            <div class="news-item">
+                <h3>{{ news.title }}</h3>
+                <p>{{ news.text }}</p>
+            </div>
+        {% empty %}
+            <p>Нет новостей на данный момент.</p>
+        {% endfor %}
+    </div>
 {% endblock %}

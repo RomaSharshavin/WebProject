@@ -1,0 +1,52 @@
+:root{
+    --news-item-width: calc(33.33% - 10px); /* Ширина блока */
+    --news-item-count: 2; /* Количество блоков в строке */
+}
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+    justify-content: space-between;
+    box-sizing: border-box; /* Учёт общей ширины */
+}
+
+.news-item {
+    width: var(--news-item-width); /* Учитываем отступы для корректного размещения */
+    background-color: #f9f9f9;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.news-item h3 {
+    white-space: nowrap; /* Не переносим заголовок */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Дтроеточие если текст не помещается */
+}
+
+.news-item p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Количество строк в блоке */
+    -webkit-box-orient: vertical;
+}
+
+/* Настройки для разных размеров экрана */
+@media (max-width: 768px) {
+    :root {
+        --news-item-width: calc(50% - 10px); /* 2 блока в строке на экранах менее 768px */
+        --news-item-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --news-item-width: 100%; /* 1 блок для телефонов */
+        --news-item-count: 1;
+    }
+}
