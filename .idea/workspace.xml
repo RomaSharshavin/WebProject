@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены информацинные блоки на страницу контакты">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены файлы стилей и js код вынесен в отдельный файл">
+      <change afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesNews.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesWrite.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/write.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +67,7 @@
       <workItem from="1728149590799" duration="194000" />
       <workItem from="1728202859892" duration="2919000" />
       <workItem from="1728223634959" duration="6266000" />
-      <workItem from="1728629345079" duration="2512000" />
+      <workItem from="1728629345079" duration="6204000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -106,7 +109,31 @@
       <option name="project" value="LOCAL" />
       <updated>1728229008194</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Исправлено отображение страницы, изменена карта">
+      <option name="closed" value="true" />
+      <created>1728633273524</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728633273524</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1728633318961</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728633318961</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Добавлены файлы стилей и js код вынесен в отдельный файл">
+      <option name="closed" value="true" />
+      <created>1728635670090</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728635670090</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +158,9 @@
     <MESSAGE value="Добавлены информацинные блоки на страницу контакты" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Добавлены картографические метки на странице контакты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены картографические метки на странице контакты" />
+    <MESSAGE value="Исправлено отображение страницы, изменена карта" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="Добавлены файлы стилей и js код вынесен в отдельный файл" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены файлы стилей и js код вынесен в отдельный файл" />
   </component>
 </project>

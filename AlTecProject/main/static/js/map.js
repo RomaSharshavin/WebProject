@@ -8,15 +8,15 @@ function init() {
 
     // Добавление метки для Санкт-Петербурга
     var myPlacemarkSPB = new ymaps.Placemark([59.939374, 30.433026], {
-        balloonContent: 'ООО "Ал-Тек"'
+        balloonContent: 'ул. Магнитогорская, д. 51, лит. Е, офис 313"'
     });
 
     myMap.geoObjects.add(myPlacemarkSPB);
 
     // Исправлено: использовано events вместо even
     myPlacemarkSPB.events.add("click", function () {
-        myMap.setCenter([59.939374, 30.433026], 15, {
-            duration: 3000 // Указываем продолжительность анимации в миллисекундах
+        myMap.setCenter([59.939374, 30.433026], 12, {
+            duration: 2000 // Указываем продолжительность анимации в миллисекундах
         });
     });
 

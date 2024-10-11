@@ -1,0 +1,25 @@
+.button-container {
+    position: fixed; /* Фиксируем контейнер */
+    bottom: 100px; /* Отступ от нижней границы */
+    right: 20px; /* Отступ от правой границы */
+    display: flex; /* Используем Flexbox для выравнивания кнопок */
+    gap: 10px; /* Расстояние между кнопками */
+}
+
+.nav-button {
+    padding: 10px 15px; /* Внутренние отступы */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругляем углы */
+    background-color: #4A90E2; /* Цвет фона */
+    color: white; /* Цвет текста */
+
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+    font-size: 24px; /* Размер текста для кнопок */
+    width: 100px; /* Ширина кнопок */
+    height: 100px; /* Высота кнопок */
+}
+
+.nav-button:hover {
+    background-color: #357ABD; /* Цвет фона при наведении */
+}

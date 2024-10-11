@@ -1,30 +1,4 @@
-{% extends 'main/base.html' %}
-{% load static %}
-
-{% block title %}
-Сертификаты
-{% endblock %}
-
-{% block breadcrumb %}
-{% endblock %}
-
-{% block content %}
-    <h2 style="margin-left: 20px"><strong>Сертификаты</strong></h2>
-    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
-        <img src="{% static 'images/sertificate1.jpg' %}" alt="Сертификат 1" class="clickable-image" style="max-width: 20%; margin: 0 20px; cursor: pointer;">
-    </div>
-
-   <!-- Фон для модального окна -->
-    <div id="modal-background" style="display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);"></div>
-
-    <!-- Модальное окно -->
-    <div id="modal" style="display: none; position: fixed; z-index: 1000; left: 50%; top: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.9); padding: 20px; border-radius: 10px; text-align: center;">
-        <span id="close" style="color: white; position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer;">&times;</span>
-        <img id="modal-img" style="max-width: 100%; max-height: 80vh; height: auto;">
-    </div>
-
-    <script>
-        // Получаем элементы
+// Получаем элементы
         const modal = document.getElementById('modal');
         const modalBackground = document.getElementById('modal-background');
         const modalImg = document.getElementById('modal-img');
@@ -76,5 +50,3 @@
             modalImg.style.transform = `scale(${scale})`; // Применяем новый масштаб
             e.stopPropagation(); // Предотвращаем закрытие модального окна
         };
-    </script>
-{% endblock %}
