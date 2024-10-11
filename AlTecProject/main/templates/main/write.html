@@ -5,12 +5,11 @@
 Написать нам
 {% endblock %}
 
-{% block content %}
-
 {% block links %}
     <link rel="stylesheet" href="{% static 'css/stylesWrite.css' %}">
 {% endblock %}
 
+{% block content %}
 <h2 style="margin-left: 20px"><strong>Написать нам</strong></h2>
 <div class="containerInfo write-to-us">
     <form action="/send_message/" method="post">
