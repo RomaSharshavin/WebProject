@@ -16,10 +16,21 @@
     cursor: pointer; /* Указатель при наведении */
     transition: background-color 0.3s; /* Плавный переход цвета фона */
     font-size: 24px; /* Размер текста для кнопок */
-    width: 100px; /* Ширина кнопок */
-    height: 100px; /* Высота кнопок */
+    width: 70px; /* Ширина кнопок */
+    height: 70px; /* Высота кнопок */
 }
 
 .nav-button:hover {
     background-color: #357ABD; /* Цвет фона при наведении */
+}
+
+#text-content {
+    font-family: 'Arial', sans-serif; /* Шрифт Arial, можно заменить на желаемый */
+    font-size: 20px; /* Размер шрифта */
+    line-height: 1.6; /* Высота строки для лучшей читаемости */
+    color: #333; /* Цвет текста */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #f9f9f9; /* Светлый фон для текста */
+    border-radius: 5px; /* Закругляем углы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для создания эффекта глубины */
 }
