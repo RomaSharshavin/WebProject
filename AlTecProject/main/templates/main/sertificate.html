@@ -14,13 +14,14 @@
         <img src="{% static 'images/sertificate1.jpg' %}" alt="Сертификат 1" class="clickable-image" style="max-width: 20%; margin: 0 20px; cursor: pointer;">
     </div>
 
-   <!-- Фон для модального окна -->
+    <!-- Фон для модального окна -->
     <div id="modal-background" style="display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);"></div>
 
     <!-- Модальное окно -->
-    <div id="modal" style="display: none; position: fixed; z-index: 1000; left: 50%; top: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.9); padding: 20px; border-radius: 10px; text-align: center;">
-        <span id="close" style="color: white; position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer;">&times;</span>
-        <img id="modal-img" style="max-width: 100%; max-height: 80vh; height: auto;">
+    <div id="modal" style="display: none; position: fixed; z-index: 1000; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 0; border-radius: 0; background-color: rgba(0, 0, 0, 0); box-sizing: border-box;">
+        <div id="image-container" style="display: flex; justify-content: center; align-items: center; cursor: move;">
+            <img id="modal-img" style="max-width: 100%; max-height: 80vh; height: auto; transition: transform 0.1s;">
+        </div>
     </div>
 
     <script>
@@ -28,11 +29,12 @@
         const modal = document.getElementById('modal');
         const modalBackground = document.getElementById('modal-background');
         const modalImg = document.getElementById('modal-img');
-        const closeBtn = document.getElementById('close');
 
-        // Переменная для хранения текущего масштаба и состояния (увеличение или уменьшение)
+        // Переменные для хранения текущего масштаба и позиции
         let scale = 1;
         let increasing = true;
+        let posY = 0;
+        let startY;
 
         // Открытие модального окна
         document.querySelector('.clickable-image').onclick = function() {
@@ -40,14 +42,12 @@
             modal.style.display = "flex";
             modalImg.src = this.src;
             scale = 1; // Сбрасываем масштаб при открытии
-            modalImg.style.transform = "scale(1)";
+            modalImg.style.transform = "scale(1) translate(0, 0)";
             increasing = true; // Начинаем с увеличения
-        };
 
-        // Закрытие модального окна
-        closeBtn.onclick = function() {
-            modalBackground.style.display = "none";
-            modal.style.display = "none";
+            // Сброс позиций
+            posY = 0;
+            modalImg.style.transition = 'none'; // Отключаем анимацию при открытии
         };
 
         // Закрытие модального окна при клике вне изображения
@@ -71,10 +71,49 @@
                     scale -= 1; // Уменьшаем масштаб
                 } else {
                     increasing = true; // Когда достигли минимума, переключаем на увеличение
+                    posY = 0; // Сбрасываем позицию при возвращении к нормальному масштабу
                 }
             }
-            modalImg.style.transform = `scale(${scale})`; // Применяем новый масштаб
+            modalImg.style.transform = `scale(${scale}) translate(0, ${posY}px)`; // Применяем новый масштаб и позиции
             e.stopPropagation(); // Предотвращаем закрытие модального окна
         };
+
+        // Обработка перетаскивания изображения (добавляем проверку на масштаб)
+        modalImg.addEventListener('mousedown', (e) => {
+            if (scale > 1) { // Перетаскивание доступно только в увеличенном состоянии
+                startY = e.clientY - posY;
+                modalImg.style.cursor = 'grabbing'; // Меняем курсор
+                document.addEventListener('mousemove', mouseMoveHandler);
+                document.addEventListener('mouseup', mouseUpHandler);
+            }
+        });
+
+        function mouseMoveHandler(e) {
+            // Обновляем позицию, проверяя границы
+            const newPosY = e.clientY - startY;
+
+            // Расчет верхней и нижней границ
+            const imageHeight = modalImg.offsetHeight * scale;
+            const upperBound = (window.innerHeight - imageHeight) / 2; // верхняя граница
+            const lowerBound = upperBound + imageHeight; // нижняя граница
+
+            // Устанавливаем новые границы для перемещения
+            if (newPosY < upperBound) {
+                posY = upperBound; // верхняя граница
+            } else if (newPosY > lowerBound) {
+                posY = lowerBound; // нижняя граница
+            } else {
+                posY = newPosY; // обновляем позицию, если она в пределах границ
+            }
+
+            modalImg.style.transform = `scale(${scale}) translate(0, ${posY}px)`; // Обновляем позицию изображения
+        }
+
+        function mouseUpHandler() {
+            // Убираем обработчики, когда отпускаем мышь
+            document.removeEventListener('mousemove', mouseMoveHandler);
+            document.removeEventListener('mouseup', mouseUpHandler);
+            modalImg.style.cursor = 'move'; // Сбрасываем курсор
+        }
     </script>
 {% endblock %}
