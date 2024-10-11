@@ -11,7 +11,13 @@
     text-align: center;
 }
 
-.modal-style{
+.image-s{
+    max-width: 20%;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.modal-fon{
     display: none;
     position: fixed;
     z-index: 999;
@@ -22,19 +28,7 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.countainer-image{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.image{
-    max-width: 20%;
-    margin: 0 20px;
-    cursor: pointer;
-}
-
-.span-object{
+.span-s{
     color: white;
     position: absolute;
     top: 10px;
