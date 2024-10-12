@@ -1,52 +1,49 @@
-// Получаем элементы
+let currentIndex = 0;
+const images = document.querySelectorAll('.clickable-image');
 const modal = document.getElementById('modal');
-const modalBackground = document.getElementById('modal-background');
 const modalImg = document.getElementById('modal-img');
-const closeBtn = document.getElementById('close');
+let zoomFactor = 0.5; // Переменная для настройки увеличения зума
 
-// Переменная для хранения текущего масштаба и состояния (увеличение или уменьшение)
-let scale = 1;
-let increasing = true;
+// Функция для открытия модального окна
+function openModal(clickedImage) {
+    currentIndex = Array.from(images).indexOf(clickedImage);
+    modal.style.display = 'block';
+    setModalImage(clickedImage.src); // Установка изображения в модальном окне
+}
 
-// Открытие модального окна
-document.querySelector('.clickable-image').onclick = function() {
-    modalBackground.style.display = "block";
-    modal.style.display = "flex";
-    modalImg.src = this.src;
-    scale = 1; // Сбрасываем масштаб при открытии
-    modalImg.style.transform = "scale(1)";
-    increasing = true; // Начинаем с увеличения
-};
+// Функция для закрытия модального окна
+function closeModal() {
+    modal.style.display = 'none';
+}
 
-// Закрытие модального окна
-closeBtn.onclick = function() {
-    modalBackground.style.display = "none";
-    modal.style.display = "none";
-};
+// Функция для установки изображения в модальном окне с учетом зума
+function setModalImage(src) {
+    modalImg.src = src;
+    modalImg.style.transform = `scale(${zoomFactor})`;
+}
 
-// Закрытие модального окна при клике вне изображения
-modalBackground.onclick = function() {
-    modalBackground.style.display = "none";
-    modal.style.display = "none";
-};
+// Функция для показа предыдущего изображения
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    setModalImage(images[currentIndex].src); // Обновление изображения с учетом зума
+}
 
-// Обработка кликов по изображению для увеличения и уменьшения
-modalImg.onclick = function(e) {
-    if (increasing) {
-        // Увеличение по клику
-        if (scale < 2) {
-            scale += 1; // Увеличиваем масштаб
-        } else {
-            increasing = false; // Когда достигли максимума, переключаем на уменьшение
-        }
-    } else {
-        // Уменьшение по клику
-        if (scale > 1) {
-            scale -= 1; // Уменьшаем масштаб
-        } else {
-            increasing = true; // Когда достигли минимума, переключаем на увеличение
-        }
+// Функция для показа следующего изображения
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    setModalImage(images[currentIndex].src); // Обновление изображения с учетом зума
+}
+
+// Обработчик событий нажатия клавиш
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+        e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+        prevImage();
+        e.preventDefault();
+    } else if (e.key === 'ArrowRight') {
+        nextImage();
+        e.preventDefault();
     }
-    modalImg.style.transform = `scale(${scale})`; // Применяем новый масштаб
-    e.stopPropagation(); // Предотвращаем закрытие модального окна
-};
+});

@@ -15,7 +15,7 @@ function init() {
 
     // Исправлено: использовано events вместо even
     myPlacemarkSPB.events.add("click", function () {
-        myMap.setCenter([59.939374, 30.433026], 12, {
+        myMap.setCenter([59.939374, 30.433026], 15, {
             duration: 2000 // Указываем продолжительность анимации в миллисекундах
         });
     });

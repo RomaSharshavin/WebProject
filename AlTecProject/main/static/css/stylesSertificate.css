@@ -1,38 +1,81 @@
-.modal-window{
+.certificate-heading {
+    margin-left: 20px;
+}
+
+.clickable-image {
+    width: 100%; /* Полная ширина родительского элемента */
+    height: auto; /* Пропорциональная высота */
+    cursor: pointer;
+}
+
+.certificate-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.certificate-item {
+    flex: 1; /* Чтобы каждый элемент занимал равное пространство */
+    max-width: 320px; /* Установка максимальной ширины для контроля размера */
+    box-shadow: 0 4px 8px rgba(0, 0, 0.3, 0.3);
+}
+
+
+/* Стили для изображений в режиме увеличения */
+.certificate-item img:hover {
+    transform: scale(1.05); /* Увеличение при наведении курсора */
+    box-shadow: 0 4px 8px rgba(0, 0, 0.3, 0.3);
+}
+
+
+/* Стили модального окна */
+#modal {
     display: none;
     position: fixed;
     z-index: 1000;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px; /* Максимальная ширина модального окна */
+    height: auto; /* Высота зависит от содержимого */
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+    text-align: center; /* Центрирование содержимого */
 }
 
-.image-s{
-    max-width: 20%;
-    margin: 0 20px;
-    cursor: pointer;
+#modal-img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
 }
 
-.modal-fon{
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.span-s{
-    color: white;
+.close-modal {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: #fff;
     cursor: pointer;
+}
+
+.prev,
+.next {
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
 }
