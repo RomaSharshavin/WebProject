@@ -1,5 +1,6 @@
+from django.http import Http404
 from django.shortcuts import render
-from .models import News
+import os
 
 
 def index(request):
@@ -14,8 +15,8 @@ def faq(request):
     return render(request, 'main/faq.html')
 
 
-def production(request):
-    return render(request, 'main/production.html')
+def partners(request):
+    return render(request, 'main/partners.html')
 
 
 def service(request):
@@ -31,9 +32,36 @@ def write(request):
 
 
 def news(request):
-    news_items = News.objects.all()
-    return render(request, 'main/news.html', {'news_items': news_items})
+    return render(request, 'main/news.html')
 
 
 def about(request):
     return render(request, 'main/about.html')
+
+
+def format_text(text):
+    # Разбиваем текст на абзацы по двум переносам строк
+    paragraphs = text.split('\n\n')  # Два новых строки - новая часть
+    # Оборачиваем каждый абзац в тег <p>
+    return ''.join(f'<p>{paragraph.strip()}</p>' for paragraph in paragraphs)
+
+
+def partners_page(request):
+    texts_dir = "media/texts"
+    texts = []
+
+    for i in range(1, 4):
+        file_path = os.path.join(texts_dir, f"text{i}.txt")
+        try:
+            with open(file_path, 'r', encoding='utf-8') as file:
+                content = file.read()
+                formatted_content = format_text(content)
+                texts.append(formatted_content)
+        except FileNotFoundError:
+            print(f"Файл не найден: {file_path}")
+            texts.append(f"<p>Файл text{i}.txt не найден.</p>")
+
+    if not texts:  # Проверяем, если texts пусто
+        raise Http404("Нет текстов для отображения.")
+
+    return render(request, 'main/partners.html', {'texts': texts})

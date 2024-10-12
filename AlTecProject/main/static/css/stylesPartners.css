@@ -12,14 +12,25 @@
     border-radius: 5px; /* Закругляем углы */
     background-color: #4A90E2; /* Цвет фона */
     color: white; /* Цвет текста */
-
     cursor: pointer; /* Указатель при наведении */
     transition: background-color 0.3s; /* Плавный переход цвета фона */
     font-size: 24px; /* Размер текста для кнопок */
-    width: 100px; /* Ширина кнопок */
-    height: 100px; /* Высота кнопок */
+    width: 70px; /* Ширина кнопок */
+    height: 70px; /* Высота кнопок */
 }
 
 .nav-button:hover {
     background-color: #357ABD; /* Цвет фона при наведении */
+}
+
+#text-content {
+    font-family: 'Arial', sans-serif; /* Шрифт Arial */
+    font-size: 18px; /* Размер шрифта */
+    line-height: 1.5; /* Высота строки для лучшей читаемости */
+    color: #333; /* Цвет текста */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #f9f9f9; /* Светлый фон для текста */
+    border-radius: 5px; /* Закругляем углы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для создания эффекта глубины */
+    text-align: justify; /* Выравнивание текста по ширине */
 }
