@@ -33,4 +33,17 @@
     border-radius: 5px; /* Закругляем углы */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для создания эффекта глубины */
     text-align: justify; /* Выравнивание текста по ширине */
+    margin: 20px;
+}
+
+.image-container {
+    display: flex;      /* Используем Flexbox */
+    justify-content: center; /* Центрируем содержимое */
+    margin: 20px 0;    /* Отступы сверху и снизу для блока с изображением */
+}
+
+.image-content {
+    border-radius: 5px; /* Закругляем углы для изображений */
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    height: auto; /* Автоматическая высота, сохраняет пропорции */
 }
