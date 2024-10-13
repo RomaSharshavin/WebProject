@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены сертификаты на страницу им настроено изх увеличение">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроено отображаение сертификатов в модальном окне">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" afterDir="false" />
     </list>
@@ -62,7 +62,7 @@
       <workItem from="1728223634959" duration="6266000" />
       <workItem from="1728629345079" duration="7923000" />
       <workItem from="1728723714049" duration="7399000" />
-      <workItem from="1728825980074" duration="2385000" />
+      <workItem from="1728825980074" duration="3381000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -144,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728733544645</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Настроено отображаение сертификатов в модальном окне">
+      <option name="closed" value="true" />
+      <created>1728828683356</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728828683357</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +182,7 @@
     <MESSAGE value="Добавлены файлы стилей и js код вынесен в отдельный файл" />
     <MESSAGE value="Добавлена связь модели с страницой &quot;Новости&quot;, настроено расположение файлов" />
     <MESSAGE value="Добавлены сертификаты на страницу им настроено изх увеличение" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены сертификаты на страницу им настроено изх увеличение" />
+    <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
+    <option name="LAST_COMMIT_MESSAGE" value="Настроено отображаение сертификатов в модальном окне" />
   </component>
 </project>

@@ -3,8 +3,8 @@
 }
 
 .clickable-image {
-    width: 100%; /* Полная ширина родительского элемента */
-    height: auto; /* Пропорциональная высота */
+    width: 100%;
+    height: auto;
     cursor: pointer;
 }
 
@@ -19,7 +19,7 @@
 
 .certificate-item {
     flex: 1; /* Чтобы каждый элемент занимал равное пространство */
-    max-width: 320px; /* Установка максимальной ширины для контроля размера */
+    max-width: 320px;
     box-shadow: 0 4px 8px rgba(0, 0, 0.3, 0.3);
 }
 
@@ -41,9 +41,9 @@
     width: 100%; /* Полная ширина экрана */
     height: 100%; /* Полная высота экрана */
     background-color: rgba(0, 0, 0, 0.9);
-    overflow: auto; /* Отключаем прокрутку */
-    align-items: center; /* Центр используем по вертикали */
-    justify-content: center; /* Центр используем по горизонтали */
+    overflow: auto; /* Включаем прокрутку */
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -52,20 +52,21 @@
     max-height: 80%; /* Ограничиваем высоту изображения */
     margin: -350px auto 50px auto;
     display: block;
+    padding-bottom: 350px;
 }
 
 #image-container {
-    max-height: 80vh; /* Ограничиваем высоту контейнера для изображений до 80% высоты экрана */
+    max-height: 80vh; /* Ограничиваем высоту контейнера для изображений */
     display: flex;
     flex-direction: column; /* Располагаем элементы по вертикали */
     align-items: center; /* Центрируем элементы внутри контейнера */
     position: relative;
-    width: 100%; /* Делаем контейнер шире */
-    padding: 20px 20px;
+    width: 100%;
+    padding: 20px 20px 50px 20px;
 }
 
 .close-modal {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 30px;
     font-size: 35px;
@@ -74,11 +75,12 @@
     z-index: 1;
 }
 
+/* Кнопки навигации по изображениям */
 .prev,
 .next {
     font-size: 50px;
     color: #fff;
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
