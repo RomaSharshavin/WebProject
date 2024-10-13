@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлена связь модели с страницой &quot;Новости&quot;, настроено расположение файлов">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены сертификаты на страницу им настроено изх увеличение">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/zoomPicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/js/zoomPicture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/sertificate.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/sertificate.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +61,8 @@
       <workItem from="1728202859892" duration="2919000" />
       <workItem from="1728223634959" duration="6266000" />
       <workItem from="1728629345079" duration="7923000" />
-      <workItem from="1728723714049" duration="6793000" />
+      <workItem from="1728723714049" duration="7399000" />
+      <workItem from="1728825980074" duration="2385000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -140,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728637687054</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Добавлены сертификаты на страницу им настроено изх увеличение">
+      <option name="closed" value="true" />
+      <created>1728733544645</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728733544645</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +173,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Добавлены файлы стилей и js код вынесен в отдельный файл" />
     <MESSAGE value="Добавлена связь модели с страницой &quot;Новости&quot;, настроено расположение файлов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена связь модели с страницой &quot;Новости&quot;, настроено расположение файлов" />
+    <MESSAGE value="Добавлены сертификаты на страницу им настроено изх увеличение" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены сертификаты на страницу им настроено изх увеличение" />
   </component>
 </project>

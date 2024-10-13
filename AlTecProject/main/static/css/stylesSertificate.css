@@ -36,21 +36,32 @@
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 800px; /* Максимальная ширина модального окна */
-    height: auto; /* Высота зависит от содержимого */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина экрана */
+    height: 100%; /* Полная высота экрана */
     background-color: rgba(0, 0, 0, 0.9);
-    text-align: center; /* Центрирование содержимого */
+    overflow: auto; /* Отключаем прокрутку */
+    align-items: center; /* Центр используем по вертикали */
+    justify-content: center; /* Центр используем по горизонтали */
 }
 
+
 #modal-img {
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
+    max-width: 80%; /* Ограничиваем ширину изображения */
+    max-height: 80%; /* Ограничиваем высоту изображения */
+    margin: -350px auto 50px auto;
     display: block;
+}
+
+#image-container {
+    max-height: 80vh; /* Ограничиваем высоту контейнера для изображений до 80% высоты экрана */
+    display: flex;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    align-items: center; /* Центрируем элементы внутри контейнера */
+    position: relative;
+    width: 100%; /* Делаем контейнер шире */
+    padding: 20px 20px;
 }
 
 .close-modal {
@@ -60,6 +71,7 @@
     font-size: 35px;
     color: #fff;
     cursor: pointer;
+    z-index: 1;
 }
 
 .prev,
@@ -70,6 +82,7 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    z-index: 1;
 }
 
 .prev {
@@ -79,3 +92,4 @@
 .next {
     right: 20px;
 }
+
