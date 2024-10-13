@@ -17,7 +17,7 @@
     </div>
 
     <div class="image-container">
-        <img id="partner-image" class="image-content" src="{% static 'images/image.png' %}"
+        <img id="partner-image" class="image-content" src="{% static 'images/image1.png' %}"
              alt="Изображение партнёра" style="width: 1000px; height: auto;" />
     </div>
 
@@ -31,7 +31,7 @@
             const texts = {% autoescape off %}{{ texts|safe }}{% endautoescape %};
 
             const images = [
-                {src: "{% static 'images/image.png' %}", width: '1000px', height: 'auto'},
+                {src: "{% static 'images/image1.png' %}", width: '550px', height: '250px'},
                 {src: "{% static 'images/image2.png' %}", width: '400px', height: '200px'},
                 {src: "{% static 'images/image3.png' %}", width: '400px', height: '200px'}
             ];

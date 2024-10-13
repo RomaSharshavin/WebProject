@@ -1,49 +1,65 @@
-.button-container {
-    position: fixed; /* Фиксируем контейнер */
-    bottom: 100px; /* Отступ от нижней границы */
-    right: 20px; /* Отступ от правой границы */
-    display: flex; /* Используем Flexbox для выравнивания кнопок */
-    gap: 10px; /* Расстояние между кнопками */
+.button-container { /* Контейнер для кнопок */
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
 }
 
-.nav-button {
-    padding: 10px 15px; /* Внутренние отступы */
-    border: none; /* Убираем границу */
-    border-radius: 5px; /* Закругляем углы */
-    background-color: #4A90E2; /* Цвет фона */
-    color: white; /* Цвет текста */
-    cursor: pointer; /* Указатель при наведении */
-    transition: background-color 0.3s; /* Плавный переход цвета фона */
-    font-size: 24px; /* Размер текста для кнопок */
-    width: 70px; /* Ширина кнопок */
-    height: 70px; /* Высота кнопок */
+.nav-button { /* Стиль кнопок навигации */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 24px;
+    width: 70px;
+    height: 70px;
 }
 
-.nav-button:hover {
-    background-color: #357ABD; /* Цвет фона при наведении */
+.nav-button:hover { /* Эффект при наведении на кнопки */
+    background-color: #357ABD;
+    transform: scale(1.05);
 }
 
-#text-content {
-    font-family: 'Arial', sans-serif; /* Шрифт Arial */
-    font-size: 18px; /* Размер шрифта */
-    line-height: 1.5; /* Высота строки для лучшей читаемости */
-    color: #333; /* Цвет текста */
-    padding: 10px; /* Внутренние отступы */
-    background-color: #f9f9f9; /* Светлый фон для текста */
-    border-radius: 5px; /* Закругляем углы */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для создания эффекта глубины */
-    text-align: justify; /* Выравнивание текста по ширине */
+#text-content { /* Стиль текстового блока */
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: justify;
     margin: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.image-container {
-    display: flex;      /* Используем Flexbox */
-    justify-content: center; /* Центрируем содержимое */
-    margin: 20px 0;    /* Отступы сверху и снизу для блока с изображением */
+#text-content:hover { /* Эффект при наведении на текстовый блок */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.image-content {
-    border-radius: 5px; /* Закругляем углы для изображений */
-    max-width: 100%; /* Ограничиваем максимальную ширину */
-    height: auto; /* Автоматическая высота, сохраняет пропорции */
+.image-container { /* Контейнер для изображений */
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image-content { /* Стиль изображений */
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-content:hover { /* Эффект при наведении на изображения */
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
