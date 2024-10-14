@@ -1,9 +1,130 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block title %}
-О компании
+О Компании
+{% endblock %}
+
+{% block breadcrumb %}
 {% endblock %}
 
 {% block content %}
-    <p>О компании</p>
+    <h2 style="margin-left: 20px"><strong>О Компании</strong></h2>
+    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+        <img src="{% static 'images/sertificate4.png' %}" alt="Сертификат" class="clickable-image" style="max-width: 20%; margin: 0 20px; cursor: pointer;">
+    </div>
+
+    <!-- Фон для модального окна -->
+    <div id="modal-background" style="display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);"></div>
+
+    <!-- Модальное окно -->
+    <div id="modal" style="display: none; position: fixed; z-index: 1000; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 0; border-radius: 0; background-color: rgba(0, 0, 0, 0); box-sizing: border-box;">
+        <div id="image-container" style="display: flex; justify-content: center; align-items: center; cursor: move;">
+            <img id="modal-img" style="max-width: 100%; max-height: 80vh; height: auto; transition: transform 0.1s;">
+        </div>
+    </div>
+
+    <span id="close-modal" style="position: fixed; top: 20px; right: 20px; font-size: 24px; color: white; cursor: pointer; z-index: 1001;">✖</span>
+
+    {% block scripts %}
+        <script>
+            // Получаем элементы
+            const modal = document.getElementById('modal');
+            const modalBackground = document.getElementById('modal-background');
+            const modalImg = document.getElementById('modal-img');
+            const closeModal = document.getElementById('close-modal');
+
+            // Переменные для хранения текущего масштаба и позиции
+            let scale = 1;
+            let increasing = true;
+            let posY = 0;
+            let startY;
+
+            // Открытие модального окна
+            document.querySelector('.clickable-image').onclick = function() {
+                modalBackground.style.display = "block";
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+                scale = 1; // Сбрасываем масштаб при открытии
+                modalImg.style.transform = "scale(1) translate(0, 0)";
+                increasing = true; // Начинаем с увеличения
+
+                // Сброс позиций
+                posY = 0;
+                modalImg.style.transition = 'none'; // Отключаем анимацию при открытии
+            };
+
+            // Закрытие модального окна
+            const closeModalWindow = () => {
+                modalBackground.style.display = "none";
+                modal.style.display = "none";
+            };
+
+            // Закрытие модального окна при клике вне изображения
+            modalBackground.onclick = closeModalWindow;
+
+            // Закрытие модального окна по клику на крестик
+            closeModal.onclick = closeModalWindow;
+
+            // Обработка кликов по изображению для увеличения и уменьшения
+            modalImg.onclick = function(e) {
+                if (increasing) {
+                    // Увеличение по клику
+                    if (scale < 2) {
+                        scale += 1; // Увеличиваем масштаб
+                    } else {
+                        increasing = false; // Когда достигли максимума, переключаем на уменьшение
+                    }
+                } else {
+                    // Уменьшение по клику
+                    if (scale > 1) {
+                        scale -= 1; // Уменьшаем масштаб
+                    } else {
+                        increasing = true; // Когда достигли минимума, переключаем на увеличение
+                        posY = 0; // Сбрасываем позицию при возвращении к нормальному масштабу
+                    }
+                }
+                modalImg.style.transform = `scale(${scale}) translate(0, ${posY}px)`; // Применяем новый масштаб и позиции
+                e.stopPropagation(); // Предотвращаем закрытие модального окна
+            };
+
+            // Обработка перетаскивания изображения (добавляем проверку на масштаб)
+            modalImg.addEventListener('mousedown', (e) => {
+                if (scale > 1) { // Перетаскивание доступно только в увеличенном состоянии
+                    startY = e.clientY - posY;
+                    modalImg.style.cursor = 'grabbing'; // Меняем курсор
+                    document.addEventListener('mousemove', mouseMoveHandler);
+                    document.addEventListener('mouseup', mouseUpHandler);
+                }
+            });
+
+            function mouseMoveHandler(e) {
+                // Обновляем позицию, проверяя границы
+                const newPosY = e.clientY - startY;
+
+                // Расчет верхней и нижней границ
+                const imageHeight = modalImg.offsetHeight * scale;
+                const upperBound = (window.innerHeight - imageHeight) / 2; // верхняя граница
+                const lowerBound = upperBound + imageHeight; // нижняя граница
+
+                // Устанавливаем новые границы для перемещения
+                if (newPosY < upperBound) {
+                    posY = upperBound; // верхняя граница
+                } else if (newPosY > lowerBound) {
+                    posY = lowerBound; // нижняя граница
+                } else {
+                    posY = newPosY; // обновляем позицию, если она в пределах границ
+                }
+
+                modalImg.style.transform = `scale(${scale}) translate(0, ${posY}px)`; // Обновляем позицию изображения
+            }
+
+            function mouseUpHandler() {
+                // Убираем обработчики, когда отпускаем мышь
+                document.removeEventListener('mousemove', mouseMoveHandler);
+                document.removeEventListener('mouseup', mouseUpHandler);
+                modalImg.style.cursor = 'move'; // Сбрасываем курсор
+            }
+        </script>
+    {% endblock %}
 {% endblock %}
