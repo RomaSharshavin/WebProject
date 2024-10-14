@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроены отступы в модальном окне сертификатов">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроено от ображение файлов на странице Партнёры">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesPartners.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesPartners.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/changeText.js" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/js/changeText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +63,9 @@
       <workItem from="1728223634959" duration="6266000" />
       <workItem from="1728629345079" duration="7923000" />
       <workItem from="1728723714049" duration="7399000" />
-      <workItem from="1728825980074" duration="4590000" />
+      <workItem from="1728825980074" duration="5130000" />
+      <workItem from="1728846245241" duration="72000" />
+      <workItem from="1728885719388" duration="823000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -162,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728829417867</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Настроено от ображение файлов на странице Партнёры">
+      <option name="closed" value="true" />
+      <created>1728830604398</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1728830604398</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +203,7 @@
     <MESSAGE value="Добавлены сертификаты на страницу им настроено изх увеличение" />
     <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Настроены отступы в модальном окне сертификатов" />
+    <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
+    <option name="LAST_COMMIT_MESSAGE" value="Настроено от ображение файлов на странице Партнёры" />
   </component>
 </project>

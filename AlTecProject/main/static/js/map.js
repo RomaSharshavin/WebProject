@@ -13,7 +13,7 @@ function init() {
 
     myMap.geoObjects.add(myPlacemarkSPB);
 
-    // Исправлено: использовано events вместо even
+    // Плавное перемещение к метке
     myPlacemarkSPB.events.add("click", function () {
         myMap.setCenter([59.939374, 30.433026], 15, {
             duration: 2000 // Указываем продолжительность анимации в миллисекундах
