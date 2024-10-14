@@ -70,14 +70,14 @@
     {% endblock %}
 
     <script>
-        // Создаем новый элемент скрипта для загрузки Яндекс.Карт
+        // инициализация карты после прогрузки всей страницы
         var script = document.createElement('script');
         script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
         script.async = true; // Асинхронная загрузка
         document.body.appendChild(script);
 
+        // проверка на успешную инициализацию
         script.onload = function() {
-            // Инициализация карты после загрузки библиотеки
             if (typeof ymaps !== 'undefined') {
                 ymaps.ready(init);
             } else {

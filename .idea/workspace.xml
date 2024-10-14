@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
-    </list>
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +61,7 @@
       <workItem from="1728723714049" duration="7399000" />
       <workItem from="1728825980074" duration="5130000" />
       <workItem from="1728846245241" duration="72000" />
-      <workItem from="1728885719388" duration="5126000" />
+      <workItem from="1728885719388" duration="5663000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -179,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728886697913</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала">
+      <option name="closed" value="true" />
+      <created>1728891228437</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1728891228437</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +217,7 @@
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
     <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
     <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
+    <MESSAGE value="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
   </component>
 </project>
