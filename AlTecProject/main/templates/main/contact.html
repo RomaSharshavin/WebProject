@@ -65,17 +65,26 @@
         </div>
     </div>
 
-    <script>
-        setTimeout(function(){
-            var elem = document.createElement('script');
-            elem.type = 'text/javascript';
-            elem.src = '//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU&onload=getYaMap';
-            document.getElementsByTagName('body')[0].appendChild(elem);
-        }, 2000);
-    </script>
+    {% block scripts %}
+        <script src="{% static 'js/map.js' %}" type="text/javascript"></script>
+    {% endblock %}
 
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script async src="{% static 'js/map.js' %}" type="text/javascript"></script>
+    <script>
+        // Создаем новый элемент скрипта для загрузки Яндекс.Карт
+        var script = document.createElement('script');
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+        script.async = true; // Асинхронная загрузка
+        document.body.appendChild(script);
+
+        script.onload = function() {
+            // Инициализация карты после загрузки библиотеки
+            if (typeof ymaps !== 'undefined') {
+                ymaps.ready(init);
+            } else {
+                console.error("ERROR MAP");
+            }
+        };
+    </script>
 
 {% endblock %}
 

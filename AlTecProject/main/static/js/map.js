@@ -1,4 +1,4 @@
-ymaps.ready(init);
+// Объявляем функцию для инициализации карты
 function init() {
     var myMap = new ymaps.Map("map", {
         center: [59.9386, 30.3141], // Координаты центра карты (Санкт-Петербург)
@@ -8,7 +8,7 @@ function init() {
 
     // Добавление метки для Санкт-Петербурга
     var myPlacemarkSPB = new ymaps.Placemark([59.939374, 30.433026], {
-        balloonContent: 'ул. Магнитогорская, д. 51, лит. Е, офис 313"'
+        balloonContent: 'ул. Магнитогорская, д. 51, лит. Е, офис 313'
     });
 
     myMap.geoObjects.add(myPlacemarkSPB);
@@ -19,5 +19,4 @@ function init() {
             duration: 2000 // Указываем продолжительность анимации в миллисекундах
         });
     });
-
 }

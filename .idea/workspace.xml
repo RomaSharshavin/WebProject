@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроено от ображение файлов на странице Партнёры">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
@@ -16,7 +16,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -65,7 +65,7 @@
       <workItem from="1728723714049" duration="7399000" />
       <workItem from="1728825980074" duration="5130000" />
       <workItem from="1728846245241" duration="72000" />
-      <workItem from="1728885719388" duration="823000" />
+      <workItem from="1728885719388" duration="5126000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -171,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728830604398</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты">
+      <option name="closed" value="true" />
+      <created>1728886697913</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728886697913</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +212,7 @@
     <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
     <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
-    <option name="LAST_COMMIT_MESSAGE" value="Настроено от ображение файлов на странице Партнёры" />
+    <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
   </component>
 </project>
