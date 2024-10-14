@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлены кооментарии к коду">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Переработана разсетка страницы &quot;Контакты&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesContact.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesContact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +66,7 @@
       <workItem from="1728723714049" duration="7399000" />
       <workItem from="1728825980074" duration="5130000" />
       <workItem from="1728846245241" duration="72000" />
-      <workItem from="1728885719388" duration="6958000" />
+      <workItem from="1728885719388" duration="12170000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -195,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728891958262</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Переработана разсетка страницы &quot;Контакты&quot;">
+      <option name="closed" value="true" />
+      <created>1728893091866</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1728893091866</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +240,7 @@
     <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
     <MESSAGE value="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
     <MESSAGE value="Добавлены кооментарии к коду" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены кооментарии к коду" />
+    <MESSAGE value="Переработана разсетка страницы &quot;Контакты&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переработана разсетка страницы &quot;Контакты&quot;" />
   </component>
 </project>
