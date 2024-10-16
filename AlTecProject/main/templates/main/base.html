@@ -20,11 +20,12 @@
                 <img src="{% static 'images/logo.png' %}" alt="Лого" style="height: 70px; user-select: none;">
             </a>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                <a class="me-3 nav-link" href="{% url 'partners' %}">Партнёры</a>
-                <a class="me-3 nav-link" href="{% url 'service' %}">Продукция</a>
-                <a class="me-3 nav-link" href="{% url 'sertificate' %}">Сертификаты</a>
-                <a class="me-3 nav-link" href="{% url 'news' %}">Новости</a>
+                <a class="me-3 nav-link {% if request.path == '/partners/' %}active{% endif %}" href="{% url 'partners' %}">Партнёры</a>
+                <a class="me-3 nav-link {% if request.path == '/service/' %}active{% endif %}" href="{% url 'service' %}">Продукция</a>
+                <a class="me-3 nav-link {% if request.path == '/sertificate/' %}active{% endif %}" href="{% url 'sertificate' %}">Сертификаты</a>
+                <a class="me-3 nav-link {% if request.path == '/news/' %}active{% endif %}" href="{% url 'news' %}">Новости</a>
             </nav>
+
         </div>
     </header>
 
@@ -34,10 +35,10 @@
 
     <footer class="footer mt-4">
         <div class="d-flex justify-content-start py-3">
-            <a class="me-3 nav-link" href="{% url 'about' %}">О компании</a>
-            <a class="me-3 nav-link" href="{% url 'contact' %}">Контакты</a>
-            <a class="me-3 nav-link" href="{% url 'write' %}">Написать нам</a>
-            <a class="me-3 nav-link" href="{% url 'faq' %}">FAQ</a>
+            <a class="me-3 nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">О компании</a>
+            <a class="me-3 nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Контакты</a>
+            <a class="me-3 nav-link {% if request.path == '/write/' %}active{% endif %}" href="{% url 'write' %}">Написать нам</a>
+            <a class="me-3 nav-link {% if request.path == '/faq/' %}active{% endif %}" href="{% url 'faq' %}">FAQ</a>
         </div>
     </footer>
 

@@ -111,6 +111,12 @@ img {
     }
 }
 
+/* видимость прехода на действующую вкладку */
+.nav-link.active {
+    font-weight: bold;
+    color: black;
+    background-color: #a8d9ff;
+}
 
 
 
