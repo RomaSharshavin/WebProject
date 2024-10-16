@@ -7,7 +7,9 @@ function init() {
 
     // Метка СПБ
     var myPlacemarkSPB = new ymaps.Placemark([59.939374, 30.433026], {
-        balloonContent: 'ул. Магнитогорская, д. 51, лит. Е, офис 313'
+        balloonContent: '<div class="balloon-content">' +
+        '<p>Дополнительная информация здесь.</p>' +
+        '</div>'
     });
 
     myMap.geoObjects.add(myPlacemarkSPB);

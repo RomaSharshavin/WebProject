@@ -6,24 +6,92 @@
 {% endblock %}
 
 {% block links %}
-    <link rel="stylesheet" href="{% static 'css/stylesPartners.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Импорт шрифта Roboto */
+
+        .split-screen {
+            display: flex;
+            height: calc(100vh - 100px); /* Учитываем высоту подвала */
+            position: relative; /* Для абсолютного позиционирования кнопок */
+        }
+
+        .text-content {
+            flex: 1; /* Занимает 50% ширины */
+            background-color: white; /* Белый фон */
+            padding: 20px; /* Отступы внутри блока */
+            font-family: 'Roboto', sans-serif; /* Изменённый шрифт */
+            font-size: 20px; /* Размер шрифта */
+            overflow-y: auto; /* Прокрутка, если текст не помещается */
+            text-align: justify; /* Текст по ширине */
+        }
+
+        .text-content h1 {
+            font-weight: 700; /* Жирный шрифт для заголовка */
+            font-size: 24px; /* Размер заголовка */
+            margin: 0 0 10px 0; /* Отступы вокруг заголовка */
+        }
+
+        .text-content p {
+            font-weight: 400; /* Обычный шрифт для абзацев */
+            margin: 10px 0; /* Отступы между абзацами */
+        }
+
+        .image-container {
+            flex: 1; /* Занимает 50% ширины */
+            display: flex;
+            justify-content: center; /* Центрирование изображения */
+            align-items: center; /* Центрирование по вертикали */
+            overflow: hidden; /* Скрытие излишков, если они есть */
+            position: relative; /* Для наложения кнопок на этот контейнер */
+        }
+
+        .image-content {
+            width: 100%; /* Картинка на весь размер правой части */
+            height: auto; /* Сохраняем пропорции */
+        }
+
+        .button-container {
+            position: absolute; /* Абсолютное позиционирование */
+            bottom: 20px; /* Располагаем его внизу */
+            right: 20px; /* Сдвигаем вправо */
+            display: flex;
+            gap: 10px;
+            z-index: 10; /* Обеспечиваем, чтобы кнопки были выше других элементов */
+        }
+
+        .nav-button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4A90E2;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .nav-button:hover {
+            background-color: #357ABD;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
-    <h2 style="margin-left: 20px"><strong>Партнёры</strong></h2>
+    <div class="split-screen">
+        <div class="text-content" id="text-content">
+            <h1>{{ texts.0.title|safe }}</h1> <!-- Заголовок -->
+            <p>{{ texts.0.body|safe }}</p> <!-- Основной текст -->
+        </div>
 
-    <div id="text-content">
-        {{ texts.0|safe }}
-    </div>
-
-    <div class="image-container">
-        <img id="partner-image" class="image-content" src="{% static 'images/image1.png' %}"
-             alt="Изображение партнёра" style="width: 1000px; height: auto;" />
-    </div>
-
-    <div class="button-container">
-        <button class="nav-button left-button" onclick="changeText(-1)">←</button>
-        <button class="nav-button right-button" onclick="changeText(1)">→</button>
+        <div class="image-container">
+            <img id="partner-image" class="image-content" src="{% static 'images/image.png' %}"
+                 alt="Изображение партнёра" />
+            <div class="button-container">
+                <button class="nav-button left-button" onclick="changeText(-1)">←</button>
+                <button class="nav-button right-button" onclick="changeText(1)">→</button>
+            </div>
+        </div>
     </div>
 
     {% block scripts %}
@@ -31,13 +99,11 @@
             const texts = {% autoescape off %}{{ texts|safe }}{% endautoescape %};
 
             const images = [
-                {src: "{% static 'images/image1.png' %}", width: '550px', height: '250px'},
-                {src: "{% static 'images/image2.png' %}", width: '400px', height: '200px'},
-                {src: "{% static 'images/image3.png' %}", width: '400px', height: '200px'}
+                {src: "{% static 'images/image.png' %}", width: '100%', height: 'auto'},
+                {src: "{% static 'images/image2.png' %}", width: '100%', height: 'auto'},
+                {src: "{% static 'images/image3.png' %}", width: '100%', height: 'auto'}
             ];
         </script>
         <script src="{% static 'js/changeText.js' %}"></script>
     {% endblock %}
-
-
 {% endblock %}

@@ -95,3 +95,14 @@
     right: 20px;
 }
 
+/* Анимации появдение */
+
+.image-animation{
+    opacity: 0;
+    animation: imgAnim 1.5s forwards;
+}
+
+@keyframes imgAnim {
+
+}
+

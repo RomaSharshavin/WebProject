@@ -6,7 +6,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     max-width: 630px;
-    margin: 13px 0 0px 20px;
+    margin: 13px 0 0 20px;
 }
 
 /* стили таблицы внутри контейнера информации */
@@ -39,4 +39,18 @@
     height: 450px;
     margin-right: 40px;
     flex-shrink: 0;
+}
+
+/* Анимация появления */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
