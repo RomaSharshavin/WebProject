@@ -40,9 +40,7 @@ def about(request):
 
 
 def format_text(text):
-    # Разбиваем текст на абзацы по двум переносам строк
-    paragraphs = text.split('\n\n')  # Два новых строки - новая часть
-    # Оборачиваем каждый абзац в тег <p>
+    paragraphs = text.split('\n\n')  # Разделяем текст на абзацы
     return ''.join(f'<p>{paragraph.strip()}</p>' for paragraph in paragraphs)
 
 
@@ -50,7 +48,7 @@ def partners_page(request):
     texts_dir = "media/texts"
     texts = []
 
-    for i in range(1, 4):
+    for i in range(2, 4):  # Загружаем только text2.txt и text3.txt
         file_path = os.path.join(texts_dir, f"text{i}.txt")
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
