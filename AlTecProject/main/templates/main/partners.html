@@ -7,103 +7,56 @@
 
 {% block links %}
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Импорт шрифта Roboto */
-
-        .split-screen {
-            display: flex;
-            height: calc(100vh - 100px); /* Учитываем высоту подвала */
-            position: relative; /* Для абсолютного позиционирования кнопок */
-        }
-
-        .text-content {
-            flex: 1; /* Занимает 50% ширины */
-            background-color: white; /* Белый фон */
-            padding: 20px; /* Отступы внутри блока */
-            font-family: 'Roboto', sans-serif; /* Изменённый шрифт */
-            font-size: 20px; /* Размер шрифта */
-            overflow-y: auto; /* Прокрутка, если текст не помещается */
-            text-align: justify; /* Текст по ширине */
-        }
-
-        .text-content h1 {
-            font-weight: 700; /* Жирный шрифт для заголовка */
-            font-size: 24px; /* Размер заголовка */
-            margin: 0 0 10px 0; /* Отступы вокруг заголовка */
-        }
-
-        .text-content p {
-            font-weight: 400; /* Обычный шрифт для абзацев */
-            margin: 10px 0; /* Отступы между абзацами */
-        }
-
-        .image-container {
-            flex: 1; /* Занимает 50% ширины */
-            display: flex;
-            justify-content: center; /* Центрирование изображения */
-            align-items: center; /* Центрирование по вертикали */
-            overflow: hidden; /* Скрытие излишков, если они есть */
-            position: relative; /* Для наложения кнопок на этот контейнер */
-        }
-
-        .image-content {
-            width: 100%; /* Картинка на весь размер правой части */
-            height: auto; /* Сохраняем пропорции */
-        }
-
-        .button-container {
-            position: absolute; /* Абсолютное позиционирование */
-            bottom: 20px; /* Располагаем его внизу */
-            right: 20px; /* Сдвигаем вправо */
-            display: flex;
-            gap: 10px;
-            z-index: 10; /* Обеспечиваем, чтобы кнопки были выше других элементов */
-        }
-
-        .nav-button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #4A90E2;
-            color: white;
-            cursor: pointer;
-            font-size: 24px;
-            width: 70px;
-            height: 70px;
-        }
-
-        .nav-button:hover {
-            background-color: #357ABD;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
     </style>
+    <link rel="stylesheet" href="{% static 'css/stylesPartners.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="split-screen">
-        <div class="text-content" id="text-content">
-            <h1>{{ texts.0.title|safe }}</h1> <!-- Заголовок -->
-            <p>{{ texts.0.body|safe }}</p> <!-- Основной текст -->
+    <div class="main-container">
+        <div class="text-container" id="text-container">
+            {% for text in texts %}
+                <div class="text-item">
+                    {{ text|safe }}
+                </div>
+            {% endfor %}
         </div>
-
-        <div class="image-container">
-            <img id="partner-image" class="image-content" src="{% static 'images/image.png' %}"
-                 alt="Изображение партнёра" />
-            <div class="button-container">
-                <button class="nav-button left-button" onclick="changeText(-1)">←</button>
-                <button class="nav-button right-button" onclick="changeText(1)">→</button>
-            </div>
+        <div class="image-container" id="image-container">
+            {% for image in images %}
+                <img src="{% static image %}" class="image-item" />
+            {% endfor %}
         </div>
     </div>
+    <div class="button-container">
+        <button onclick="prev()">←</button>
+        <button onclick="next()">→</button>
+    </div>
 
-    {% block scripts %}
-        <script>
-            const texts = {% autoescape off %}{{ texts|safe }}{% endautoescape %};
+    <script>
+        let currentIndex = 0;
+        const texts = document.querySelectorAll('.text-item');
+        const images = document.querySelectorAll('.image-container img');
 
-            const images = [
-                {src: "{% static 'images/image.png' %}", width: '100%', height: 'auto'},
-                {src: "{% static 'images/image2.png' %}", width: '100%', height: 'auto'},
-                {src: "{% static 'images/image3.png' %}", width: '100%', height: 'auto'}
-            ];
-        </script>
-        <script src="{% static 'js/changeText.js' %}"></script>
-    {% endblock %}
+        function showItem(index) {
+            texts.forEach((item, i) => {
+                item.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
+            });
+            images.forEach((img, i) => {
+                img.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
+            });
+        }
+
+        function next() {
+            currentIndex = (currentIndex + 1) % texts.length;
+            showItem(currentIndex);
+        }
+
+        function prev() {
+            currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+            showItem(currentIndex);
+        }
+
+        // Инициализация первого элемента
+        showItem(currentIndex);
+    </script>
 {% endblock %}
