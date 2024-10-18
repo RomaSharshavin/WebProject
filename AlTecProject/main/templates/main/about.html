@@ -16,7 +16,11 @@
     <h2 class="certificate-heading"><strong>О Компании</strong></h2>
     <div class="certificate-container">
         <div id="text-content">
-            {{ texts.4|safe }}
+            {% if texts %}
+                {{ texts.0|safe }}
+            {% else %}
+                <p>Текст не найден.</p>
+            {% endif %}
         </div>
         <div class="certificate-item">
             <img src="{% static 'images/sertificate4.png' %}" alt="Сертификат 3" class="clickable-image" onclick="openModal(this)">
@@ -28,15 +32,12 @@
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <div id="image-container">
             <img id="modal-img">
-
         </div>
     </div>
 
     {% block scripts %}
         <script>
             const texts = {% autoescape off %}{{ texts|safe }}{% endautoescape %};
-
-
         </script>
         <script src="{% static 'js/zoomAbout.js' %}" type="text/javascript"></script>
     {% endblock %}

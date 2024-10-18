@@ -68,7 +68,7 @@ def partners_page(request):
 
 def views_about(request):
     texts_dir = "media/texts"
-    file_name = "text4.txt"  # Укажите конкретный файл
+    file_name = "text1.txt"  # Укажите конкретный файл
     file_path = os.path.join(texts_dir, file_name)
     texts = []
 
