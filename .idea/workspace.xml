@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлена анимация между элементами на странице &quot;Партнёры&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/animateButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/animateButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" afterDir="false" />
-    </list>
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроены отступы на странице &quot;Партнёры&quot; для блока с текстом" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,7 +255,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729096386524</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Изменены стили кнопок навигации по сайту, стили перенесены в отдельный файл">
+      <option name="closed" value="true" />
+      <created>1729351297897</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1729351297897</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Настроены отступы на странице &quot;Партнёры&quot; для блока с текстом">
+      <option name="closed" value="true" />
+      <created>1729352706481</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1729352706481</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +311,8 @@
     <MESSAGE value="Добавлена анимация появления на странице &quot;Контакты&quot;" />
     <MESSAGE value="Изменены стили для отсеживания перемещения по сайту чсерез панель навигации" />
     <MESSAGE value="Добавлена анимация между элементами на странице &quot;Партнёры&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена анимация между элементами на странице &quot;Партнёры&quot;" />
+    <MESSAGE value="Изменены стили кнопок навигации по сайту, стили перенесены в отдельный файл" />
+    <MESSAGE value="Настроены отступы на странице &quot;Партнёры&quot; для блока с текстом" />
+    <option name="LAST_COMMIT_MESSAGE" value="Настроены отступы на странице &quot;Партнёры&quot; для блока с текстом" />
   </component>
 </project>
