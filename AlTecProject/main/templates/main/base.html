@@ -8,12 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
     <title>{% block title %}{% endblock %}</title>
-    {% load sass_tags %}
     {% load static %}
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    {% block links %}
-        <link href="{% sass_scr 'css/animateButton.scss' %}" rel="stylesheet" type="text/css"/>
-    {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/animateButton.css' %}">
+
+    {% block links %} {% endblock %}
 
 </head>
 <body>
@@ -46,25 +45,6 @@
     </footer>
 
     {% block scripts %}
-    <script>
-        var animateButton = function (e) {
-          e.preventDefault;
-          //reset animation
-          e.target.classList.remove("animate");
-
-          e.target.classList.add("animate");
-          setTimeout(function () {
-            e.target.classList.remove("animate");
-          }, 700);
-        };
-
-        var bubblyButtons = document.getElementsByClassName("bubbly-button");
-
-        for (var i = 0; i < bubblyButtons.length; i++) {
-          bubblyButtons[i].addEventListener("click", animateButton, false);
-        }
-
-    </script>
     {% endblock %}
 </body>
 </html>

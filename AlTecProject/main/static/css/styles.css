@@ -22,26 +22,6 @@ h2, h5 {
     margin-left: 20px
 }
 
-/* стили для навигационных ссылок */
-.nav-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #F7F7F7;
-    border-radius: 20px;
-    color: #000000;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    width: 150px;
-    text-align: center;
-    font-weight: bold;
-}
-
-/* эффекты наведения на ссылки */
-.nav-link:hover {
-    background-color: #e0e0e0;
-    text-decoration: none;
-}
-
 /* отключение выделения изображений */
 img {
     user-select: none;
@@ -109,11 +89,4 @@ img {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* видимость прехода на действующую вкладку */
-.nav-link.active {
-    font-weight: bold;
-    color: black;
-    background-color: #a8d9ff;
 }
