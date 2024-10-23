@@ -9,36 +9,139 @@
 {% endblock %}
 
 {% block links %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .main-container {
+        display: flex;
+        height: calc(100vh - 60px);
+        position: relative;
+        overflow: hidden; /* Скрываем переполнение, чтобы избежать отображения элементов вне контейнера */
+    }
+
+    .text-container {
+        flex: 1;
+        padding: 20px;
+        background-color: white;
+        font-family: "Ubuntu", serif;
+        font-size: 20px;
+        text-align: justify;
+        position: relative; /* Для управления позиционированием текста */
+        overflow: hidden; /* Скрываем переполнение так, чтобы текст не выходил за границы */
+    }
+
+    .text-item {
+        width: 100%;
+        position: absolute; /* Позволяет текстам накладываться друг на друга */
+        transition: transform 0.5s ease; /* Плавный переход для трансформации */
+        left: 0; /* Выравнивание по левому краю */
+    }
+
+    .image-container {
+        flex: 1;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden; /* Скрываем переполнение */
+        width: 100%; /* Убедитесь, что ширина определена */
+        height: 100%; /* Убедитесь, что высота определена */
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto; /* Измените на auto для сохранения пропорций */
+        max-width: 100%; /* Добавьте это для ограничения ширины */
+        max-height: 100%; /* Добавьте это для ограничения высоты */
+        object-fit: cover;
+        position: absolute; /* Позволяет изображениям накладываться друг на друга */
+        transition: transform 0.5s ease; /* Плавный переход для трансформации */
+    }
+
+    .button-container {
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%); /* Центрируем кнопки */
+        display: flex;
+        gap: 10px;
+    }
+
+    button {
+        width: 70px;
+        height: 50px;
+        font-size: 30px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #a8d9ff;
+        color: white;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+
+    </style>
     <link rel="stylesheet" href="{% static 'css/stylesAbout.css' %}">
 {% endblock %}
 
 {% block content %}
-    <h2 class="certificate-heading"><strong>О Компании</strong></h2>
-    <div class="certificate-container">
-        <div id="text-content">
-            {% if texts %}
-                {{ texts.0|safe }}
-            {% else %}
-                <p>Текст не найден.</p>
-            {% endif %}
+    <div class="main-container">
+        <div class="text-container" id="text-container">
+            {% for text in texts %}
+                <div class="text-item">
+                    {{ text|safe }}
+                </div>
+            {% endfor %}
         </div>
-        <div class="certificate-item">
-            <img src="{% static 'images/sertificate4.png' %}" alt="Сертификат 3" class="clickable-image" onclick="openModal(this)">
+        <div class="image-container" id="image-container">
+            {% for image in images %}
+                <img src="{% static image %}" class="image-item" />
+            {% endfor %}
         </div>
+    </div>
+    <div class="button-container">
+        <button onclick="prev()">←</button>
+        <button onclick="next()">→</button>
     </div>
 
-    <!-- Модальное окно -->
-    <div id="modal">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <div id="image-container">
-            <img id="modal-img">
-        </div>
-    </div>
 
     {% block scripts %}
-        <script>
-            const texts = {% autoescape off %}{{ texts|safe }}{% endautoescape %};
-        </script>
-        <script src="{% static 'js/zoomAbout.js' %}" type="text/javascript"></script>
+
+    <script>
+        let currentIndex = 0;
+        const texts = document.querySelectorAll('.text-item');
+        const images = document.querySelectorAll('.image-container img');
+
+        function showItem(index) {
+            texts.forEach((item, i) => {
+                item.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
+            });
+            images.forEach((img, i) => {
+                img.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
+            });
+        }
+
+        function next() {
+            currentIndex = (currentIndex + 1) % texts.length;
+            showItem(currentIndex);
+        }
+
+        function prev() {
+            currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+            showItem(currentIndex);
+        }
+
+        // Инициализация первого элемента
+        showItem(currentIndex);
+    </script>
     {% endblock %}
 {% endblock %}

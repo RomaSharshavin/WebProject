@@ -69,20 +69,21 @@ def partners_page(request):
 
 def views_about(request):
     texts_dir = "media/texts"
-    file_name = "text1.txt"  # Укажите конкретный файл
-    file_path = os.path.join(texts_dir, file_name)
     texts = []
+    images = [os.path.join('images', f'im{i}.png') for i in range(2, 4)]  # Путь к изображениям
 
-    try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            content = file.read()
-            formatted_content = format_text(content)
-            texts.append(formatted_content)
-    except FileNotFoundError:
-        print(f"Файл не найден: {file_path}")
-        texts.append(f"<p>Файл {file_name} не найден.</p>")
+    for i in range(2, 4):  # Загружаем только txt2.txt и txt3.txt
+        file_path = os.path.join(texts_dir, f"txt{i}.txt")
+        try:
+            with open(file_path, 'r', encoding='utf-8') as file:
+                content = file.read()
+                formatted_content = format_text(content)
+                texts.append(formatted_content)
+        except FileNotFoundError:
+            print(f"Файл не найден: {file_path}")
+            texts.append(f"<p>Файл text{i}.txt не найден.</p>")
 
     if not texts:  # Проверяем, если texts пусто
         raise Http404("Нет текстов для отображения.")
 
-    return render(request, 'main/about.html', {'texts': texts})
+    return render(request, 'main/about.html', {'texts': texts, 'images': images})
