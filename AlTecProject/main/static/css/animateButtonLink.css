@@ -1,0 +1,62 @@
+/* стили для навигационных ссылок */
+.nav-link {
+    display: inline-block;
+    font-size: 1em;
+    padding: 10px 15px;
+    background-color: #F7F7F7;
+    border-radius: 20px;
+    color: #000000;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link:focus {
+  outline: 0;
+}
+
+.nav-link:before, .nav-link:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.nav-link:active {
+  transform: scale(0.9);
+  box-shadow: 0 2px 25px rgba(124, 171, 214);
+}
+
+.nav-link.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.nav-link.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+/* эффекты наведения на ссылки */
+.nav-link:hover {
+    background-color: #e0e0e0;
+    text-decoration: none;
+}
+
+/* видимость прехода на действующую вкладку */
+.nav-link.active {
+    font-weight: bold;
+    color: black;
+    background-color: #a8d9ff;
+}

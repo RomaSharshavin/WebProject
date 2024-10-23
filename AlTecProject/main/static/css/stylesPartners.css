@@ -3,6 +3,10 @@ html, body {
     margin: 0;
 }
 
+* {
+    box-sizing: border-box; /* Примените ко всем элементам */
+}
+
 .main-container {
     display: flex;
     height: calc(100vh - 60px);
@@ -12,7 +16,7 @@ html, body {
 
 .text-container {
     flex: 1;
-    padding: 20px;
+    padding-top: 40px;
     background-color: white;
     font-family: "Ubuntu", serif;
     font-size: 20px;
@@ -23,6 +27,7 @@ html, body {
 
 .text-item {
     width: 100%;
+    padding-left: 30px;
     position: absolute; /* Позволяет текстам накладываться друг на друга */
     transition: transform 0.5s ease; /* Плавный переход для трансформации */
     left: 0; /* Выравнивание по левому краю */

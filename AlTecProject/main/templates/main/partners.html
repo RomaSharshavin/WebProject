@@ -23,9 +23,10 @@
         </div>
         <div class="image-container" id="image-container">
             {% for image in images %}
-                <img src="{% static image %}" class="image-item" />
+                <img src="{% static image %}" class="image-item" alt="Image {{ forloop.counter }}" />
             {% endfor %}
         </div>
+
     </div>
     <div class="button-container">
         <button onclick="prev()">←</button>
@@ -60,3 +61,4 @@
         showItem(currentIndex);
     </script>
 {% endblock %}
+

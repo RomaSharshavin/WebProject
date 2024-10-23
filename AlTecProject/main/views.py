@@ -48,9 +48,12 @@ def format_text(text):
 def partners_page(request):
     texts_dir = "media/texts"
     texts = []
-    images = [os.path.join('images', f'ima{i}.png') for i in range(2, 4)]  # Путь к изображениям
 
-    for i in range(2, 4):  # Загружаем только text2.txt и text3.txt
+    # Изменяем имена изображений, чтобы они указывали на правильный путь
+    images = [f'images/ima{i}.png' for i in range(2, 5)]  # Путь относительно static
+
+    # Загружаем text2.txt, text3.txt и text4.txt
+    for i in range(2, 5):  # Загружаем text2.txt, text3.txt и text4.txt
         file_path = os.path.join(texts_dir, f"text{i}.txt")
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
@@ -65,6 +68,7 @@ def partners_page(request):
         raise Http404("Нет текстов для отображения.")
 
     return render(request, 'main/partners.html', {'texts': texts, 'images': images})
+
 
 
 def views_about(request):
