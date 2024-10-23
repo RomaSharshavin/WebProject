@@ -35,6 +35,7 @@
 
 /* стили для карты */
 .map {
+    margin-top: 50px;
     width: 500px;
     height: 450px;
     margin-right: 40px;

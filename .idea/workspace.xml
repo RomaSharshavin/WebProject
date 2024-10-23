@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроены отступы на странице &quot;Партнёры&quot; для блока с текстом" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроены отступы на странице &quot;Партнёры&quot; для блока с текстом">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_10_2024_12_02__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesContact.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesContact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/sertificate.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/sertificate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +96,8 @@
       <workItem from="1729084935286" duration="5384000" />
       <workItem from="1729177697594" duration="165000" />
       <workItem from="1729290238891" duration="5887000" />
+      <workItem from="1729514823552" duration="670000" />
+      <workItem from="1729670423654" duration="4399000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -271,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729352706481</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Настроены отступы на странице &quot;Партнёры&quot; для блока с текстом">
+      <option name="closed" value="true" />
+      <created>1729514839554</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1729514839554</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

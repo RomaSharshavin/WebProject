@@ -11,8 +11,7 @@
 
 {% block content %}
 
-<h2 style="margin-left: 20px"><strong>Написать нам</strong></h2>
-<div class="containerInfo write-to-us">
+<div class="write-to-us">
     <form action="/send_message/" method="post">
         {% csrf_token %}
 
