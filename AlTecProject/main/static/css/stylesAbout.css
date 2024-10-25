@@ -26,6 +26,7 @@ html, body {
     position: absolute; /* Позволяет текстам накладываться друг на друга */
     transition: transform 0.5s ease; /* Плавный переход для трансформации */
     left: 0; /* Выравнивание по левому краю */
+    padding-left: 40px;
 }
 
 .image-container {

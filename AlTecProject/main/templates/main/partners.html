@@ -8,57 +8,102 @@
 {% block links %}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+        .partners-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px; /* Увеличенный промежуток между элементами */
+            padding: 20px 0;
+        }
+
+        .partners-title {
+            font-size: 28px; /* Увеличенный размер заголовка */
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0056b3; /* Измененный цвет текста */
+            font-weight: 700; /* Жирный текст */
+            text-transform: uppercase; /* Заглавные буквы */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Тень для текста заголовка */
+        }
+
+        .partners-images {
+            display: flex; /* Используем flex для размещения изображений в ряд */
+            justify-content: center; /* Центрируем содержимое по горизонтали */
+            align-items: center; /* Выравниваем по центру по вертикали */
+            gap: 30px; /* Увеличенный промежуток между изображениями */
+            padding: 20px; /* Отступ для контейнера изображений */
+            border: 2px dashed #a9def5; /* Оформление контейнера изображений */
+            border-radius: 10px; /* Закругленные углы */
+            background-color: #f9f9f9; /* Светлый фон контейнера изображений */
+            transition: background-color 0.3s; /* Плавный переход цвета фона */
+        }
+
+        .partners-images:hover {
+            background-color: #e0f7fa; /* Изменение фона при наведении */
+        }
+
+        .partner {
+            text-align: center;
+            flex: 0 1 auto; /* Смена поведения flex для центровки */
+            max-width: 200px;
+            min-width: 150px; /* Уменьшаем минимальную ширину для компактности */
+            transition: transform 0.3s; /* Плавная анимация при наведении */
+        }
+
+        .partner:hover {
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+
+        .partner img {
+            width: 100%;
+            height: 100px; /* Фиксированная высота */
+            object-fit: contain;
+            border-radius: 10px;
+            border: 3px solid #a9def5;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s; /* Плавный переход для тени */
+        }
+
+        .partner img:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+        }
+
+        .partner a {
+            display: block;
+            margin-top: 10px;
+            color: #0056b3; /* Цвет текста */
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s; /* Плавный переход цвета текста */
+        }
+
+        .partner a:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+            color: #003d80; /* Темнее при наведении */
+        }
     </style>
-    <link rel="stylesheet" href="{% static 'css/stylesPartners.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="main-container">
-        <div class="text-container" id="text-container">
-            {% for text in texts %}
-                <div class="text-item">
-                    {{ text|safe }}
-                </div>
-            {% endfor %}
+<div class="partners-container">
+    <div class="partners-title">Наши партнёры</div>
+    <div class="partners-images">
+        <div class="partner">
+            <a href="https://www.enerprom-spb.com/">
+                <img src="{% static 'images/logo1.png' %}" alt="Партнер 1">
+            </a>
         </div>
-        <div class="image-container" id="image-container">
-            {% for image in images %}
-                <img src="{% static image %}" class="image-item" alt="Image {{ forloop.counter }}" />
-            {% endfor %}
+        <div class="partner">
+            <a href="https://www.kspmachine.com/">
+                <img src="{% static 'images/logo2.png' %}" alt="Партнер 2">
+            </a>
         </div>
-
+        <div class="partner">
+            <a href="https://tammermatic.com/en/home/">
+                <img src="{% static 'images/logo3.png' %}" alt="Партнер 3">
+            </a>
+        </div>
     </div>
-    <div class="button-container">
-        <button onclick="prev()">←</button>
-        <button onclick="next()">→</button>
-    </div>
-
-    <script>
-        let currentIndex = 0;
-        const texts = document.querySelectorAll('.text-item');
-        const images = document.querySelectorAll('.image-container img');
-
-        function showItem(index) {
-            texts.forEach((item, i) => {
-                item.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
-            });
-            images.forEach((img, i) => {
-                img.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
-            });
-        }
-
-        function next() {
-            currentIndex = (currentIndex + 1) % texts.length;
-            showItem(currentIndex);
-        }
-
-        function prev() {
-            currentIndex = (currentIndex - 1 + texts.length) % texts.length;
-            showItem(currentIndex);
-        }
-
-        // Инициализация первого элемента
-        showItem(currentIndex);
-    </script>
+</div>
 {% endblock %}
-

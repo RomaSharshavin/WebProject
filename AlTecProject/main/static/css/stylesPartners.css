@@ -1,77 +1,35 @@
-html, body {
-    height: 100%;
-    margin: 0;
+.header {
+    text-align: center; /* Выравнивание по центру */
+    padding: 20px 0; /* Отступы сверху и снизу */
 }
 
-* {
-    box-sizing: border-box; /* Примените ко всем элементам */
-}
-
-.main-container {
+.partners-container {
     display: flex;
-    height: calc(100vh - 60px);
-    position: relative;
-    overflow: hidden; /* Скрываем переполнение, чтобы избежать отображения элементов вне контейнера */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    gap: 20px; /* Промежуток между элементами */
+    padding: 20px 0; /* Отступы сверху и снизу */
 }
 
-.text-container {
-    flex: 1;
-    padding-top: 40px;
-    background-color: white;
-    font-family: "Ubuntu", serif;
-    font-size: 20px;
-    text-align: justify;
-    position: relative; /* Для управления позиционированием текста */
-    overflow: hidden; /* Скрываем переполнение так, чтобы текст не выходил за границы */
+.partner {
+    text-align: center; /* Выравнивание текста по центру */
+    flex: 1; /* Занимает равное пространство */
+    max-width: 150px; /* Максимальная ширина для всех партнеров */
 }
 
-.text-item {
-    width: 100%;
-    padding-left: 30px;
-    position: absolute; /* Позволяет текстам накладываться друг на друга */
-    transition: transform 0.5s ease; /* Плавный переход для трансформации */
-    left: 0; /* Выравнивание по левому краю */
+.partner img {
+    width: 100%; /* Занимает 100% ширины родительского контейнера */
+    height: 100px; /* Фиксированная высота */
+    object-fit: contain; /* Обеспечивает сохранение пропорций */
+    border-radius: 10px; /* Закругленные углы у изображений */
 }
 
-.image-container {
-    flex: 1;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Скрываем переполнение */
-    position: relative; /* Для управления позиционированием изображений */
+.partner a {
+    display: block; /* Блоковый элемент для ссылки */
+    margin-top: 10px; /* Отступ сверху */
+    color: #0056b3; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
 }
 
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute; /* Позволяет изображениям наклады��аться друг на друга */
-    transition: transform 0.5s ease; /* Плавный переход для трансформации */
-}
-
-.button-container {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%); /* Центрируем кнопки */
-    display: flex;
-    gap: 10px;
-}
-
-button {
-    width: 70px;
-    height: 50px;
-    font-size: 30px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #a8d9ff;
-    color: white;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
+.partner a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
 }
