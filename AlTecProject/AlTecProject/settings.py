@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'sass_processor',
+    "compressor",
 ]
 
 MIDDLEWARE = [

@@ -96,13 +96,17 @@
 }
 
 /* Анимации появдение */
-
-.image-animation{
+.image-animation {
     opacity: 0;
-    animation: imgAnim 1.5s forwards;
+    animation: fadeIn 1s forwards; /* Анимация плавного появления */
 }
 
-@keyframes imgAnim {
-
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Исходное состояние (полностью прозрачный) */
+    }
+    to {
+        opacity: 1; /* Конечное состояние (полностью видимый) */
+    }
 }
 

@@ -6,95 +6,118 @@
 {% endblock %}
 
 {% block links %}
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+    <link rel="stylesheet" href="{% static 'css/stylesContact.css' %}">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-        .partners-title {
-            font-size: 28px; /* Увеличенный размер заголовка */
-            margin-bottom: 20px;
-            text-align: center;
-            color: #0056b3; /* Измененный цвет текста */
-            font-weight: 700; /* Жирный текст */
-            text-transform: uppercase; /* Заглавные буквы */
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Тень для текста заголовка */
-        }
+    .partners-title {
+        font-size: 30px; /* Увеличенный размер заголовка */
+        margin: 30px 0 10px; /* Отступы со всех сторон */
+        text-align: center;
+        font-weight: 700;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    }
 
-        .partner {
-            display: flex;
-            flex-direction: column; /* Вертикальное расположение элементов */
-            align-items: center; /* Централизованное размещение */
-            max-width: 300px; /* Увеличенная максимальная ширина */
-            height: 350px; /* Увеличенная высота для создания вертикальных контейнеров */
-            margin: 20px; /* Отступ для размещения контейнеров по бокам */
-            text-align: center;
-            border: 2px solid #a9def5; /* Рамка контейнера */
-            border-radius: 10px; /* Закругленные углы */
-            padding: 15px; /* Внутренние отступы */
-            background-color: #f9f9f9; /* Фон контейнера */
-            transition: transform 0.3s; /* Плавная анимация при наведении */
-        }
+    .partners-container {
+        display: flex;
+        flex-wrap: wrap; /* Позволяет элементам переноситься */
+        justify-content: center; /* Центрируем содержимое */
+        gap: 30px; /* Промежуток между контейнерами */
+        padding: 20px;
+    }
 
-        .partner:hover {
-            transform: scale(1.05); /* Увеличение при наведении */
-        }
+    .partner {
+        display: flex;
+        flex-direction: column; /* Вертикальное расположение */
+        align-items: center; /* Центрируем элементы */
+        max-width: 400px; /* Максимальная ширина */
+        height: 350px;
+        margin: 10px; /* Отступы по бокам */
+        text-align: center; /* Центрирование текста */
+        border: 2px solid #a9def5;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: #ffffff; /* Белый фон */
+        transition: transform 0.3s;
+        opacity: 0; /* Начальное значение для анимации */
+        animation: fade-in 0.6s forwards; /* Применяем анимацию */
+    }
 
-        .partner img {
-            width: 100%; /* Ширина изображения 100% */
-            height: 200px; /* Увеличенная высота изображения */
-            object-fit: contain;
-            border-radius: 8px; /* Закругленные углы для изображения */
-            box-sizing: border-box;
-            transition: box-shadow 0.3s; /* Плавный переход для тени */
+    /* Анимация появления */
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+            transform: translateY(20px); /* Сдвиг вниз */
         }
+        100% {
+            opacity: 1;
+            transform: translateY(0); /* Вернуться в исходное положение */
+        }
+    }
 
-        .partner img:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень при наведении */
-        }
+    .partner:hover {
+        transform: scale(1.05);
+    }
 
-        .partner a {
-            display: block;
-            margin-top: 10px;
-            color: #0056b3; /* Цвет текста */
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500; /* Увеличенный жирный текст */
-            transition: color 0.3s; /* Плавный переход цвета текста */
-        }
+    .partner img {
+        width: 100%;
+        height: 150px;
+        object-fit: contain;
+        border-radius: 8px;
+        transition: box-shadow 0.3s;
+        margin-bottom: 10px; /* Добавляем отступ снизу изображения */
+    }
 
-        .partner a:hover {
-            text-decoration: underline; /* Подчеркивание при наведении */
-            color: #003d80; /* Темнее при наведении */
-        }
+    .partner img:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 
-        .partners-container {
-            display: flex;
-            justify-content: center; /* Центрируем содержимое по горизонтали */
-            gap: 30px; /* Увеличенный промежуток между отдельными контейнерами */
-            padding: 20px; /* Отступ для общего контейнера */
-        }
-    </style>
+    .partner a {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        transition: color 0.3s;
+        text-decoration: none; /* Убирает подчеркивание */
+        color: inherit; /* Наследует цвет текста родительских элементов */
+    }
+
+    .partner a:hover {
+        text-decoration: none; /* Убирает подчеркивание при наведении */
+        color: inherit; /* Сохраняет цвет при наведении */
+    }
+</style>
+
 {% endblock %}
 
 {% block content %}
-<div class="partners-title">Наши партнёры</div>
-<div class="partners-container">
-    <div class="partner">
-        <a href="https://www.enerprom-spb.com/">
-            <img src="{% static 'images/logo1.png' %}" alt="Партнер 1">
-            <span>Сайт партнёра 1</span>
-        </a>
+    <h5 class="partners-title">Наши партнёры</h5>
+    <div class="partners-container">
+        <div class="partner">
+            <a href="https://www.enerprom-spb.com/">
+                <img src="{% static 'images/logo1.png' %}" alt="Партнер 1">
+                <div class="partner-description">
+                    Механический завод «Энерпром» разрабатывает и изготавливает
+                    промышленное гидравлическое оборудование в Санкт-Петербурге.
+                </div>
+            </a>
+        </div>
+        <div class="partner">
+            <a href="https://www.kspmachine.com/">
+                <img src="{% static 'images/logo_2.png' %}" alt="Партнер 2">
+                <div class="partner-description">
+                    KSP Machine Tool CO – турецкий производитель предлагает промышленные мойки, машины для ремонта
+                    двигателей и системы обработки поверхности.
+                </div>
+            </a>
+        </div>
+        <div class="partner">
+            <a href="https://tammermatic.com/en/home/">
+                <img src="{% static 'images/logo3.png' %}" alt="Партнер 3">
+                <div class="partner-description">
+                    Tammermatic Group - глобальная высокотехнологичная компания-изготовитель моечных машин
+                    для специализированного оборудования.
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="partner">
-        <a href="https://www.kspmachine.com/">
-            <img src="{% static 'images/logo2.png' %}" alt="Партнер 2">
-            <span>Сайт партнёра 2</span>
-        </a>
-    </div>
-    <div class="partner">
-        <a href="https://tammermatic.com/en/home/">
-            <img src="{% static 'images/logo3.png' %}" alt="Партнер 3">
-            <span>Сайт партнёра 3</span>
-        </a>
-    </div>
-</div>
 {% endblock %}
