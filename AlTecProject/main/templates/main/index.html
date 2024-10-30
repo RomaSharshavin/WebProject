@@ -2,15 +2,16 @@
 
 {% load static %}
 
-{% load compress %}
-
 {% block title %}
 Главная страница
 {% endblock %}
 
 {% block content %}
     <div class="full-width-container">
-        <img src="{% static 'images/altec.gif' %}" alt="Altec GIF" class="styled-gif">
+        <video autoplay loop muted class="styled-gif">
+            <source src="{% static 'images/altec.webm' %}" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
         <div class="equipment-description">
             <strong>Автомойки для транспорта</strong>
         </div>

@@ -76,6 +76,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder',
+    'compressor.finders.CompressorFinder',
 ]
 
 WSGI_APPLICATION = 'AlTecProject.wsgi.application'

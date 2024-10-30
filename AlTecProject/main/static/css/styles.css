@@ -61,6 +61,8 @@ img {
     max-height: calc(80vh - 50px);
     object-fit: cover;
     position: absolute;
+    pointer-events: none;
+    display: block;
     top: 0;
 }
 

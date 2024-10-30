@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load compress %}
 
 {% block title %}
 О Компании
@@ -9,10 +10,12 @@
 {% endblock %}
 
 {% block links %}
+{% compress css %}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
     </style>
     <link rel="stylesheet" href="{% static 'css/stylesAbout.css' %}">
+{% endcompress %}
 {% endblock %}
 
 {% block content %}
@@ -37,33 +40,34 @@
 
 
     {% block scripts %}
+    {% compress js %}
+        <script>
+            let currentIndex = 0;
+            const texts = document.querySelectorAll('.text-item');
+            const images = document.querySelectorAll('.image-container img');
 
-    <script>
-        let currentIndex = 0;
-        const texts = document.querySelectorAll('.text-item');
-        const images = document.querySelectorAll('.image-container img');
+            function showItem(index) {
+                texts.forEach((item, i) => {
+                    item.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
+                });
+                images.forEach((img, i) => {
+                    img.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
+                });
+            }
 
-        function showItem(index) {
-            texts.forEach((item, i) => {
-                item.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
-            });
-            images.forEach((img, i) => {
-                img.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
-            });
-        }
+            function next() {
+                currentIndex = (currentIndex + 1) % texts.length;
+                showItem(currentIndex);
+            }
 
-        function next() {
-            currentIndex = (currentIndex + 1) % texts.length;
+            function prev() {
+                currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+                showItem(currentIndex);
+            }
+
+            // Инициализация первого элемента
             showItem(currentIndex);
-        }
-
-        function prev() {
-            currentIndex = (currentIndex - 1 + texts.length) % texts.length;
-            showItem(currentIndex);
-        }
-
-        // Инициализация первого элемента
-        showItem(currentIndex);
-    </script>
+        </script>
+    {% endcompress %}
     {% endblock %}
 {% endblock %}
