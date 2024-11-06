@@ -46,29 +46,7 @@ def format_text(text):
 
 
 def partners_page(request):
-    texts_dir = "media/texts"
-    texts = []
-
-    # Изменяем имена изображений, чтобы они указывали на правильный путь
-    images = [f'images/ima{i}.png' for i in range(2, 5)]  # Путь относительно static
-
-    # Загружаем text2.txt, text3.txt и text4.txt
-    for i in range(2, 5):  # Загружаем text2.txt, text3.txt и text4.txt
-        file_path = os.path.join(texts_dir, f"text{i}.txt")
-        try:
-            with open(file_path, 'r', encoding='utf-8') as file:
-                content = file.read()
-                formatted_content = format_text(content)
-                texts.append(formatted_content)
-        except FileNotFoundError:
-            print(f"Файл не найден: {file_path}")
-            texts.append(f"<p>Файл text{i}.txt не найден.</p>")
-
-    if not texts:  # Проверяем, если texts пусто
-        raise Http404("Нет текстов для отображения.")
-
-    return render(request, 'main/partners.html', {'texts': texts, 'images': images})
-
+    return render(request, 'main/partners.html')
 
 
 def views_about(request):

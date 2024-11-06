@@ -1,0 +1,1 @@
+var script=document.createElement('script');script.src='https://api-maps.yandex.ru/2.1/?lang=ru_RU';script.async=true;document.body.appendChild(script);script.onload=function(){if(typeof ymaps!=='undefined'){ymaps.ready(init);}else{console.error("ERROR MAP");}};;

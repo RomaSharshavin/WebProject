@@ -1,0 +1,35 @@
+.header {
+    text-align: center; /* Выравнивание по центру */
+    padding: 20px 0; /* Отступы сверху и снизу */
+}
+
+.partners-container {
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    gap: 20px; /* Промежуток между элементами */
+    padding: 20px 0; /* Отступы сверху и снизу */
+}
+
+.partner {
+    text-align: center; /* Выравнивание текста по центру */
+    flex: 1; /* Занимает равное пространство */
+    max-width: 150px; /* Максимальная ширина для всех партнеров */
+}
+
+.partner img {
+    width: 100%; /* Занимает 100% ширины родительского контейнера */
+    height: 100px; /* Фиксированная высота */
+    object-fit: contain; /* Обеспечивает сохранение пропорций */
+    border-radius: 10px; /* Закругленные углы у изображений */
+}
+
+.partner a {
+    display: block; /* Блоковый элемент для ссылки */
+    margin-top: 10px; /* Отступ сверху */
+    color: #0056b3; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.partner a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}

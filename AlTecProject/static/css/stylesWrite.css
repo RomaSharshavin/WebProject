@@ -1,0 +1,94 @@
+.write-to-us {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    max-width: 700px;
+    margin: 70px auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+/* Глобальные стили для анимации */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стили для групп полей ввода */
+.form-group {
+    margin-bottom: 3px;
+}
+
+/* Стили для меток полей ввода */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Стили для различных типов полей ввода и текстовой области */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/* Эффект фокуса на полях ввода */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #4A90E2;
+}
+
+/* Стили для текстовой области */
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Стили для кнопки отправки */
+.send-button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+/* Эффект изменения цвета фона кнопки при наведении */
+.send-button:hover {
+    background-color: #357ABD;
+}
+
+/* Стили для группы полей ввода на одной строке */
+.flex-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Стили для элементов внутри флекс-группы */
+.flex-item {
+    flex: 1;
+    margin-right: 10px;
+}
+
+

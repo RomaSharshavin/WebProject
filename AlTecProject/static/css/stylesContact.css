@@ -1,0 +1,57 @@
+/* основной контейнер информации */
+.containerInfo {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 630px;
+    margin: 13px 0 0 20px;
+}
+
+/* стили таблицы внутри контейнера информации */
+.containerInfo table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* стили для ячеек таблицы */
+.containerInfo td {
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* flex-контейнер для распределения элементов */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* flex-элемент с равным весом */
+.flex-item {
+    flex: 1;
+}
+
+/* стили для карты */
+.map {
+    margin-top: 50px;
+    width: 500px;
+    height: 450px;
+    margin-right: 40px;
+    flex-shrink: 0;
+}
+
+/* Анимация появления */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,4 @@
+let currentIndex=0;const texts=document.querySelectorAll('.text-item');const images=document.querySelectorAll('.image-container img');function showItem(index){texts.forEach((item,i)=>{item.style.transform=(i===index)?'translateX(0)':(i<index?'translateX(-100%)':'translateX(100%)');});images.forEach((img,i)=>{img.style.transform=(i===index)?'translateX(0)':(i<index?'translateX(-100%)':'translateX(100%)');});}
+function next(){currentIndex=(currentIndex+1)%texts.length;showItem(currentIndex);}
+function prev(){currentIndex=(currentIndex-1+texts.length)%texts.length;showItem(currentIndex);}
+showItem(currentIndex);;
