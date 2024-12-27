@@ -13,23 +13,62 @@
 {% compress css %}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+        .main-container {
+            text-align: right; /* Выравнивание текста по правому краю */
+            padding: 20px;
+            max-width: 800px; /* Ограничение ширины контейнера */
+            margin: auto; /* Центрирование контейнера */
+        }
+
+        .button-container {
+            display: flex; /* Используем flex для расположения кнопок */
+            justify-content: space-between; /* Располагаем кнопки по краям */
+            margin-top: 150px;
+        }
+
+        h1 {
+            font-size: 30px; /* Увеличенный размер заголовка */
+            margin: 30px 0 10px; /* Отступы со всех сторон */
+            font-family: 'Jura', sans-serif;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-item {
+            font-size: 24px; /* Увеличенный размер шрифта для текста */
+            line-height: 1.6; /* Междустрочный интервал */
+            color: #333; /* Цвет текста */
+            text-align: right; /* Выравнивание текста по правому краю */
+        }
+
+        button {
+            padding: 10px 20px; /* Внутренние отступы кнопок */
+            background-color: #007bff; /* Цвет фона кнопок */
+            color: white; /* Цвет текста кнопок */
+            border: none; /* Убираем границы */
+            border-radius: 5px; /* Скругление углов кнопок */
+            cursor: pointer; /* Указатель курсора на кнопках */
+            transition: background-color 0.3s; /* Плавный переход для фона кнопок */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Цвет фона кнопок при наведении */
+        }
     </style>
-    <link rel="stylesheet" href="{% static 'css/stylesAbout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/.css' %}">
 {% endcompress %}
 {% endblock %}
 
 {% block content %}
     <div class="main-container">
+        <h1>О Компании</h1>
         <div class="text-container" id="text-container">
             {% for text in texts %}
-                <div class="text-item">
+                <div class="text-item" id="text-{{ forloop.counter0 }}" style="display: {% if forloop.counter0 == 0 %}block{% else %}none{% endif %};">
                     {{ text|safe }}
                 </div>
-            {% endfor %}
-        </div>
-        <div class="image-container" id="image-container">
-            {% for image in images %}
-                <img src="{% static image %}" class="image-item" />
             {% endfor %}
         </div>
     </div>
@@ -37,37 +76,30 @@
         <button onclick="prev()">←</button>
         <button onclick="next()">→</button>
     </div>
-
-
     {% block scripts %}
-    {% compress js %}
-        <script>
-            let currentIndex = 0;
-            const texts = document.querySelectorAll('.text-item');
-            const images = document.querySelectorAll('.image-container img');
+    <script>
+        let currentIndex = 0;
+        const texts = document.querySelectorAll('.text-item');
 
-            function showItem(index) {
-                texts.forEach((item, i) => {
-                    item.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
-                });
-                images.forEach((img, i) => {
-                    img.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
-                });
+        function showText(index) {
+            texts.forEach((text, idx) => {
+                text.style.display = idx === index ? 'block' : 'none';
+            });
+        }
+
+        function prev() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showText(currentIndex);
             }
+        }
 
-            function next() {
-                currentIndex = (currentIndex + 1) % texts.length;
-                showItem(currentIndex);
+        function next() {
+            if (currentIndex < texts.length - 1) {
+                currentIndex++;
+                showText(currentIndex);
             }
-
-            function prev() {
-                currentIndex = (currentIndex - 1 + texts.length) % texts.length;
-                showItem(currentIndex);
-            }
-
-            // Инициализация первого элемента
-            showItem(currentIndex);
-        </script>
-    {% endcompress %}
+        }
+    </script>
     {% endblock %}
 {% endblock %}
