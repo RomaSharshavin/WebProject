@@ -1,78 +1,67 @@
-html, body {
-    height: 100%;
+.title-text{
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-container{
+    width: 50%;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.9;
+    border: 2px solid #a9def5;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.about-container p {
     margin: 0;
 }
 
-.main-container {
-    display: flex;
-    height: calc(100vh - 60px);
+/* Прокручиваемая область */
+.scroll-container {
     position: relative;
-    overflow: hidden; /* Скрываем переполнение, чтобы избежать отображения элементов вне контейнера */
+    overflow: hidden;
+    border: 2px solid #a9def5;
+    border-radius: 15px;
+    width: 80%;
+    margin: 30px auto;
+    background-color: #EFFBFF;
+    padding: 10px 0;
 }
 
-.text-container {
-    flex: 1;
-    padding: 20px;
-    background-color: white;
-    font-family: "Ubuntu", serif;
-    font-size: 20px;
-    text-align: justify;
-    position: relative; /* Для управления позиционированием текста */
-    overflow: hidden; /* Скрываем переполнение так, чтобы текст не выходил за границы */
-}
-
-.text-item {
-    width: 100%;
-    position: absolute; /* Позволяет текстам накладываться друг на друга */
-    transition: transform 0.5s ease; /* Плавный переход для трансформации */
-    left: 0; /* Выравнивание по левому краю */
-    padding-left: 40px;
-}
-
-.image-container {
-    flex: 1;
-    bottom: 80px;
-    background-color: #f0f0f0;
+.scroll-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden; /* Скрываем переполнение */
-    width: 100%; /* Убедитесь, что ширина определена */
-    height: 100%; /* Убедитесь, что высота определена */
+    animation: scroll linear infinite;
 }
 
-.image-container img {
-    width: 100%;
-    height: auto; /* Измените на auto для сохранения пропорций */
-    max-width: 100%; /* Добавьте это для ограничения ширины */
-    max-height: 100%; /* Добавьте это для ограничения высоты */
-    object-fit: cover;
-    position: absolute; /* Позволяет изображениям накладываться друг на друга */
-    transition: transform 0.5s ease; /* Плавный переход для трансформации */
+.scroll-item {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 25px;
+    text-align: center;
+    color: #1b1b1b;
 }
 
-.button-container {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%); /* Центрируем кнопки */
-    display: flex;
-    gap: 10px;
+.scroll-item img {
+    width: 200px;
+    height: 140px;
+    object-fit: initial;
+    margin-bottom: 5px;
+    border: 2px solid #000;
+    border-radius: 15px;
 }
 
-button {
-    width: 70px;
-    height: 50px;
-    font-size: 30px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #a8d9ff;
-    color: white;
-    transition: background-color 0.3s;
-}
 
-button:hover {
-    background-color: #0056b3;
+.scroll-item span {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
 }

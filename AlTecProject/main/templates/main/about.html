@@ -19,54 +19,85 @@
 {% endblock %}
 
 {% block content %}
-    <div class="main-container">
-        <div class="text-container" id="text-container">
-            {% for text in texts %}
-                <div class="text-item">
-                    {{ text|safe }}
-                </div>
-            {% endfor %}
-        </div>
-        <div class="image-container" id="image-container">
-            {% for image in images %}
-                <img src="{% static image %}" class="image-item" />
-            {% endfor %}
-        </div>
-    </div>
-    <div class="button-container">
-        <button onclick="prev()">←</button>
-        <button onclick="next()">→</button>
+    <h5 class="title-text">О КОМАПНИИ</h5>
+
+    <div class="about-container">
+        <p>ООО "Ал-Тек" является официальным представителем финской компании Tammermatic
+            и поставляет, устанавливает и обслуживает автоматические мойки для легкового,
+            грузового, пассажирского и железнодорожного транспорта. Поддержать моечное
+            оборудование в отличном состоянии поможет наша сервисная служба.
+        </p>
     </div>
 
+    <div class="scroll-container" id="scroll-container">
+        <div class="scroll-content" id="scroll-content">
+        </div>
+    </div>
 
     {% block scripts %}
     {% compress js %}
         <script>
-            let currentIndex = 0;
-            const texts = document.querySelectorAll('.text-item');
-            const images = document.querySelectorAll('.image-container img');
+            const scrollContent = document.getElementById('scroll-content');
+            const scrollContainer = document.getElementById('scroll-container');
+            let isDragging = false; // Флаг, который отслеживает, перетаскивает ли пользователь
+            let startX; // Начальная позиция X при нажатии
+            let scrollLeft; // Текущее положение карусели по оси X
 
-            function showItem(index) {
-                texts.forEach((item, i) => {
-                    item.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
+            // Список компаний
+            const companies = [
+                { img: '{% static "images/logo/rzd_dr_st_pos_rgb.webp" %}' },
+                { img: '{% static "images/logo/vodo.webp" %}' },
+                { img: '{% static "images/logo/mosinj.webp" %}' },
+                { img: '{% static "images/logo/peter_metro.webp" %}' },
+                { img: '{% static "images/logo/moscow_metro.webp" %}' },
+                { img: '{% static "images/logo/aksel.webp" %}' },
+                { img: '{% static "images/logo/Logo_statoil.webp" %}' },
+                { img: '{% static "images/logo/sever.webp" %}' },
+                { img: '{% static "images/logo/neste.webp" %}' },
+                { img: '{% static "images/logo/ilim.webp" %}' }
+            ];
+
+            // Функция для добавления компаний в прокрутку
+            function addCompanies() {
+                companies.forEach(company => {
+                    const item = document.createElement('div');
+                    item.className = 'scroll-item';
+                    item.innerHTML = `<img src="${company.img}" alt="company logo">`;
+                    scrollContent.appendChild(item);
                 });
-                images.forEach((img, i) => {
-                    img.style.transform = (i === index) ? 'translateX(0)' : (i < index ? 'translateX(-100%)' : 'translateX(100%)');
+            }
+
+            // Добавляем компании
+            addCompanies();
+
+            // Дублируем элементы для бесшовной прокрутки
+            function duplicateItems() {
+                const items = Array.from(scrollContent.children);
+                items.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    scrollContent.appendChild(clone);
                 });
             }
 
-            function next() {
-                currentIndex = (currentIndex + 1) % texts.length;
-                showItem(currentIndex);
-            }
+            duplicateItems();
 
-            function prev() {
-                currentIndex = (currentIndex - 1 + texts.length) % texts.length;
-                showItem(currentIndex);
-            }
+            const totalWidth = scrollContent.scrollWidth;
+            const scrollDuration = totalWidth / 120;  // Скорость прокрутки
 
-            // Инициализация первого элемента
-            showItem(currentIndex);
+            // Анимация прокрутки
+            document.styleSheets[0].insertRule(`
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-${totalWidth / 2}px);
+                    }
+                }
+            `, 0);
+
+            // Запуск анимации
+            scrollContent.style.animation = `scroll ${scrollDuration}s linear infinite`;
         </script>
     {% endcompress %}
     {% endblock %}
