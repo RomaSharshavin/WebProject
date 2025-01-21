@@ -1,0 +1,28 @@
+Index: AlTecProject/main/static/css/stylesAbout.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.title-text{\r\n    font-family: 'Jura', sans-serif;\r\n    font-size: 30px;\r\n    margin-top: 15px;\r\n    display: block;\r\n    text-align: center;\r\n    font-weight: 700;\r\n    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.about-container{\r\n    width: 50%;\r\n    padding: 20px;\r\n    font-size: 20px;\r\n    line-height: 1.9;\r\n    border: 2px solid #a9def5;\r\n    border-radius: 15px;\r\n    text-align: center;\r\n    background-color: #fff;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    margin: 20px auto;\r\n}\r\n\r\n.about-container p {\r\n    margin: 0;\r\n}\r\n\r\n/* Прокручиваемая область */\r\n.scroll-container {\r\n    position: relative;\r\n    overflow: hidden;\r\n    border: 2px solid #a9def5;\r\n    border-radius: 15px;\r\n    width: 80%;\r\n    margin: 30px auto;\r\n    background-color: #EFFBFF;\r\n    padding: 10px 0;\r\n}\r\n\r\n.scroll-content {\r\n    display: flex;\r\n    animation: scroll linear infinite;\r\n}\r\n\r\n.scroll-item {\r\n    flex: 0 0 auto;\r\n    width: 200px;\r\n    margin: 0 25px;\r\n    text-align: center;\r\n    color: #1b1b1b;\r\n}\r\n\r\n.scroll-item img {\r\n    width: 200px;\r\n    height: 140px;\r\n    object-fit: initial;\r\n    margin-bottom: 5px;\r\n    border: 2px solid #000;\r\n    border-radius: 15px;\r\n}\r\n\r\n\r\n.scroll-item span {\r\n    display: block;\r\n    font-size: 14px;\r\n    margin-top: 5px;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AlTecProject/main/static/css/stylesAbout.css b/AlTecProject/main/static/css/stylesAbout.css
+--- a/AlTecProject/main/static/css/stylesAbout.css	
++++ b/AlTecProject/main/static/css/stylesAbout.css	
+@@ -5,15 +5,15 @@
+     display: block;
+     text-align: center;
+     font-weight: 700;
++    padding: 20px 0; /* Отступы сверху и снизу */
+     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .about-container{
+-    width: 50%;
++    width: 80%;
+     padding: 20px;
+     font-size: 20px;
+     line-height: 1.9;
+-    border: 2px solid #a9def5;
+     border-radius: 15px;
+     text-align: center;
+     background-color: #fff;

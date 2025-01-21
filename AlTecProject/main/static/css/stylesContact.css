@@ -1,3 +1,11 @@
+.contact-title {
+        font-size: 30px; /* Увеличенный размер заголовка */
+        margin: 30px 0 10px; /* Отступы со всех сторон */
+        text-align: center;
+        font-weight: 700;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
 /* основной контейнер информации */
 .containerInfo {
     background-color: white;
