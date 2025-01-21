@@ -97,3 +97,21 @@
 .pagination-buttons button:hover {
     background-color: #5fa3d7;
 }
+
+/* Стили для неактивных кнопок */
+.disabled-button {
+    background-color: #ccc; /* Серый фон */
+    color: #999; /* Серый цвет текста */
+    cursor: not-allowed; /* Убираем курсор */
+    border: 2px solid #aaa; /* Серая граница */
+}
+
+/* Дополнительные стили для кнопок с атрибутом disabled */
+.pagination-buttons button:disabled {
+    background-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+    border: 2px solid #aaa;
+}
+
+

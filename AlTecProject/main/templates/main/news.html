@@ -30,9 +30,13 @@
             </div>
 
             <div class="pagination-buttons">
-                <button class="prev-button" onclick="navigate(-1)" {% if not page_obj.has_previous %}disabled{% endif %}>&#8592;</button>
-                <button class="next-button" onclick="navigate(1)" {% if not page_obj.has_next %}disabled{% endif %}>&#8594;</button>
+                <button class="prev-button {% if not page_obj.has_previous %}disabled-button{% endif %}"
+                        onclick="navigate(-1)" {% if not page_obj.has_previous %}disabled{% endif %}>&#8592;</button>
+                <button class="next-button {% if not page_obj.has_next %}disabled-button{% endif %}"
+                        onclick="navigate(1)" {% if not page_obj.has_next %}disabled{% endif %}>&#8594;</button>
             </div>
+
+
         {% else %}
             <p>Нет новостей на данный момент.</p>
         {% endif %}
