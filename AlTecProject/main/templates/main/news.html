@@ -41,11 +41,34 @@
     {% block scripts %}
         <script>
             function navigate(direction) {
-                // Получаем текущую страницу
+                // Получаем текущую страницу из URL
                 const currentPage = new URLSearchParams(window.location.search).get('page') || 1;
                 const nextPage = parseInt(currentPage) + direction;
-                window.location.href = `?page=${nextPage}`;
+
+                // Плавная анимация исчезновения текущих новостей
+                const newsItems = document.querySelectorAll('.news-item');
+                newsItems.forEach(item => {
+                    item.classList.remove('visible'); // Убираем класс видимости
+                });
+
+                // Обновляем новости после анимации исчезновения
+                setTimeout(() => {
+                    // Обновление текущей страницы и загрузка новых новостей
+                    window.location.href = `?page=${nextPage}`;
+                }, 500); // Задержка для завершения анимации
+
+                // Плавная анимация появления новых новостей
+                // (Эта часть будет работать автоматически, так как новые новости будут добавлены с классом 'visible')
             }
+
+            // После того как новость загружена, применяем анимацию появления
+            window.onload = () => {
+                const newsItems = document.querySelectorAll('.news-item');
+                newsItems.forEach(item => {
+                    item.classList.add('visible');
+                });
+            };
         </script>
     {% endblock %}
+
 {% endblock %}

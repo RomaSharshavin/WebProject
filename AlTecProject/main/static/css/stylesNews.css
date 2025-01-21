@@ -2,9 +2,10 @@
 #news-container {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Отступы между блоками */
+    gap: 30px; /* отступы между блоками */
     margin: 50px auto;
     align-items: center;
+    position: relative;
 }
 
 /* Основной блок новости */
@@ -17,6 +18,18 @@
     background-color: #73c5f5;
     width: 1000px; /* Ширина блока */
     height: 90px; /* Высота блока */
+}
+
+/* анимация появления блоков */
+.news-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/*   */
+.news-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /* Блок для изображения */
@@ -36,7 +49,7 @@
     border-radius: 5px; /* Закругление углов изображения */
 }
 
-/* Блок для текста */
+/* Блок текста */
 .news-content {
     flex-grow: 0.5;
     padding-top: 10px;
@@ -57,7 +70,7 @@
     color: #888;
 }
 
-/*Кнокпи управления*/
+/* Кнокпи управления */
 .pagination-buttons {
     display: flex;
     justify-content: center;
