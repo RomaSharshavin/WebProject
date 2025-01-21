@@ -1,6 +1,8 @@
 from django.http import Http404
 from django.shortcuts import render
 from django.conf import settings
+
+from .models import News
 import os
 
 
@@ -33,7 +35,8 @@ def write(request):
 
 
 def news(request):
-    return render(request, 'main/news.html')
+    news_list = News.objects.order_by('-date_written')  # Сортировка по дате (новые сверху)
+    return render(request, 'main/news.html', {'news_list': news_list})
 
 
 def about(request):

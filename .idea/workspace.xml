@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Изменена разметка страницы &quot;О компании&quot; 1.1">
-      <change beforePath="$PROJECT_DIR$/.idea/AlTec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AlTec.iml" afterDir="false" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Панель администрирования и миграции 1.1">
+      <change afterPath="$PROJECT_DIR$/AlTecProject/main/static/images/iconNews.webm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/media/texts/txt2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/media/texts/txt3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesNews.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesNews.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,26 +42,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.base.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Roman/PycharmProjects/AlTec/AlTecProject/main/static/images/logo&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.base.html.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Roman/PycharmProjects/AlTec/AlTecProject/main/static/images",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Roman\PycharmProjects\AlTec\AlTecProject\main\static\images\logo" />
       <recent name="C:\Users\Roman\PycharmProjects\AlTec\AlTecProject\main\static\images" />
+      <recent name="C:\Users\Roman\PycharmProjects\AlTec\AlTecProject\main\static\images\logo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\PycharmProjects\AlTec\AlTecProject\main\static\images" />
@@ -117,7 +115,8 @@
       <workItem from="1730875344911" duration="3975000" />
       <workItem from="1735287581475" duration="1291000" />
       <workItem from="1737374566611" duration="3704000" />
-      <workItem from="1737386408608" duration="2665000" />
+      <workItem from="1737386408608" duration="3090000" />
+      <workItem from="1737439906734" duration="6338000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -351,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735369360769</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Панель администрирования и миграции 1.1">
+      <option name="closed" value="true" />
+      <created>1737389242164</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1737389242164</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +376,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Настроено отображение переходов" />
     <MESSAGE value="Добавлены информацинные блоки на страницу контакты" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Добавлены картографические метки на странице контакты" />
@@ -394,6 +400,7 @@
     <MESSAGE value="Ипзменены форматы файлов изображений" />
     <MESSAGE value="Добавлены подсказки на странице партнёры" />
     <MESSAGE value="Изменена разметка страницы &quot;О компании&quot; 1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменена разметка страницы &quot;О компании&quot; 1.1" />
+    <MESSAGE value="Панель администрирования и миграции 1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Панель администрирования и миграции 1.1" />
   </component>
 </project>

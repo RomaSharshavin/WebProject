@@ -12,14 +12,24 @@
 
 
 {% block content %}
-    <div class="news-container">
-        {% for news in news_items %}
-            <div class="news-item">
-                <h3>{{ news.title }}</h3>
-                <p>{{ news.text }}</p>
+    <div>
+        {% if news_list %}
+            <div id="news-container">
+                {% for news in news_list %}
+                    <div class="news-item" draggable="true">
+                        <div class="news-image">
+                            <img src="{% static 'images/iconNews.webm' %}" alt="Новость" />
+                        </div>
+                        <div class="news-content">
+                            <h2>{{ news.title }}</h2>
+                            <p>{{ news.text }}</p>
+                            <small>Дата написания: {{ news.date_written|date:"d.m.Y H:i" }}</small>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        {% empty %}
+        {% else %}
             <p>Нет новостей на данный момент.</p>
-        {% endfor %}
+        {% endif %}
     </div>
 {% endblock %}

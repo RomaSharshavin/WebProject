@@ -1,52 +1,59 @@
-:root{
-    --news-item-width: calc(33.33% - 10px); /* Ширина блока */
-    --news-item-count: 2; /* Количество блоков в строке */
-}
-
-.news-container {
+/* Контейнер для всех новостей */
+#news-container {
     display: flex;
-    flex-wrap: wrap;
-    padding: 20px 20px;
-    justify-content: space-between;
-    box-sizing: border-box; /* Учёт общей ширины */
+    flex-direction: column;
+    gap: 30px; /* Отступы между блоками */
+    margin: 0 auto;
+    align-items: center;
 }
 
+/* Основной блок новости */
 .news-item {
-    width: var(--news-item-width); /* Учитываем отступы для корректного размещения */
-    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    border: 3px solid #ccc;
     padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
+    border-radius: 8px;
+    background-color: #73c5f5;
+    cursor: move;
+    width: 1000px; /* Ширина блока */
+    height: 90px; /* Высота блока */
 }
 
-.news-item h3 {
-    white-space: nowrap; /* Не переносим заголовок */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Дтроеточие если текст не помещается */
+/* Блок для изображения */
+.news-image {
+    flex-shrink: 0;
+    width: 150px; /* Ширина изображения */
+    height: 94px; /* Высота изображения */
+    margin-right: 15px;
+    margin-left: -15px;
+    padding: 10px; /* Внутренние отступы внутри блока */
 }
 
-.news-item p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Количество строк в блоке */
-    -webkit-box-orient: vertical;
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px; /* Закругление углов изображения */
 }
 
-/* Настройки для разных размеров экрана */
-@media (max-width: 768px) {
-    :root {
-        --news-item-width: calc(50% - 10px); /* 2 блока в строке на экранах менее 768px */
-        --news-item-count: 2;
-    }
+/* Блок для текста */
+.news-content {
+    flex-grow: 1;
 }
 
-@media (max-width: 480px) {
-    :root {
-        --news-item-width: 100%; /* 1 блок для телефонов */
-        --news-item-count: 1;
-    }
+.news-content h2 {
+    margin: 0 0 10px;
+    font-size: 20px; /* Размер заголовка */
+}
+
+.news-content p {
+    margin: 0 0 10px;
+    font-size: 16px; /* Размер текста */
+    color: #555;
+}
+
+.news-content small {
+    font-size: 14px; /* Размер текста для даты */
+    color: #888;
 }
