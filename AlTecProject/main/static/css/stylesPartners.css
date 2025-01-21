@@ -1,8 +1,3 @@
-.header {
-    text-align: center; /* Выравнивание по центру */
-    padding: 20px 0; /* Отступы сверху и снизу */
-}
-
 .partners-container {
     display: flex;
     justify-content: center; /* Центрируем содержимое по горизонтали */
