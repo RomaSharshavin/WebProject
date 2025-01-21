@@ -13,9 +13,9 @@
 
 {% block content %}
     <div>
-        {% if news_list %}
+        {% if page_obj.has_other_pages %}
             <div id="news-container">
-                {% for news in news_list|slice:":3" %}
+                {% for news in page_obj.object_list %}
                     <div class="news-item" draggable="true">
                         <div class="news-image">
                             <img src="{% static 'images/iconNews.webm' %}" alt="Новость" />
@@ -30,11 +30,22 @@
             </div>
 
             <div class="pagination-buttons">
-                <button class="prev-button">&#8592</button>
-                <button class="next-button">&#8594</button>
+                <button class="prev-button" onclick="navigate(-1)" {% if not page_obj.has_previous %}disabled{% endif %}>&#8592;</button>
+                <button class="next-button" onclick="navigate(1)" {% if not page_obj.has_next %}disabled{% endif %}>&#8594;</button>
             </div>
         {% else %}
             <p>Нет новостей на данный момент.</p>
         {% endif %}
     </div>
+
+    {% block scripts %}
+        <script>
+            function navigate(direction) {
+                // Получаем текущую страницу
+                const currentPage = new URLSearchParams(window.location.search).get('page') || 1;
+                const nextPage = parseInt(currentPage) + direction;
+                window.location.href = `?page=${nextPage}`;
+            }
+        </script>
+    {% endblock %}
 {% endblock %}

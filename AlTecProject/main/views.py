@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render
 from django.conf import settings
-
+from django.core.paginator import Paginator
 from .models import News
 import os
 
@@ -36,7 +36,10 @@ def write(request):
 
 def news(request):
     news_list = News.objects.order_by('-date_written')  # Сортировка по дате (новые сверху)
-    return render(request, 'main/news.html', {'news_list': news_list})
+    paginator = Paginator(news_list, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'main/news.html', {'page_obj': page_obj})
 
 
 def about(request):

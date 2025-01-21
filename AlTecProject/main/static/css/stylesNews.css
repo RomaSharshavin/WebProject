@@ -63,6 +63,10 @@
     justify-content: center;
     gap: 300px; /* Расстояние между кнопками */
     margin-top: 10px;
+    transform: translateX(-50%);
+    bottom: 95px;
+    left: 50%;
+    position: fixed;
 }
 
 /* Стили для кнопок */
