@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Панель администрирования и миграции 1.1">
-      <change afterPath="$PROJECT_DIR$/AlTecProject/main/static/images/iconNews.webm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/db.sqlite3" afterDir="false" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Новости 1.2&#10;Добавлены кнопки просмотра новостей">
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesNews.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesNews.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +109,7 @@
       <workItem from="1735287581475" duration="1291000" />
       <workItem from="1737374566611" duration="3704000" />
       <workItem from="1737386408608" duration="3090000" />
-      <workItem from="1737439906734" duration="6338000" />
+      <workItem from="1737439906734" duration="7282000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -358,7 +351,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737389242164</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Новости 1.1">
+      <option name="closed" value="true" />
+      <created>1737449552671</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1737449552671</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Новости 1.1&#10;Добавлены блоки новстей, настроено выгрузка из модели">
+      <option name="closed" value="true" />
+      <created>1737449592833</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1737449592833</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Новости 1.2&#10;Добавлены кнопки просмотра новостей">
+      <option name="closed" value="true" />
+      <created>1737450212111</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1737450212111</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,9 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлены информацинные блоки на страницу контакты" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="Добавлены картографические метки на странице контакты" />
     <MESSAGE value="Исправлено отображение страницы, изменена карта" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Добавлены файлы стилей и js код вынесен в отдельный файл" />
@@ -401,6 +415,9 @@
     <MESSAGE value="Добавлены подсказки на странице партнёры" />
     <MESSAGE value="Изменена разметка страницы &quot;О компании&quot; 1.1" />
     <MESSAGE value="Панель администрирования и миграции 1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Панель администрирования и миграции 1.1" />
+    <MESSAGE value="Новости 1.1" />
+    <MESSAGE value="Новости 1.1&#10;Добавлены блоки новстей, настроено выгрузка из модели" />
+    <MESSAGE value="Новости 1.2&#10;Добавлены кнопки просмотра новостей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Новости 1.2&#10;Добавлены кнопки просмотра новостей" />
   </component>
 </project>

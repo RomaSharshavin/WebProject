@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px; /* Отступы между блоками */
-    margin: 0 auto;
+    margin: 50px auto;
     align-items: center;
 }
 
@@ -15,7 +15,6 @@
     padding: 15px;
     border-radius: 8px;
     background-color: #73c5f5;
-    cursor: move;
     width: 1000px; /* Ширина блока */
     height: 90px; /* Высота блока */
 }
@@ -39,21 +38,45 @@
 
 /* Блок для текста */
 .news-content {
-    flex-grow: 1;
+    flex-grow: 0.5;
+    padding-top: 10px;
 }
-
+/* Заголовок */
 .news-content h2 {
-    margin: 0 0 10px;
-    font-size: 20px; /* Размер заголовка */
+    margin: 0 0 5px;
+    font-size: 22px;
 }
-
+/* текст */
 .news-content p {
-    margin: 0 0 10px;
-    font-size: 16px; /* Размер текста */
-    color: #555;
+    margin: 0 0 5px;
+    font-size: 12px;
+}
+/* текст для даты */
+.news-content small {
+    font-size: 14px;
+    color: #888;
 }
 
-.news-content small {
-    font-size: 14px; /* Размер текста для даты */
-    color: #888;
+/*Кнокпи управления*/
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 300px; /* Расстояние между кнопками */
+    margin-top: 10px;
+}
+
+/* Стили для кнопок */
+.pagination-buttons button {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #73c5f5;
+    color: black;
+    transition: background-color 0.5s ease;
+}
+
+.pagination-buttons button:hover {
+    background-color: #5fa3d7;
 }
