@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Оптимизация кода">
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/about.html" afterDir="false" />
-    </list>
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Замена логотипа" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -436,7 +434,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737527791567</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Замена логотипа">
+      <option name="closed" value="true" />
+      <created>1737530518831</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1737530518831</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +460,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлены файлы стилей и js код вынесен в отдельный файл" />
     <MESSAGE value="Добавлена связь модели с страницой &quot;Новости&quot;, настроено расположение файлов" />
     <MESSAGE value="Добавлены сертификаты на страницу им настроено изх увеличение" />
     <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
@@ -479,6 +484,7 @@
     <MESSAGE value="Новости 1.4.2&#10;Анимация смены цвета кнопок перехода" />
     <MESSAGE value="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний" />
     <MESSAGE value="Оптимизация кода" />
-    <option name="LAST_COMMIT_MESSAGE" value="Оптимизация кода" />
+    <MESSAGE value="Замена логотипа" />
+    <option name="LAST_COMMIT_MESSAGE" value="Замена логотипа" />
   </component>
 </project>
