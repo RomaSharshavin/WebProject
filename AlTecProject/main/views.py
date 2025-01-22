@@ -1,9 +1,6 @@
-from django.http import Http404
 from django.shortcuts import render
-from django.conf import settings
 from django.core.paginator import Paginator
 from .models import News
-import os
 
 
 def index(request):
