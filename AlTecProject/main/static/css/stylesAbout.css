@@ -1,23 +1,39 @@
+.title-text{
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
 .about-container {
-    width: 80%; /* Установите ширину контейнера */
+    width: 80%; /* ширина */
     padding: 20px;
     font-size: 20px;
     line-height: 1.9;
+    border: 2px solid #a9def5;
     border-radius: 15px;
     text-align: center;
-    background-color: #fff; /* Цвет фона */
-    box-shadow: none; /* Убираем тень */
-    margin: 20px auto; /* Центрируем контейнер */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
 }
 
+.about-container p {
+    margin: 0;
+}
+
+/* карусель */
 .scroll-container {
     position: relative;
     overflow: hidden;
-    border: none; /* Убираем рамку */
+    border: 2px solid #a9def5;
     border-radius: 15px;
-    width: 80%; /* Ширина такая же, как у about-container */
-    margin: 30px auto; /* Центрируем контейнер */
-    background-color: #EFFBFF; /* Цвет фона прокручиваемой области */
+    width: 80%;
+    margin: 30px auto;
+    background-color: #EFFBFF;
     padding: 10px 0;
 }
 
@@ -29,11 +45,22 @@
     color: #1b1b1b;
 }
 
+.scroll-content {
+    display: flex;
+    animation: scroll linear infinite;
+}
+
 .scroll-item img {
     width: 200px;
     height: 140px;
-    object-fit: initial; /* Измените на cover, если хотите сохранить пропорции */
+    object-fit: cover;
     margin-bottom: 5px;
-    border: 2px solid #000; /* Добавьте рамку к изображению */
-    border-radius: 15px; /* Закругление углов изображения */
+    border: 2px solid #000;
+    border-radius: 15px;
+}
+
+.scroll-item span {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
 }

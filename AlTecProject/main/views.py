@@ -35,7 +35,7 @@ def write(request):
 
 
 def news(request):
-    news_list = News.objects.order_by('-date_written')  # Сортировка по дате
+    news_list = News.objects.order_by('-date_written')  # Сортировка по датеё
     paginator = Paginator(news_list, 3)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

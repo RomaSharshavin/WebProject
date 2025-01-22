@@ -39,12 +39,7 @@
     {% compress js %}
         <script>
             const scrollContent = document.getElementById('scroll-content');
-            const scrollContainer = document.getElementById('scroll-container');
-            let isDragging = false; // Флаг, который отслеживает, перетаскивает ли пользователь
-            let startX; // Начальная позиция X при нажатии
-            let scrollLeft; // Текущее положение карусели по оси X
 
-            // Список компаний
             const companies = [
                 { img: '{% static "images/logo/rzd_dr_st_pos_rgb.webp" %}' },
                 { img: '{% static "images/logo/vodo.webp" %}' },
@@ -58,8 +53,7 @@
                 { img: '{% static "images/logo/ilim.webp" %}' }
             ];
 
-            // Функция для добавления компаний в прокрутку
-            function addCompanies() {
+             function addCompanies() {
                 companies.forEach(company => {
                     const item = document.createElement('div');
                     item.className = 'scroll-item';
@@ -68,11 +62,9 @@
                 });
             }
 
-            // Добавляем компании
             addCompanies();
 
-            // Дублируем элементы для бесшовной прокрутки
-            function duplicateItems() {
+             function duplicateItems() {
                 const items = Array.from(scrollContent.children);
                 items.forEach(item => {
                     const clone = item.cloneNode(true);
@@ -81,10 +73,8 @@
             }
 
             duplicateItems();
-
             const totalWidth = scrollContent.scrollWidth;
             const scrollDuration = totalWidth / 120;  // Скорость прокрутки
-
             // Анимация прокрутки
             document.styleSheets[0].insertRule(`
                 @keyframes scroll {
@@ -96,7 +86,6 @@
                     }
                 }
             `, 0);
-
             // Запуск анимации
             scrollContent.style.animation = `scroll ${scrollDuration}s linear infinite`;
         </script>
