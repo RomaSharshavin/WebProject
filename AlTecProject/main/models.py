@@ -11,8 +11,8 @@ class News(models.Model):
 
 
 class FAQ(models.Model):
-    question = models.CharField('Вопрос', max_length=100)
-    answer = models.CharField('Ответ', max_length=400)
+    question = models.CharField(max_length=100)
+    answer = models.CharField(max_length=400)
 
     def __str__(self):
         return self.question

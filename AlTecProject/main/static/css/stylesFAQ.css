@@ -6,33 +6,75 @@
     text-align: center;
     font-weight: 700;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.faq-description {
+    font-size: 20px;
+    text-align: center; /* Центрируем текст описания и кнопку */
+    margin: 15px 0; /* Обеспечиваем отступы сверху и снизу */
+}
+
+.ask-question-button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.ask-question-button:hover {
+    background-color: #357ABD;
+}
+
+.faq-layout {
+    display: flex;
+    justify-content: flex-start; /* Убираем центрирование контейнера */
+    margin: 20px;
 }
 
 .faq-container {
-    width: 80%;
-    margin: auto;
+    flex: 2; /* Устанавливаем ширину для списка вопросов */
+    margin-left: 20px; /* Отступ слева для контейнера */
 }
 
 .faq-item {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    margin-bottom: 10px; /* Отступ между вопросами */
+    border-radius: 5px; /* Скругленные углы */
+    padding: 10px; /* Внутренние отступы */
 }
 
 .faq-question {
     cursor: pointer;
+    font-size: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0; /* Убираем отступы для упрощения стиля */
 }
 
 .faq-answer {
-    display: none; /* Скрываем ответы по умолчанию */
+    display: none; /* Скрыто по умолчанию */
     margin-top: 10px;
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    color: #fff; /* Цвет текста в ответах */
+    opacity: 0; /* Начальная непрозрачность */
+    transform: translateY(-10px); /* Начальное смещение по оси Y */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Переход для анимации */
+}
+
+.faq-answer.show {
+    display: block; /* Блок для показа */
+    opacity: 1; /* Полная непрозрачность */
+    transform: translateY(0); /* Вернуться на свое место */
 }
 
 .arrow {
-    font-size: 18px;
+    font-size: 20px;
     transition: transform 0.2s;
 }

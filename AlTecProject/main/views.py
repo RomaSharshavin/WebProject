@@ -12,8 +12,8 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 
-def faq(request):
-    faqs = FAQ.objects.all()  # Получаем все вопросы и ответы
+def faq_view(request):
+    faqs = FAQ.objects.all()
     return render(request, 'main/faq.html', {'faqs': faqs})
 
 

@@ -3,7 +3,7 @@
 {% load compress %}
 
 {% block title %}
-FAQ
+    FAQ
 {% endblock %}
 
 {% block breadcrumb %}
@@ -16,16 +16,27 @@ FAQ
 
 {% block content %}
     <h5 class="faq-title">FAQ. Вопрос-Ответ</h5>
-    <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">
-                    <h6>{{ forloop.counter }}. {{ faq.question }}</h6>
-                    <span class="arrow">▶</span>
+    <div class="faq-layout" style="display: flex; margin: 20px;">
+        <div class="faq-description" style="flex: 1; text-align: center;">
+            <p>У вас есть вопрос?</p>
+            <p>Мы с радостью проконсультируем вас. Ответы на странице появляются после модерации.</p>
+            <a href="{% url 'write' %}" class="ask-question-button">Задать вопрос</a>
+        </div>
+        <div class="faq-container" style="flex: 2; margin-left: 20px;">
+            {% for faq in faqs %}
+                <div class="faq-item" tabindex="0" aria-expanded="false" style="background-color: #4A90E2; color: white; margin-bottom: 10px; border-radius: 5px; padding: 10px;">
+                    <div class="faq-question" onclick="toggleAnswer(this)" onkeydown="handleKeyPress(event, this)" style="display: flex; justify-content: space-between; align-items: center;">
+                        <h6 style="margin: 0;">{{ faq.question }}</h6>
+                        <span class="arrow">+</span>
+                    </div>
+                    <div class="faq-answer" aria-hidden="true" style="display: none; margin-top: 10px;">
+                        <div style="background-color: #f0f0f0; border-radius: 5px; padding: 10px; transition: max-height 0.5s ease-out; overflow: hidden;">
+                            <p style="margin: 0; color: #555;">{{ faq.answer }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-answer" style="display: none;">  <!-- Скрываем ответ по умолчанию -->
-                    <p>{{ faq.answer }}</p>
-                </div>
-            </div>
+            {% endfor %}
+        </div>
     </div>
 
     {% block scripts %}
@@ -33,14 +44,26 @@ FAQ
             function toggleAnswer(questionElement) {
                 const answerElement = questionElement.nextElementSibling;
                 const arrowElement = questionElement.querySelector('.arrow');
+                const isExpanded = questionElement.parentElement.getAttribute('aria-expanded') === 'true';
 
-                // Переключаем видимость ответа
-                if (answerElement.style.display === "block") {
-                    answerElement.style.display = "none";
-                    arrowElement.style.transform = "rotate(0deg)";
+                // Меняем значение aria-expanded
+                questionElement.parentElement.setAttribute('aria-expanded', !isExpanded);
+                answerElement.setAttribute('aria-hidden', isExpanded);
+
+                // Меняем текст стрелки
+                arrowElement.textContent = isExpanded ? '+' : '-';
+
+                // Устанавливаем классы для анимации
+                if (isExpanded) {
+                    answerElement.classList.remove('show'); // Убираем класс показа
+                    setTimeout(() => {
+                        answerElement.style.display = 'none'; // Скрываем контейнер
+                    }, 300); // Задержка, соответствующая времени анимации
                 } else {
-                    answerElement.style.display = "block";
-                    arrowElement.style.transform = "rotate(90deg)";
+                    answerElement.style.display = 'block'; // Показываем контейнер
+                    setTimeout(() => {
+                        answerElement.classList.add('show'); // Добавляем класс показа
+                    }, 0); // Задержка равна 0 для немедленной добавки класса
                 }
             }
         </script>
