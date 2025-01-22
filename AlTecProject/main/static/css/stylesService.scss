@@ -1,15 +1,4 @@
-{% extends 'main/base.html' %}
-{% load static %}
-
-{% block title %}
-Продукция
-{% endblock %}
-
-
-{% block links %}
-    <link rel="stylesheet" href="{% static 'css/stylesContact.css' %}">
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
     body {
         font-family: 'Ubuntu', sans-serif; /* Применяем шрифт ко всему документу */
@@ -25,16 +14,6 @@
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .partner-description {
-        font-size: 20px; /* Увеличенный размер заголовка */
-        margin: 10px 0 10px; /* Отступы со всех сторон */
-        text-align: center;
-        font-weight: 700;
-        color: #333; /* Цвет текста */
-
-
-    }
-
     .partners-container {
         display: flex;
         flex-wrap: wrap; /* Позволяет элементам переноситься */
@@ -47,7 +26,7 @@
         display: flex;
         flex-direction: column; /* Вертикальное расположение */
         align-items: center; /* Центрируем элементы */
-        max-width: 400px; /* Максимальная ширина для удобства */
+        max-width: 300px; /* Максимальная ширина для удобства */
         height: auto;
         margin: 10px; /* Отступы по бокам */
         text-align: center; /* Центрирование текста */
@@ -78,13 +57,12 @@
     }
 
     .partner img {
-        width: 200%; /* Уменьшаем ширину изображения */
+        width: 80%; /* Уменьшаем ширину изображения */
         height: auto; /* Высота авто для пропорций */
-        max-height: 190px; /* Максимальная высота */
+        max-height: 150px; /* Максимальная высота */
         object-fit: contain;
-        border-radius: 2px;
-        margin-bottom: 15px;
-        margin-top: 15px /* Увеличиваем отступ снизу */
+        border-radius: 8px;
+        margin-bottom: 15px; /* Увеличиваем отступ снизу */
     }
 
     .partner a {
@@ -100,40 +78,3 @@
         color: #003d7a; /* Темнее при наведении */
         text-decoration: underline; /* Подчеркивание при наведении */
     }
-
-</style>
-{% endblock %}
-
-{% block content %}
-    <h5 class="partners-title">Наша продукция</h5>
-    <div class="partners-container">
-        <div class="partner">
-                <div class="partner-description">
-                    Портальная автомойка T700 PRO
-                </div>
-                <img src="{% static 'images/products/product_1.webp' %}" alt="Партнер 1">
-                <div class="partner-description">
-                    ПОДРОБНЕЕ
-                </div>
-        </div>
-        <div class="partner">
-
-                <div class="partner-description">
-                    Портальная автомойка T700 JET
-                </div>
-                <img src="{% static 'images/products/product_2.webp' %}" alt="Партнер 2">
-                <div class="partner-description">
-                    ПОДРОБНЕЕ
-                </div>
-        </div>
-        <div class="partner">
-                <div class="partner-description">
-                    Портальная автомойка T700 TWIN
-                </div>
-                <img src="{% static 'images/products/product_3.webp' %}" alt="Партнер 2">
-                <div class="partner-description">
-                    ПОДРОБНЕЕ
-                </div>
-        </div>
-    </div>
-{% endblock %}
