@@ -53,7 +53,7 @@
 .scroll-item img {
     width: 200px;
     height: 140px;
-    object-fit: cover;
+    object-fit: initial;
     margin-bottom: 5px;
     border: 2px solid #000;
     border-radius: 15px;
