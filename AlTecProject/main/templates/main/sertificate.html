@@ -13,15 +13,16 @@
 {% endblock %}
 
 {% block content %}
+    <h5 class="certificate-title">Сертификаты</h5>
     <div class="certificate-container">
         <div class="certificate-item">
-            <img src="{% static 'images/sertificate1.webm' %}" alt="Сертификат 1" class="clickable-image" onclick="openModal(this)">
+            <img src="{% static 'images/sertificate1.webm' %}" alt="Сертификат 1" class="clickable-image image-animation" onclick="openModal(this)">
         </div>
         <div class="certificate-item">
-            <img src="{% static 'images/sertificate2.webm' %}" alt="Сертификат 2" class="clickable-image" onclick="openModal(this)">
+            <img src="{% static 'images/sertificate2.webm' %}" alt="Сертификат 2" class="clickable-image image-animation" onclick="openModal(this)">
         </div>
         <div class="certificate-item">
-            <img src="{% static 'images/sertificate3.webm' %}" alt="Сертификат 3" class="clickable-image" onclick="openModal(this)">
+            <img src="{% static 'images/sertificate3.webm' %}" alt="Сертификат 3" class="clickable-image image-animation" onclick="openModal(this)">
         </div>
     </div>
 
@@ -39,3 +40,4 @@
         <script src="{% static 'js/zoomPicture.js' %}" type="text/javascript"></script>
     {% endblock %}
 {% endblock %}
+

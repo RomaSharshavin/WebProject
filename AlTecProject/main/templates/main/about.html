@@ -13,16 +13,15 @@
 {% compress css %}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
     </style>
     <link rel="stylesheet" href="{% static 'css/stylesAbout.css' %}">
 {% endcompress %}
 {% endblock %}
 
 {% block content %}
-    <h5 class="title-text">О компании</h5>
+    <h5 class="title-text fade-in">О компании</h5>
 
-    <div class="about-container">
+    <div class="about-container fade-in">
         <p>ООО "Ал-Тек" является официальным представителем финской компании Tammermatic
             и поставляет, устанавливает и обслуживает автоматические мойки для легкового,
             грузового, пассажирского и железнодорожного транспорта. Поддержать моечное
@@ -53,10 +52,10 @@
                 { img: '{% static "images/logo/ilim.webp" %}' }
             ];
 
-             function addCompanies() {
+            function addCompanies() {
                 companies.forEach(company => {
                     const item = document.createElement('div');
-                    item.className = 'scroll-item';
+                    item.className = 'scroll-item fade-in'; // Добавляем класс fade-in
                     item.innerHTML = `<img src="${company.img}" alt="company logo">`;
                     scrollContent.appendChild(item);
                 });
@@ -64,7 +63,7 @@
 
             addCompanies();
 
-             function duplicateItems() {
+            function duplicateItems() {
                 const items = Array.from(scrollContent.children);
                 items.forEach(item => {
                     const clone = item.cloneNode(true);
@@ -74,7 +73,8 @@
 
             duplicateItems();
             const totalWidth = scrollContent.scrollWidth;
-            const scrollDuration = totalWidth / 120;  // Скорость прокрутки
+            const scrollDuration = totalWidth / 120; // Скорость прокручивания
+
             // Анимация прокрутки
             document.styleSheets[0].insertRule(`
                 @keyframes scroll {
@@ -92,3 +92,4 @@
     {% endcompress %}
     {% endblock %}
 {% endblock %}
+

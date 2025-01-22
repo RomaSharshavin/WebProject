@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Замена логотипа1">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Новости 1.4&#10;Добавлена анимация смены новостей">
+      <change beforePath="$PROJECT_DIR$/.idea/AlTec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AlTec.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_022_22_01_25_10_21__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_022_22_01_25_10_21__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2025_10_38_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_01_2025_10_38__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_01_2025_12_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_01_2025_12_50__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/images/logo/aksel.webp" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/images/logo/aksel.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesAbout.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesAbout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesContact.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesContact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesPartners.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesPartners.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSertificate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/sertificate.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/sertificate.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,26 +61,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.base.html.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Nastya/PycharmProjects/WebProject/AlTecProject/main/static/images/logo",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.base.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Roman/PycharmProjects/AlTec/AlTecProject/main/static/images/logo&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Nastya\PycharmProjects\WebProject\AlTecProject\main\static\images\logo" />
       <recent name="C:\Users\Roman\PycharmProjects\AlTec\AlTecProject\main\static\images\logo" />
       <recent name="C:\Users\Roman\PycharmProjects\AlTec\AlTecProject\main\static\images" />
     </key>
@@ -79,7 +91,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
       </set>
     </attachedChunks>
   </component>
@@ -124,7 +136,6 @@
       <workItem from="1735287581475" duration="1291000" />
       <workItem from="1737374566611" duration="3704000" />
       <workItem from="1737386408608" duration="2665000" />
-      <workItem from="1737525216812" duration="2785000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -382,79 +393,7 @@
       <option name="project" value="LOCAL" />
       <updated>1737455783569</updated>
     </task>
-    <task id="LOCAL-00033" summary="Новости 1.4.1&#10;Добавлено отключение кнопок перехода">
-      <option name="closed" value="true" />
-      <created>1737456169402</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1737456169402</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Новости 1.4.2&#10;Анимация смены цвета кнопок перехода">
-      <option name="closed" value="true" />
-      <created>1737525848676</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1737525848676</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Новости 1.4.2&#10;Анимация смены цвета кнопок перехода">
-      <option name="closed" value="true" />
-      <created>1737525893645</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1737525893645</updated>
-    </task>
-    <task id="LOCAL-00036" summary="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний">
-      <option name="closed" value="true" />
-      <created>1737527353215</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1737527353215</updated>
-    </task>
-    <task id="LOCAL-00037" summary="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний">
-      <option name="closed" value="true" />
-      <created>1737527682385</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1737527682385</updated>
-    </task>
-    <task id="LOCAL-00038" summary="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний">
-      <option name="closed" value="true" />
-      <created>1737527709983</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1737527709983</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Оптимизация кода">
-      <option name="closed" value="true" />
-      <created>1737527791567</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1737527791567</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Замена логотипа">
-      <option name="closed" value="true" />
-      <created>1737530518831</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1737530518831</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Замена логотипа1">
-      <option name="closed" value="true" />
-      <created>1737531177409</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1737531177409</updated>
-    </task>
-    <option name="localTasksCounter" value="42" />
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,6 +411,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Добавлены картографические метки на странице контакты" />
+    <MESSAGE value="Исправлено отображение страницы, изменена карта" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="Добавлены файлы стилей и js код вынесен в отдельный файл" />
+    <MESSAGE value="Добавлена связь модели с страницой &quot;Новости&quot;, настроено расположение файлов" />
     <MESSAGE value="Добавлены сертификаты на страницу им настроено изх увеличение" />
     <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
@@ -491,12 +436,6 @@
     <MESSAGE value="Изменена разметка страницы &quot;О компании&quot; 1.1" />
     <MESSAGE value="Новости 1.3&#10;Настроено перемещение по ностям через кнопки" />
     <MESSAGE value="Новости 1.4&#10;Добавлена анимация смены новостей" />
-    <MESSAGE value="Новости 1.4.1&#10;Добавлено отключение кнопок перехода" />
-    <MESSAGE value="Новости 1.4.2&#10;Анимация смены цвета кнопок перехода" />
-    <MESSAGE value="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний" />
-    <MESSAGE value="Оптимизация кода" />
-    <MESSAGE value="Замена логотипа" />
-    <MESSAGE value="Замена логотипа1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Замена логотипа1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Новости 1.4&#10;Добавлена анимация смены новостей" />
   </component>
 </project>

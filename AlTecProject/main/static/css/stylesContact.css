@@ -1,9 +1,12 @@
 .contact-title {
-        font-size: 30px; /* Увеличенный размер заголовка */
-        margin: 30px 0 10px; /* Отступы со всех сторон */
-        text-align: center;
-        font-weight: 700;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; /* Уменьшен отступ снизу для заголовка */
 }
 
 /* основной контейнер информации */
@@ -33,18 +36,23 @@
 /* flex-контейнер для распределения элементов */
 .flex-container {
     display: flex;
+    flex-wrap: wrap; /* Добавлено для обеспечения адаптивности */
     justify-content: space-between;
+    padding: 0 10px; /* Добавлен горизонтальный отступ */
+    margin-top: 10px; /* Добавлен отступ сверху для контейнера */
 }
 
 /* flex-элемент с равным весом */
 .flex-item {
     flex: 1;
+    max-width: calc(50% - 20px); /* Обеспечиваем, чтобы элементы не выходили за пределы экрана */
+    margin-bottom: 20px; /* Добавлен отступ снизу для элементов */
 }
 
 /* стили для карты */
 .map {
-    margin-top: 50px;
-    width: 500px;
+    margin-top: 10px; /* Уменьшен отступ сверху для карты */
+    width: 100%; /* Теперь занимает 100% ширины родителя */
     height: 450px;
     margin-right: 40px;
     flex-shrink: 0;
