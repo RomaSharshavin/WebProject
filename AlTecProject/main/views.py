@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import News
+from .models import FAQ
 
 
 def index(request):
@@ -12,7 +13,8 @@ def contact(request):
 
 
 def faq(request):
-    return render(request, 'main/faq.html')
+    faqs = FAQ.objects.all()  # Получаем все вопросы и ответы
+    return render(request, 'main/faq.html', {'faqs': faqs})
 
 
 def partners(request):

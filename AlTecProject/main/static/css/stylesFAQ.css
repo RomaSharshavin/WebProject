@@ -1,0 +1,38 @@
+.faq-title {
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-container {
+    width: 80%;
+    margin: auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.faq-question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none; /* Скрываем ответы по умолчанию */
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.arrow {
+    font-size: 18px;
+    transition: transform 0.2s;
+}

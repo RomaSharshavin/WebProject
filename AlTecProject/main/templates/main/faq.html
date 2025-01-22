@@ -1,9 +1,48 @@
 {% extends 'main/base.html' %}
+{% load static %}
+{% load compress %}
 
 {% block title %}
 FAQ
 {% endblock %}
 
-{% block content %}
+{% block breadcrumb %}
+{% endblock %}
 
+{% block links %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="{% static 'css/stylesFAQ.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h5 class="faq-title">FAQ. Вопрос-Ответ</h5>
+    <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <h6>{{ forloop.counter }}. {{ faq.question }}</h6>
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="faq-answer" style="display: none;">  <!-- Скрываем ответ по умолчанию -->
+                    <p>{{ faq.answer }}</p>
+                </div>
+            </div>
+    </div>
+
+    {% block scripts %}
+        <script>
+            function toggleAnswer(questionElement) {
+                const answerElement = questionElement.nextElementSibling;
+                const arrowElement = questionElement.querySelector('.arrow');
+
+                // Переключаем видимость ответа
+                if (answerElement.style.display === "block") {
+                    answerElement.style.display = "none";
+                    arrowElement.style.transform = "rotate(0deg)";
+                } else {
+                    answerElement.style.display = "block";
+                    arrowElement.style.transform = "rotate(90deg)";
+                }
+            }
+        </script>
+    {% endblock %}
 {% endblock %}

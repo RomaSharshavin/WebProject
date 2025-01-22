@@ -4,11 +4,12 @@ from .views import partners_page
 from .views import views_about
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import faq
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('contact/', views.contact, name='contact'),
-    path('faq/', views.faq, name='faq'),
+    path('faq/', faq, name='faq'),
     path('partners/', partners_page, name='partners'),
     path('service/', views.service, name='service'),
     path('news/', views.news, name='news'),
