@@ -55,17 +55,19 @@
                     item.classList.remove('visible'); // Убираем класс видимости
                 });
 
-                // Обновляем новости после анимации исчезновения
-                setTimeout(() => {
-                    // Обновление текущей страницы и загрузка новых новостей
-                    window.location.href = `?page=${nextPage}`;
-                }, 500); // Задержка для завершения анимации
+                // Анимация смены цвета для кнопок
+                const buttons = document.querySelectorAll('.pagination-buttons button');
+                buttons.forEach(button => {
+                    button.classList.add('color-transition'); // Добавляем класс анимации
+                });
 
-                // Плавная анимация появления новых новостей
-                // (Эта часть будет работать автоматически, так как новые новости будут добавлены с классом 'visible')
+                // Переход к новой странице после завершения анимации
+                setTimeout(() => {
+                    window.location.href = `?page=${nextPage}`;
+                }, 500); // Задержка в 500 мс (время анимации)
             }
 
-            // После того как новость загружена, применяем анимацию появления
+            // Анимация появления новостей при загрузке
             window.onload = () => {
                 const newsItems = document.querySelectorAll('.news-item');
                 newsItems.forEach(item => {
