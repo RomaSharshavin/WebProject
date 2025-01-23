@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import News
 from .models import FAQ
+from django import template
 
 from django.core.mail import send_mail
 from django.http import HttpResponse
-
 
 def index(request):
     return render(request, 'main/index.html')
@@ -17,7 +17,15 @@ def contact(request):
 
 def faq_view(request):
     faqs = FAQ.objects.all()
-    return render(request, 'main/faq.html', {'faqs': faqs})
+    paginator = Paginator(faqs, 5)  # 5 questions per page
+    page_number = request.GET.get('page')
+    faqs_page = paginator.get_page(page_number)
+
+    # Create a list of page numbers
+    page_numbers = list(range(1, paginator.num_pages + 1))
+
+    return render(request, 'main/faq.html',
+                  {'faqs': faqs_page, 'page_numbers': page_numbers, 'total_faqs': paginator.count})
 
 
 def partners(request):

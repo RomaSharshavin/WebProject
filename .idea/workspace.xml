@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Создание страницы FAQ (разметка)" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="1.1 Дополнение страницы &quot;О компании&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -386,7 +386,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737561888182</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="0.1 Дополнение страницы &quot;О компании&quot;. Добавление текста и картинок и их смена">
+      <option name="closed" value="true" />
+      <created>1737631312714</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1737631312714</updated>
+    </task>
+    <task id="LOCAL-00035" summary="1.1 Дополнение страницы &quot;О компании&quot;">
+      <option name="closed" value="true" />
+      <created>1737636918381</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1737636918381</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,8 +420,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлены картографические метки на странице контакты" />
-    <MESSAGE value="Исправлено отображение страницы, изменена карта" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Добавлены файлы стилей и js код вынесен в отдельный файл" />
     <MESSAGE value="Добавлена связь модели с страницой &quot;Новости&quot;, настроено расположение файлов" />
@@ -429,6 +443,8 @@
     <MESSAGE value="Новости 1.3&#10;Настроено перемещение по ностям через кнопки" />
     <MESSAGE value="Новости 1.4&#10;Добавлена анимация смены новостей" />
     <MESSAGE value="Создание страницы FAQ (разметка)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание страницы FAQ (разметка)" />
+    <MESSAGE value="0.1 Дополнение страницы &quot;О компании&quot;. Добавление текста и картинок и их смена" />
+    <MESSAGE value="1.1 Дополнение страницы &quot;О компании&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1 Дополнение страницы &quot;О компании&quot;" />
   </component>
 </project>

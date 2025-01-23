@@ -19,12 +19,12 @@
     <div class="faq-layout" style="display: flex; margin: 20px;">
         <div class="faq-description" style="flex: 1; text-align: center;">
             <p>У вас есть вопрос?</p>
-            <p>Мы с радостью проконсультируем вас. Ответы на странице появляются после модерации.</p>
+            <p>Мы с радостью проконсультируем вас! Ответы на странице появляются после модерации.</p>
             <a href="{% url 'write' %}" class="ask-question-button">Задать вопрос</a>
         </div>
-        <div class="faq-container" style="flex: 2; margin-left: 20px;">
-            {% for faq in faqs %}
-                <div class="faq-item" tabindex="0" aria-expanded="false" style="background-color: #4A90E2; color: white; margin-bottom: 10px; border-radius: 5px; padding: 10px;">
+        <div class="faq-container" id="faqContainer" style="flex: 2; margin-left: 20px;">
+            {% for faq in faqs|slice:":7" %}
+                <div class="faq-item" tabindex="0" aria-expanded="false" style="background-color: #a8d9ff; color: #000000;">
                     <div class="faq-question" onclick="toggleAnswer(this)" onkeydown="handleKeyPress(event, this)" style="display: flex; justify-content: space-between; align-items: center;">
                         <h6 style="margin: 0;">{{ faq.question }}</h6>
                         <span class="arrow">+</span>
@@ -39,6 +39,20 @@
         </div>
     </div>
 
+    <div class="pagination" style="text-align: center;">
+        {% for num in page_numbers %}
+            <span class="page-number" onclick="loadPage({{ num }})" class="circle">{{ num }}</span>
+        {% endfor %}
+    </div>
+
+    <div id="faqModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h6 id="modalQuestion" style="font-weight: bold;"></h6>
+            <p id="modalAnswer"></p>
+        </div>
+    </div>
+
     {% block scripts %}
         <script>
             function toggleAnswer(questionElement) {
@@ -46,26 +60,55 @@
                 const arrowElement = questionElement.querySelector('.arrow');
                 const isExpanded = questionElement.parentElement.getAttribute('aria-expanded') === 'true';
 
-                // Меняем значение aria-expanded
-                questionElement.parentElement.setAttribute('aria-expanded', !isExpanded);
-                answerElement.setAttribute('aria-hidden', isExpanded);
+                const modalQuestion = document.getElementById("modalQuestion");
+                const modalAnswer = document.getElementById("modalAnswer");
 
-                // Меняем текст стрелки
-                arrowElement.textContent = isExpanded ? '+' : '-';
+                modalQuestion.textContent = questionElement.querySelector('h6').textContent;
+                modalAnswer.textContent = isExpanded ? '' : answerElement.querySelector('p').textContent;
 
-                // Устанавливаем классы для анимации
                 if (isExpanded) {
-                    answerElement.classList.remove('show'); // Убираем класс показа
-                    setTimeout(() => {
-                        answerElement.style.display = 'none'; // Скрываем контейнер
-                    }, 300); // Задержка, соответствующая времени анимации
+                    closeModal();
+                    arrowElement.textContent = '+';
                 } else {
-                    answerElement.style.display = 'block'; // Показываем контейнер
-                    setTimeout(() => {
-                        answerElement.classList.add('show'); // Добавляем класс показа
-                    }, 0); // Задержка равна 0 для немедленной добавки класса
+                    document.getElementById("faqModal").style.display = "block";
+                }
+
+                questionElement.parentElement.setAttribute('aria-expanded', !isExpanded);
+                arrowElement.textContent = isExpanded ? '+' : '-';
+            }
+
+            function closeModal() {
+                document.getElementById("faqModal").style.display = "none";
+                const faqQuestions = document.querySelectorAll('.faq-question');
+                faqQuestions.forEach(question => {
+                    question.querySelector('.arrow').textContent = '+';
+                });
+            }
+
+            document.querySelector('.close').onclick = function() {
+                closeModal();
+            }
+
+            window.onclick = function(event) {
+                const modal = document.getElementById("faqModal");
+                if (event.target === modal) {
+                    closeModal();
                 }
             }
+
+            function loadPage(pageNumber) {
+                const url = `{% url 'faq' %}?page=` + pageNumber; // Измените на ваш URL.
+                window.location.href = url; // Переход на новую страницу.
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const faqItems = document.querySelectorAll('.faq-item');
+                faqItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('visible'); // Добавляем класс для анимации появления
+                    }, index * 100); // Задержка между элементами
+                });
+            });
         </script>
     {% endblock %}
 {% endblock %}
