@@ -3,6 +3,9 @@ from django.core.paginator import Paginator
 from .models import News
 from .models import FAQ
 
+from django.core.mail import send_mail
+from django.http import HttpResponse
+
 
 def index(request):
     return render(request, 'main/index.html')
@@ -30,6 +33,25 @@ def sertificate(request):
 
 
 def write(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        question = request.POST.get('question')
+
+        message = f"Имя: {name}\nТелефон: {phone}\nEmail: {email}\nВопрос: {question}"
+
+        try:
+            send_mail(
+                subject="Новое сообщение с сайта",
+                message=message,
+                from_email='your_email@example.com',  # Ваш email
+                recipient_list=['recipient_email@example.com'],  # Кому отправить
+                fail_silently=False,
+            )
+        except Exception as e:
+            return HttpResponse(f"Ошибка отправки сообщения: {e}")
+
     return render(request, 'main/write.html')
 
 
