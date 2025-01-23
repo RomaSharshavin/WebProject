@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Изменение настроек проекта для отправки сообщения на почту" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Создание запроса на отправку данных формы на почту">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/write.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -460,7 +464,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737612853720</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Создание запроса на отправку данных формы на почту">
+      <option name="closed" value="true" />
+      <created>1737613425331</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1737613425331</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
     <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
     <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
@@ -503,6 +514,7 @@
     <MESSAGE value="Замена логотипа" />
     <MESSAGE value="Замена логотипа1" />
     <MESSAGE value="Изменение настроек проекта для отправки сообщения на почту" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменение настроек проекта для отправки сообщения на почту" />
+    <MESSAGE value="Создание запроса на отправку данных формы на почту" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создание запроса на отправку данных формы на почту" />
   </component>
 </project>
