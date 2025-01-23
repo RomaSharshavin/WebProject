@@ -11,8 +11,8 @@
 
 .faq-description {
     font-size: 20px;
-    text-align: center; /* Центрируем текст описания и кнопку */
-    margin: 15px 0; /* Обеспечиваем отступы сверху и снизу */
+    text-align: center;
+    margin: 15px 0; /* отступы */
 }
 
 .ask-question-button {
@@ -25,7 +25,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 16px;
-    text-decoration: none; /* Убираем подчеркивание */
+    text-decoration: none;
 }
 
 .ask-question-button:hover {
@@ -34,19 +34,19 @@
 
 .faq-layout {
     display: flex;
-    justify-content: flex-start; /* Убираем центрирование контейнера */
+    justify-content: flex-start;
     margin: 20px;
 }
 
 .faq-container {
-    flex: 2; /* Устанавливаем ширину для списка вопросов */
+    flex: 2; /* ширина для списка вопросов */
     margin-left: 20px; /* Отступ слева для контейнера */
 }
 
 .faq-item {
     margin-bottom: 10px; /* Отступ между вопросами */
-    border-radius: 5px; /* Скругленные углы */
-    padding: 10px; /* Внутренние отступы */
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .faq-question {
@@ -63,15 +63,15 @@
     margin-top: 10px;
     font-size: 16px;
     color: #fff; /* Цвет текста в ответах */
-    opacity: 0; /* Начальная непрозрачность */
-    transform: translateY(-10px); /* Начальное смещение по оси Y */
+    opacity: 0;
+    transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease; /* Переход для анимации */
 }
 
 .faq-answer.show {
-    display: block; /* Блок для показа */
-    opacity: 1; /* Полная непрозрачность */
-    transform: translateY(0); /* Вернуться на свое место */
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .arrow {
