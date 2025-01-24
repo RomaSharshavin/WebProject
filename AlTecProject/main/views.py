@@ -21,35 +21,15 @@ from django.core.paginator import Paginator
 def faq_view(request):
     faqs = FAQ.objects.all()  # Получаем все записи FAQ
     paginator = Paginator(faqs, 5)  # 5 на страницу
-    current_page = request.GET.get('page', 1)
+    current_page = int(request.GET.get('page', 1))  # Преобразуем в целое число
     page_obj = paginator.get_page(current_page)
 
     total_pages = paginator.num_pages
 
-    # Пагинация: формируем список страниц для отображения
-    page_numbers = []
-    if total_pages <= 3:
-        page_numbers = list(range(1, total_pages + 1))
-    elif total_pages == 4:
-        page_numbers = [1, 2, 3, 4]
-    else:
-        page_numbers.append(1)  # Всегда добавляем первую страницу
-        if current_page > 3:
-            page_numbers.append("...")
-        if current_page > 1:
-            page_numbers.append(current_page - 1)
-        page_numbers.append(current_page)
-        if current_page < total_pages:
-            page_numbers.append(current_page + 1)
-        if current_page < total_pages - 2:
-            page_numbers.append("...")
-        page_numbers.append(total_pages)  # И последнюю страницу
-
     return render(request, 'main/faq.html', {
         'faqs': page_obj,
-        'page_numbers': page_numbers,
         'total_pages': total_pages,
-        'current_page': page_obj.number,
+        'current_page': current_page,  # Отправляем как целое
     })
 
 def partners(request):

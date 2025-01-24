@@ -41,15 +41,16 @@
 
     <div class="pagination" style="text-align: center;">
         {% if total_pages > 1 %}
-            {% for num in page_numbers %}
-                {% if num == current_page %}
-                    <span class="page-number" style="background-color: #357ABD; color: #fff;">{{ num }}</span>
-                {% elif num == "..." %}
-                    <span>...</span>
-                {% else %}
-                    <span class="page-number" onclick="loadPage({{ num }})">{{ num }}</span>
-                {% endif %}
-            {% endfor %}
+            <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>  <!-- Кнопка стрелка назад -->
+            <span class="page-number" onclick="loadPage(1)" {% if current_page == 1 %}style="font-weight: bold;"{% endif %}>1</span>  <!-- Кнопка первая страница -->
+
+            {% if total_pages > 3 %}
+                <span>...</span>  <!-- Точки -->
+            {% endif %}
+
+            <span class="page-number" onclick="loadPage({{ total_pages }})" {% if current_page == total_pages %}style="font-weight: bold;"{% endif %}>{{ total_pages }}</span>  <!-- Кнопка последняя страница -->
+
+            <span class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>&gt;</span>  <!-- Кнопка стрелка вперед -->
         {% endif %}
     </div>
 
