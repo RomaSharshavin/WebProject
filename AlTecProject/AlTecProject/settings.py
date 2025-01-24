@@ -142,10 +142,3 @@ RECAPTCHA_PUBLIC_KEY = '6LcZYV4qAAAAAP0xhXFtToLZBnJU1wFAwjKWpIEJ'
 RECAPTCHA_DEFAULT_ACTION = 'generic'
 RECAPTCHA_SCORE_THRESHOLD = 0.5
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'sharshavin.roma@gmail.com'
-EMAIL_HOST_PASSWORD = 'mfoq haoi hzxl wnzz'
-
