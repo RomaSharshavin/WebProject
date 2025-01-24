@@ -15,7 +15,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 30px;
     max-width: 700px;
-    margin: 30px auto;
+    margin: 20px auto;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s forwards;
@@ -35,7 +35,7 @@
 
 /* Стили для групп полей ввода */
 .form-group {
-    margin-bottom: 3px;
+    margin-bottom: 15px; /* Увеличил отступ для лучшего визуального разделения */
 }
 
 /* Стили для меток полей ввода */
@@ -83,6 +83,9 @@ textarea {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 16px;
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
 }
 
 /* Эффект изменения цвета фона кнопки при наведении */
@@ -99,7 +102,24 @@ textarea {
 /* Стили для элементов внутри флекс-группы */
 .flex-item {
     flex: 1;
-    margin-right: 10px;
+    margin-right: 10px; /* Отступ между элементами */
 }
 
+/* Убираем отступ у последнего элемента */
+.flex-item:last-child {
+    margin-right: 0;
+}
+
+/* Адаптивное поведение для меньших экранов */
+@media (max-width: 600px) {
+    .flex-group {
+        flex-direction: column; /* Вертикальное расположение на маленьких экранах */
+    }
+}
+
+.captcha-container {
+    display: flex; /* Используем Flexbox */
+    justify-content: center; /* Центрируем по горизонтали */
+    margin: 20px 0; /* Отступ сверху и снизу */
+}
 

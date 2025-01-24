@@ -3,7 +3,8 @@ from django.core.paginator import Paginator
 from .models import News
 from .models import FAQ
 from django import template
-
+import requests
+from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.http import HttpResponse
 
@@ -47,6 +48,30 @@ def sertificate(request):
 def write(request):
     return render(request, 'main/write.html')
 
+def sendEmail(request):
+    if request.method == 'POST':
+        # Получите данные из формы
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        question = request.POST['question']
+        recaptcha_response = request.POST['g-recaptcha-response']
+
+        # Проверка reCAPTCHA
+        secret_key = '6LeeccIqAAAAANIAHfpRG9Hz4UKUlkVRked0oruU'  # Замените своим Secret Key
+        data = {
+            'secret': secret_key,
+            'response': recaptcha_response
+        }
+        response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = response.json()
+
+        if result.get('success'):
+            # Здесь ваш код для отправки email...
+            return JsonResponse({'status': 'success', 'message': 'Сообщение успешно отправлено!'})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Проверка reCAPTCHA не пройдена!'})
+    return JsonResponse({'status': 'error', 'message': 'Некорректный запрос!'})
 
 def news(request):
     news_list = News.objects.order_by('-date_written')  # Сортировка по датеё
