@@ -35,7 +35,7 @@
             <textarea id="question" name="question" placeholder="Введите ваш вопрос" required></textarea>
         </div>
 
-        <button type="submit" class="send-button">Отправить</button>
+        <button type="submit" class="send-button" id="sendButton">Отправить</button>
     </form>
 </div>
 
@@ -52,7 +52,12 @@
         function sendEmail(event) {
             event.preventDefault();
 
+            // Получаем форму и кнопку отправки
             const form = event.target;
+            const sendButton = document.getElementById('sendButton');
+
+            // Блокируем кнопку, чтобы избежать множественных отправок
+            sendButton.disabled = true;
 
             const formData = {
                 name: form.elements["name"].value,
@@ -61,15 +66,21 @@
                 message: form.elements["question"].value,
             };
 
-
+            // Отправка письма через EmailJS
             emailjs.send("service_ff5uksc", "template_qo1cyv8", formData)
                 .then(response => {
+                    // Уведомление об успешной отправке
                     alert("Сообщение успешно отправлено!");
+                    // Сброс формы
                     form.reset();
                 })
                 .catch(error => {
                     console.error("Ошибка при отправке:", error);
                     alert("Не удалось отправить сообщение. Попробуйте позже.");
+                })
+                .finally(() => {
+                    // Разблокируем кнопку, чтобы пользователь мог отправить новое сообщение
+                    sendButton.disabled = false;
                 });
         }
     </script>
