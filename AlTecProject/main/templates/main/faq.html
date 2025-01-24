@@ -40,9 +40,17 @@
     </div>
 
     <div class="pagination" style="text-align: center;">
-        {% for num in page_numbers %}
-            <span class="page-number" onclick="loadPage({{ num }})" class="circle">{{ num }}</span>
-        {% endfor %}
+        {% if total_pages > 1 %}
+            {% for num in page_numbers %}
+                {% if num == current_page %}
+                    <span class="page-number" style="background-color: #357ABD; color: #fff;">{{ num }}</span>
+                {% elif num == "..." %}
+                    <span>...</span>
+                {% else %}
+                    <span class="page-number" onclick="loadPage({{ num }})">{{ num }}</span>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     </div>
 
     <div id="faqModal" class="modal" style="display: none;">
