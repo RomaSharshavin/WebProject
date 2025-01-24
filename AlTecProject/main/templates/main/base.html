@@ -29,9 +29,33 @@
             </nav>
 
         </div>
+
+        <div class="breadcrumb-container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная</a></li>
+                    {% if request.path == '/partners/' %}
+                        <li class="breadcrumb-item active" aria-current="page">Партнёры</li>
+                    {% elif request.path == '/service/' %}
+                        <li class="breadcrumb-item active" aria-current="page">Продукция</li>
+                    {% elif request.path == '/sertificate/' %}
+                        <li class="breadcrumb-item active" aria-current="page">Сертификаты</li>
+                    {% elif request.path == '/news/' %}
+                        <li class="breadcrumb-item active" aria-current="page">Новости</li>
+                    {% elif request.path == '/about/' %}
+                    <li class="breadcrumb-item active" aria-current="page">О компании</li>
+                    {% elif request.path == '/contact/' %}
+                        <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+                    {% elif request.path == '/write/' %}
+                        <li class="breadcrumb-item active" aria-current="page">Написать нам</li>
+                    {% elif request.path == '/faq/' %}
+                        <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                    {% endif %}
+                </ol>
+            </nav>
+        </div>
     </header>
 
-    {% block breadcrumb %}{% endblock %}
 
     {% block content %}{% endblock %}
 

@@ -91,3 +91,16 @@ img {
         transform: translateY(0);
     }
 }
+
+/* хлебная крошка */
+.breadcrumb-container {
+    margin-top: -28px;  /* отступ сверху */
+    margin-bottom: -10px;  /* отступ снизу */
+}
+
+.breadcrumb {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
