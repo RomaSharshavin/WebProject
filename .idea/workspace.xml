@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добален поисковик по сайту">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Поисковик 1.2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -467,7 +464,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737789951533</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Поисковик 1.2">
+      <option name="closed" value="true" />
+      <created>1737791117986</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1737791117986</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
     <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
     <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
     <MESSAGE value="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
@@ -510,6 +514,7 @@
     <MESSAGE value="Настройка одноразовой отпрвки формы" />
     <MESSAGE value="Настройка одноразовой отправки формы" />
     <MESSAGE value="Добален поисковик по сайту" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добален поисковик по сайту" />
+    <MESSAGE value="Поисковик 1.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поисковик 1.2" />
   </component>
 </project>
