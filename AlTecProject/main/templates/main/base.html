@@ -22,14 +22,14 @@
                 <img src="{% static 'images/logo.webm' %}" alt="Лого" style="height: 70px; user-select: none;">
             </a>
 
-            <div class="d1">
-              <form>
-                  <input type="text" placeholder="Искать здесь...">
-                  <button type="submit"></button>
-              </form>
-            </div>
-
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <div class="d1">
+                  <form>
+                      <input type="text" placeholder="Искать здесь...">
+                      <button type="submit"></button>
+                  </form>
+                </div>
+
                 <a class="bubbly-button me-3 nav-link {% if request.path == '/partners/' %}active{% endif %}" href="{% url 'partners' %}">Партнёры</a>
                 <a class="me-3 nav-link {% if request.path == '/service/' %}active{% endif %}" href="{% url 'service' %}">Продукция</a>
                 <a class="me-3 nav-link {% if request.path == '/sertificate/' %}active{% endif %}" href="{% url 'sertificate' %}">Сертификаты</a>
