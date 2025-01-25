@@ -7,6 +7,7 @@ import requests
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.http import HttpResponse
+from django.core.paginator import Paginator
 
 def index(request):
     return render(request, 'main/index.html')
@@ -14,9 +15,6 @@ def index(request):
 
 def contact(request):
     return render(request, 'main/contact.html')
-
-
-from django.core.paginator import Paginator
 
 
 def faq_view(request):
