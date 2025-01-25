@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <link rel="stylesheet" href="{% static 'css/animateButtonLink.css' %}">
-
     {% block links %} {% endblock %}
 
 </head>
@@ -21,6 +21,14 @@
             <a href="{% url 'index' %}" class="d-flex align-items-center text-decoration-none">
                 <img src="{% static 'images/logo.webm' %}" alt="Лого" style="height: 70px; user-select: none;">
             </a>
+
+            <div class="d1">
+              <form>
+                  <input type="text" placeholder="Искать здесь...">
+                  <button type="submit"></button>
+              </form>
+            </div>
+
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
                 <a class="bubbly-button me-3 nav-link {% if request.path == '/partners/' %}active{% endif %}" href="{% url 'partners' %}">Партнёры</a>
                 <a class="me-3 nav-link {% if request.path == '/service/' %}active{% endif %}" href="{% url 'service' %}">Продукция</a>
