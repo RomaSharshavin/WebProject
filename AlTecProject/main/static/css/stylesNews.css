@@ -1,3 +1,14 @@
+.news-title {
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
 /* Контейнер для всех новостей */
 #news-container {
     display: flex;

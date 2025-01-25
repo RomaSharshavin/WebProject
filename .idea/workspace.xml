@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Окончательная версия навигационной панеле страницы faq">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавление captcha в страницу Написать нам">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesWrite.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesWrite.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/write.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesNews.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesNews.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -446,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737741736501</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Добавление captcha в страницу Написать нам">
+      <option name="closed" value="true" />
+      <created>1737748365490</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1737748365490</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
     <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
     <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
@@ -489,6 +495,7 @@
     <MESSAGE value="Правильная настройка навигации страницы faq" />
     <MESSAGE value="Правка страницы Написать нам (добавление заголовка)" />
     <MESSAGE value="Окончательная версия навигационной панеле страницы faq" />
-    <option name="LAST_COMMIT_MESSAGE" value="Окончательная версия навигационной панеле страницы faq" />
+    <MESSAGE value="Добавление captcha в страницу Написать нам" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление captcha в страницу Написать нам" />
   </component>
 </project>

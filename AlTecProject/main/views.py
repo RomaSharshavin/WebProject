@@ -58,7 +58,7 @@ def sendEmail(request):
         recaptcha_response = request.POST['g-recaptcha-response']
 
         # Проверка reCAPTCHA
-        secret_key = '6LeeccIqAAAAANIAHfpRG9Hz4UKUlkVRked0oruU'  # Замените своим Secret Key
+        secret_key = '6LeeccIqAAAAANIAHfpRG9Hz4UKUlkVRked0oruU'
         data = {
             'secret': secret_key,
             'response': recaptcha_response
