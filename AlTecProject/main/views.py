@@ -7,6 +7,7 @@ import requests
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.http import HttpResponse
+from django.core.paginator import Paginator
 
 def index(request):
     return render(request, 'main/index.html')
@@ -14,9 +15,6 @@ def index(request):
 
 def contact(request):
     return render(request, 'main/contact.html')
-
-
-from django.core.paginator import Paginator
 
 
 def faq_view(request):
@@ -58,7 +56,7 @@ def sendEmail(request):
         recaptcha_response = request.POST['g-recaptcha-response']
 
         # Проверка reCAPTCHA
-        secret_key = '6LeeccIqAAAAANIAHfpRG9Hz4UKUlkVRked0oruU'  # Замените своим Secret Key
+        secret_key = '6LeeccIqAAAAANIAHfpRG9Hz4UKUlkVRked0oruU'
         data = {
             'secret': secret_key,
             'response': recaptcha_response
