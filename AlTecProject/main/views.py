@@ -8,6 +8,8 @@ from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.core.paginator import Paginator
+from .models import Service
+from django.templatetags.static import static
 
 def index(request):
     return render(request, 'main/index.html')
@@ -36,7 +38,32 @@ def partners(request):
 
 
 def service(request):
-    return render(request, 'main/service.html')
+    products = [
+        {'name': 'Портальная автомойка T700 PRO', 'image_url': static('images/products/product_1.webp'),
+         'alt': 'Партнер 1'},
+        {'name': 'Портальная автомойка T700 JET', 'image_url': static('images/products/product_2.webp'),
+         'alt': 'Партнер 2'},
+        {'name': 'Портальная автомойка T700 TWIN', 'image_url': static('images/products/product_3.webp'),
+         'alt': 'Партнер 3'},
+        {'name': 'Портальная автомойка T700 TWIN', 'image_url': static('images/products/product_3.webp'),
+         'alt': 'Партнер 4'},
+        {'name': 'Портальная автомойка T700 TWIN', 'image_url': static('images/products/product_3.webp'),
+         'alt': 'Партнер 5'},
+    ]
+
+    # Параметры пагинации
+    per_page = 3  # Количество продуктов на странице
+    paginator = Paginator(products, per_page)  # Создаем объект пагинации
+    current_page = int(request.GET.get('page', 1))  # Текущая страница
+    page_obj = paginator.get_page(current_page)  # Получаем объект страницы
+
+    context = {
+        'products': page_obj,  # Передаем объект страницы
+        'current_page': current_page,
+        'total_pages': paginator.num_pages,  # Общее количество страниц
+    }
+
+    return render(request, 'main/service.html', context)
 
 
 def sertificate(request):
