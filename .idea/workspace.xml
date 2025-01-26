@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Макет продукции">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_10_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_10_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_10_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_10_33__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_12_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_12_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_14_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_14_38__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_14_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_14_45__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_17_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_17_26__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_01_2025_9_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_01_2025_9_03__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_01_2025_17_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_01_2025_17_38__Changes_.xml" afterDir="false" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добален поисковик по сайту">
+      <change beforePath="$PROJECT_DIR$/.idea/AlTec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AlTec.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_023_23_01_25_9_11__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_023_23_01_25_9_11__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_023_23_01_25_9_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_023_23_01_25_9_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_026_26_01_25_17_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_026_26_01_25_17_49__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2025_9_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2025_9_32__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesService.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesService.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesWrite.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesWrite.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -54,6 +47,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -65,25 +61,26 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;JavaScript Debug.base.html.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nastya/PycharmProjects/WebProject/AlTecProject/main/static/images/products&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Margo/PycharmProjects/WebProject/AlTecProject/db.sqlite3&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Nastya\PycharmProjects\WebProject\AlTecProject\main\static\images\products" />
-      <recent name="C:\Users\Nastya\PycharmProjects\WebProject\AlTecProject\main\static\images\logo" />
       <recent name="C:\Users\Roman\PycharmProjects\AlTec\AlTecProject\main\static\images\logo" />
       <recent name="C:\Users\Roman\PycharmProjects\AlTec\AlTecProject\main\static\images" />
     </key>
@@ -95,7 +92,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
       </set>
     </attachedChunks>
   </component>
@@ -140,8 +137,6 @@
       <workItem from="1735287581475" duration="1291000" />
       <workItem from="1737374566611" duration="3704000" />
       <workItem from="1737386408608" duration="2665000" />
-      <workItem from="1737525216812" duration="2785000" />
-      <workItem from="1737912514630" duration="8493000" />
     </task>
     <task id="LOCAL-00001" summary="Start Project">
       <option name="closed" value="true" />
@@ -399,79 +394,87 @@
       <option name="project" value="LOCAL" />
       <updated>1737455783569</updated>
     </task>
-    <task id="LOCAL-00033" summary="Новости 1.4.1&#10;Добавлено отключение кнопок перехода">
+    <task id="LOCAL-00033" summary="Создание страницы FAQ (разметка)">
       <option name="closed" value="true" />
-      <created>1737456169402</created>
+      <created>1737561888182</created>
       <option name="number" value="00033" />
       <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1737456169402</updated>
+      <updated>1737561888182</updated>
     </task>
-    <task id="LOCAL-00034" summary="Новости 1.4.2&#10;Анимация смены цвета кнопок перехода">
+    <task id="LOCAL-00034" summary="0.1 Дополнение страницы &quot;О компании&quot;. Добавление текста и картинок и их смена">
       <option name="closed" value="true" />
-      <created>1737525848676</created>
+      <created>1737631312714</created>
       <option name="number" value="00034" />
       <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1737525848676</updated>
+      <updated>1737631312714</updated>
     </task>
-    <task id="LOCAL-00035" summary="Новости 1.4.2&#10;Анимация смены цвета кнопок перехода">
+    <task id="LOCAL-00035" summary="1.1 Дополнение страницы &quot;О компании&quot;">
       <option name="closed" value="true" />
-      <created>1737525893645</created>
+      <created>1737636918381</created>
       <option name="number" value="00035" />
       <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1737525893645</updated>
+      <updated>1737636918381</updated>
     </task>
-    <task id="LOCAL-00036" summary="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний">
+    <task id="LOCAL-00036" summary="1.3 Дополнение для страницы FAQ">
       <option name="closed" value="true" />
-      <created>1737527353215</created>
+      <created>1737673756661</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1737527353215</updated>
+      <updated>1737673756661</updated>
     </task>
-    <task id="LOCAL-00037" summary="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний">
+    <task id="LOCAL-00037" summary="Удаление лишнего кода">
       <option name="closed" value="true" />
-      <created>1737527682385</created>
+      <created>1737724402044</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1737527682385</updated>
+      <updated>1737724402044</updated>
     </task>
-    <task id="LOCAL-00038" summary="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний">
+    <task id="LOCAL-00038" summary="Настройка одноразовой отпрвки формы">
       <option name="closed" value="true" />
-      <created>1737527709983</created>
+      <created>1737725020005</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1737527709983</updated>
+      <updated>1737725020005</updated>
     </task>
-    <task id="LOCAL-00039" summary="Оптимизация кода">
+    <task id="LOCAL-00039" summary="Настройка одноразовой отпрвки формы">
       <option name="closed" value="true" />
-      <created>1737527791567</created>
+      <created>1737726296076</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1737527791567</updated>
+      <updated>1737726296076</updated>
     </task>
-    <task id="LOCAL-00040" summary="Замена логотипа">
+    <task id="LOCAL-00040" summary="Настройка одноразовой отправки формы">
       <option name="closed" value="true" />
-      <created>1737530518831</created>
+      <created>1737726308004</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1737530518831</updated>
+      <updated>1737726308004</updated>
     </task>
-    <task id="LOCAL-00041" summary="Замена логотипа1">
+    <task id="LOCAL-00041" summary="Настройка одноразовой отправки формы">
       <option name="closed" value="true" />
-      <created>1737531177409</created>
+      <created>1737726678012</created>
       <option name="number" value="00041" />
       <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1737531177409</updated>
+      <updated>1737726678012</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Добален поисковик по сайту">
+      <option name="closed" value="true" />
+      <created>1737789951533</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1737789951533</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,8 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлены сертификаты на страницу им настроено изх увеличение" />
-    <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
     <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
     <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
@@ -508,12 +509,14 @@
     <MESSAGE value="Изменена разметка страницы &quot;О компании&quot; 1.1" />
     <MESSAGE value="Новости 1.3&#10;Настроено перемещение по ностям через кнопки" />
     <MESSAGE value="Новости 1.4&#10;Добавлена анимация смены новостей" />
-    <MESSAGE value="Новости 1.4.1&#10;Добавлено отключение кнопок перехода" />
-    <MESSAGE value="Новости 1.4.2&#10;Анимация смены цвета кнопок перехода" />
-    <MESSAGE value="О компании 1.2.1&#10;Испрапвлено отображение прокрутки компаний" />
-    <MESSAGE value="Оптимизация кода" />
-    <MESSAGE value="Замена логотипа" />
-    <MESSAGE value="Замена логотипа1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Замена логотипа1" />
+    <MESSAGE value="Создание страницы FAQ (разметка)" />
+    <MESSAGE value="0.1 Дополнение страницы &quot;О компании&quot;. Добавление текста и картинок и их смена" />
+    <MESSAGE value="1.1 Дополнение страницы &quot;О компании&quot;" />
+    <MESSAGE value="1.3 Дополнение для страницы FAQ" />
+    <MESSAGE value="Удаление лишнего кода" />
+    <MESSAGE value="Настройка одноразовой отпрвки формы" />
+    <MESSAGE value="Настройка одноразовой отправки формы" />
+    <MESSAGE value="Добален поисковик по сайту" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добален поисковик по сайту" />
   </component>
 </project>

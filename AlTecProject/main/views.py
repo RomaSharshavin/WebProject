@@ -11,6 +11,7 @@ from django.core.paginator import Paginator
 from .models import Service
 from django.templatetags.static import static
 
+
 def index(request):
     return render(request, 'main/index.html')
 
