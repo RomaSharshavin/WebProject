@@ -43,9 +43,6 @@
             padding: 5px; /* Отступ для элементов выпадающего списка */
             white-space: normal; /* Позволяет переносить текст на следующую строку */
         }
-
-
-
     </style>
 {% endblock %}
 
@@ -125,20 +122,19 @@
             </div>
         </div>
 
-        <div class="products">
-            <div class="partners-container">
-                {% for product in products %}
-                    <div class="partner">
-                        <div class="partner-description">
-                            {{ product.name }}
-                        </div>
-                        <img src="{{ product.image_url }}" alt="{{ product.alt }}">
-                        <div class="partner-description">
-                            ПОДРОБНЕЕ
-                        </div>
+        <div class="partners-container">
+            {% for service in services %}
+                <div class="partner">
+                    <div class="partner-description">
+                        {{ service.prod_name }}  <!-- Используйте правильное имя поля -->
                     </div>
-                {% endfor %}
-            </div>
+                    <img src="{{ service.image_path }}" alt="{{ service.alt }}">
+                    <div class="partner-description">
+                        <a href="{% url 'service_detail' service.id_prod %}">ПОДРОБНЕЕ</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 
             <div class="pagination" style="text-align: center;">
                 <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>
