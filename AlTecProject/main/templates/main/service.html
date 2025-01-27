@@ -8,85 +8,115 @@
 {% block links %}
     <link rel="stylesheet" href="{% static 'css/stylesService.css' %}">
     <style>
-        .container {
-            display: flex;
-        }
-        /* Стили для меню */
-        .menu {
-            height: 800px;
-            width: 400px; /* Ширина меню */
-            max-width: 100%; /* Ограничение ширины для мобильных устройств */
-            position: fixed; /* Фиксируем меню при прокрутке */
-            top: 118px; /* Расположение сверху */
-            left: 0px; /* Расположение слева */
-            background-color: #fff; /* Цвет фона */
-            padding: 20px; /* Внутренний отступ */
-            border-radius: 5px; /* Скругление углов */
-            margin-bottom: 100px; /* Значение можно изменить по необходимости */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
-        }
+    .container {
+        display: flex;
+    }
+    /* Стили для меню */
+    .menu {
+    height: 445px; /* Высота меню */
+    width: 410px; /* Ширина меню */
+    max-width: 100%; /* Ограничение ширины для мобильных устройств */
+    position: fixed; /* Фиксируем меню при прокрутке */
+    top: 118px; /* Расположение сверху */
+    left: 0px; /* Расположение слева */
+    background-color: #fff; /* Цвет фона */
+    padding: 20px; /* Внутренний отступ */
+    border-radius: 5px; /* Скругление углов */
+    margin-bottom: 100px; /* Значение можно изменить по необходимости */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
+    overflow-y: auto; /* Добавляем прокрутку по вертикали */
+    }
 
-        .menu-item {
-            cursor: pointer; /* Указатель при наведении */
-            padding: 8px; /* Отступ в меню */
-            margin-top: 20px;
-            border-bottom: 1px solid #ccc; /* Разделитель между элементами */
-            white-space: normal; /* Позволяет переносить текст на следующую строку */
-        }
+    /* Стилизация скроллбара для WebKit-браузеров (Chrome, Safari) */
+    .menu::-webkit-scrollbar {
+        width: 1px; /* Ширина скроллбара */
+    }
 
-        .dropdown {
-            display: none; /* Изначально скрыто */
-            margin-top: 5px; /* Отступ сверху для выпадающего списка */
-            padding-left: 10px; /* Отступ для вложенных элементов */
-        }
-        .dropdown-item {
-            padding: 5px; /* Отступ для элементов выпадающего списка */
-            white-space: normal; /* Позволяет переносить текст на следующую строку */
-        }
-    </style>
+    .menu::-webkit-scrollbar-track {
+        background: transparent; /* Цвет фона трека */
+    }
+
+    .menu::-webkit-scrollbar-thumb {
+        background: #ccc; /* Цвет ползунка */
+        border-radius: 40px; /* Скругление ползунка */
+    }
+
+    .menu::-webkit-scrollbar-thumb:hover {
+        background: #aaa; /* Цвет ползунка при наведении */
+    }
+
+    /* Стили для Firefox */
+    .menu {
+        scrollbar-width: thin; /* Тонкий скроллбар */
+        scrollbar-color: #ccc transparent; /* Цвет ползунка и трека */
+    }
+
+    .menu-item {
+        cursor: pointer; /* Указатель при наведении */
+        padding: 8px; /* Отступ в меню */
+        margin-top: 20px;
+        border-bottom: 1px solid #ccc; /* Разделитель между элементами */
+        white-space: normal; /* Позволяет переносить текст на следующую строку */
+    }
+
+    .dropdown {
+        display: none; /* Изначально скрыто */
+        margin-top: 5px; /* Отступ сверху для выпадающего списка */
+        padding-left: 10px; /* Отступ для вложенных элементов */
+    }
+    .dropdown-item {
+        padding: 5px; /* Отступ для элементов выпадающего списка */
+        white-space: normal; /* Позволяет переносить текст на следующую строку */
+    }
+    .arrow {
+        display: inline-block;
+        margin-left: 5px;
+        transition: transform 0.3s;
+        width: 1px; /* Уменьшение ширины стрелки */
+        height:  1px; /* Уменьшение высоты стрелки */
+        font-weight: normal; /* Уменьшение жирности */
+        color: #777; /* Изменение цвета стрелки */
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .dropdown.show {
+        display: block;
+    }
+
+    .arrow.up {
+        transform: rotate(180deg);
+    }
+</style>
+
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="menu">
-            <div class="menu-item" onclick="toggleDropdown('category1')">Мойки для транспорта TAMMERMATIC
+          <div class="menu-item" onclick="toggleDropdown('category1', true)">Мойки для транспорта TAMMERMATIC
+                <span class="arrow" id="arrow1">►</span>
                 <div id="category1" class="dropdown">
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory1')">Автоматические мойки для транспорта
-                        <div id="subcategory1" class="dropdown">
-                            <div class="dropdown-item">Конвеерная автомойка RoboJet</div>
-                            <div class="dropdown-item">Портальная атомойка Т700 Jet</div>
-                            <div class="dropdown-item">Портальная атомойка Т700 Lux</div>
-                            <div class="dropdown-item">Портальная атомойка Т700 Pro</div>
-                            <div class="dropdown-item">Портальная атомойка Т700 Takt</div>
-                            <div class="dropdown-item">Портальная атомойка Т700 Twin</div>
-
-                        </div>
+                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory1')">
+                        Автоматические мойки для транспорта
                     </div>
-                     <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory2')">Автоматические мойки для грузовых машин
-                        <div id="subcategory2" class="dropdown">
-                            <div class="dropdown-item">Автоматическая мойка Rainbow ULTIMA</div>
-                        </div>
-                    </div>
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory3')">Автоматические мойки для поездов метро
-                        <div id="subcategory3" class="dropdown">
-                            <div class="dropdown-item">Автоматическая мойка поездов XJ 204</div>
-                        </div>
-                    </div>
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory4')">Автоматические мойки для ж/д транспорта
-                        <div id="subcategory4" class="dropdown">
-                            <div class="dropdown-item">Автоматическая мойка поездов XJ1000-16D</div>
-                        </div>
-                    </div>
+                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory2')">Автоматические мойки для грузовых машин</div>
+                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory3')">Автоматические мойки для поездов метро</div>
+                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory4')">Автоматические мойки для ж/д транспорта</div>
                 </div>
             </div>
-            <div class="menu-item" onclick="toggleDropdown('category2')">Производство АЛ-ТЕК
+            <div class="menu-item" onclick="toggleDropdown('category2', true)">Производство АЛ-ТЕК
+                <span class="arrow" id="arrow2">►</span>
                 <div id="category2" class="dropdown">
                     <div class="dropdown-item">Складчатые ворота "IDEAL"</div>
                     <div class="dropdown-item">Промышленные ворота "Идеал"</div>
                     <div class="dropdown-item">Система отчистки воды</div>
                 </div>
             </div>
-            <div class="menu-item" onclick="toggleDropdown('category3')">Мойки деталей TEIJO
+            <div class="menu-item" onclick="toggleDropdown('category3', true)">Мойки деталей TEIJO
+                <span class="arrow" id="arrow3">►</span>
                 <div id="category3" class="dropdown">
                     <div class="dropdown-item">Мойка деталей TL-серии</div>
                     <div class="dropdown-item">Мойка деталей с фронтальной выгрузкой</div>
@@ -98,26 +128,11 @@
                     <div class="dropdown-item">Мойки деталей под заказ</div>
                 </div>
             </div>
-            <div class="menu-item" onclick="toggleDropdown('category4')">Промышленные ворота ASSA ABLOY (CRAWFORD)
+            <div class="menu-item" onclick="toggleDropdown('category4', true)">Промышленные ворота ASSA ABLOY (CRAWFORD)
+                <span class="arrow" id="arrow4">►</span>
                 <div id="category4" class="dropdown">
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory5')">Подъемно-секционные ворота
-                        <div id="subcategory5" class="dropdown">
-                            <div class="dropdown-item">Подъемно-секционные ворота ASSA ABLOY (Crawford) 242</div>
-                            <div class="dropdown-item">Подъемно-секционные ворота ASSA ABLOY (Crawford) 242FG</div>
-                            <div class="dropdown-item">Подъемно-секционные ворота ASSA ABLOY (Crawford) 542D</div>
-                            <div class="dropdown-item">Подъемно-секционные ворота ASSA ABLOY (Crawford) OH1042F</div>
-                            <div class="dropdown-item">Подъемно-секционные ворота ASSA ABLOY (Crawford) OH1042P</div>
-                            <div class="dropdown-item">Подъемно-секционные ворота ASSA ABLOY (Crawford) 370</div>
-
-                        </div>
-                    </div>
-                     <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory6')">Складные ворота
-                        <div id="subcategory6" class="dropdown">
-                             <div class="dropdown-item">Складные ворота ASSA ABLOY (Crawford) FD2050F</div>
-                             <div class="dropdown-item">Складные ворота ASSA ABLOY (Crawford) FD2050FCW</div>
-                             <div class="dropdown-item">Складные утепленные промышленные ворота ASSA ABLOY (Crawford) FD2250P</div>
-                        </div>
-                    </div>
+                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory5')">Подъемно-секционные ворота</div>
+                     <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory6')">Складные ворота</div>
                 </div>
             </div>
         </div>
@@ -149,32 +164,52 @@
 
 {% block scripts %}
     <script>
-        function loadPage(pageNumber) {
-            const url = `{% url 'service' %}?page=` + pageNumber;
-            window.location.href = url; // Переход на новую страницу.
-        }
+    function loadPage(pageNumber) {
+        const url = `{% url 'service' %}?page=` + pageNumber;
+        window.location.href = url; // Переход на новую страницу.
+    }
 
-       function toggleDropdown(dropdownId) {
-            const dropdown = document.getElementById(dropdownId);
-            if (dropdown) {
-                if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-                    dropdown.style.display = 'block';
-                } else {
-                    dropdown.style.display = 'none';
-                }
-            }
-       }
+    function toggleDropdown(dropdownId, isMainCategory = false) {
+        const dropdown = document.getElementById(dropdownId);
+        const arrow = document.getElementById('arrow' + dropdownId.charAt(dropdownId.length - 1));
 
-// Закрывать выпадающий список, если пользователь кликает вне его
-        window.onclick = function(event) {
-            if (!event.target.matches('.menu-item') && !event.target.matches('.dropdown-item')) {
-                var dropdowns = document.getElementsByClassName("dropdown");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    dropdowns[i].style.display = "none";
+        if (dropdown) {
+            // Переключение класса 'show' для дропдауна
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+                if (isMainCategory) {
+                    arrow.classList.remove('down');
+                    arrow.innerHTML = '►'; // Стрелка вправо
                 }
+                dropdown.style.display = 'none'; // Скрываем дропдаун
+            } else {
+                dropdown.classList.add('show');
+                if (isMainCategory) {
+                    arrow.classList.add('down');
+                    arrow.innerHTML = '▼'; // Стрелка вниз
+                }
+                dropdown.style.display = 'block'; // Показываем дропдаун
             }
         }
-    </script>
+    }
+
+    // Закрывать выпадающий список, если пользователь кликает вне его
+    window.onclick = function(event) {
+        if (!event.target.matches('.menu-item') && !event.target.matches('.dropdown-item')) {
+            var dropdowns = document.getElementsByClassName("dropdown");
+            for (var i = 0; i < dropdowns.length; i++) {
+                dropdowns[i].style.display = "none";
+            }
+            // Сбросить стрелки основных категорий
+            const mainArrows = document.querySelectorAll('.arrow');
+            mainArrows.forEach((arrow) => {
+                arrow.innerHTML = '►'; // Сброс стрелки вправо
+                arrow.classList.remove('down'); // Удалить класс вниз
+            });
+        }
+    }
+</script>
+
 {% endblock %}
 
 {% endblock %}

@@ -36,7 +36,17 @@ def partners(request):
 
 def service(request):
     services = Service.objects.all()
-    return render(request, 'main/service.html', {'services': services})
+    paginator = Paginator(services, 2)
+    current_page = int(request.GET.get('page', 1))
+    page_obj = paginator.get_page(current_page)
+
+    total_pages = paginator.num_pages
+
+    return render(request, 'main/service.html', {
+        'services': page_obj,
+        'total_pages': total_pages,
+        'current_page': current_page,  # Отправляем как целое
+    })
 
 
 def service_detail(request, id_prod):
