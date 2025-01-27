@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Попытки исправления страницы Написать нам">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesServiceDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesServiceDetails.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
