@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ service.prod_name }} - Подробности  <!-- Измените на prod_name -->
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/stylesServiceDetail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="service-detail">
+    <h1>{{ service.prod_name }}</h1>  <!-- Измените на prod_name -->
+    <img src="{{ service.image_path }}" alt="{{ service.prod_name }}" style="width: 150px; height: auto;" />
+    <h2>Описание</h2>
+    <p>{{ service.description }}</p>
+    <h2>Характеристики</h2>
+    <p>{{ service.characteristics }}</p>
+    <a href="{% url 'service' %}">Назад к услугам</a>
+</div>
+{% endblock %}

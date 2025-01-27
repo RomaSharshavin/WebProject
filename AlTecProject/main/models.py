@@ -17,10 +17,13 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
 
+
 class Service(models.Model):
-    name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='images/products/')
-    alt = models.CharField(max_length=255, blank=True, null=True)  # Для альтернативного текста
+    id_prod = models.AutoField(primary_key=True)
+    prod_name = models.CharField(max_length=255)
+    image_path = models.URLField()
+    description = models.TextField()
+    characteristics = models.TextField()
 
     def __str__(self):
-        return self.name
+        return self.prod_name
