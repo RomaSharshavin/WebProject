@@ -16,3 +16,14 @@ class FAQ(models.Model):
 
     def __str__(self):
         return self.question
+
+
+class Service(models.Model):
+    id_prod = models.AutoField(primary_key=True)
+    prod_name = models.CharField(max_length=255)
+    image_path = models.URLField()
+    description = models.TextField()
+    characteristics = models.TextField()
+
+    def __str__(self):
+        return self.prod_name

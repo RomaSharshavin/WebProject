@@ -1,13 +1,11 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator
 from .models import News
 from .models import FAQ
-from django import template
 import requests
 from django.http import JsonResponse
-from django.core.mail import send_mail
-from django.http import HttpResponse
 from django.core.paginator import Paginator
+from django.shortcuts import render, get_object_or_404
+from .models import Service
 
 def index(request):
     return render(request, 'main/index.html')
@@ -18,9 +16,9 @@ def contact(request):
 
 
 def faq_view(request):
-    faqs = FAQ.objects.all()  # Получаем все записи FAQ
-    paginator = Paginator(faqs, 5)  # 5 на страницу
-    current_page = int(request.GET.get('page', 1))  # Преобразуем в целое число
+    faqs = FAQ.objects.all()
+    paginator = Paginator(faqs, 5)
+    current_page = int(request.GET.get('page', 1))
     page_obj = paginator.get_page(current_page)
 
     total_pages = paginator.num_pages
@@ -31,12 +29,19 @@ def faq_view(request):
         'current_page': current_page,  # Отправляем как целое
     })
 
+
 def partners(request):
     return render(request, 'main/partners.html')
 
 
 def service(request):
-    return render(request, 'main/service.html')
+    services = Service.objects.all()
+    return render(request, 'main/service.html', {'services': services})
+
+
+def service_detail(request, id_prod):
+    service = get_object_or_404(Service, id_prod=id_prod)
+    return render(request, 'main/service_detail.html', {'service': service})
 
 
 def sertificate(request):
@@ -46,9 +51,9 @@ def sertificate(request):
 def write(request):
     return render(request, 'main/write.html')
 
+
 def sendEmail(request):
     if request.method == 'POST':
-        # Получите данные из формы
         name = request.POST['name']
         email = request.POST['email']
         phone = request.POST['phone']
@@ -65,11 +70,11 @@ def sendEmail(request):
         result = response.json()
 
         if result.get('success'):
-            # Здесь ваш код для отправки email...
             return JsonResponse({'status': 'success', 'message': 'Сообщение успешно отправлено!'})
         else:
             return JsonResponse({'status': 'error', 'message': 'Проверка reCAPTCHA не пройдена!'})
     return JsonResponse({'status': 'error', 'message': 'Некорректный запрос!'})
+
 
 def news(request):
     news_list = News.objects.order_by('-date_written')  # Сортировка по датеё
@@ -84,7 +89,7 @@ def about(request):
 
 
 def format_text(text):
-    paragraphs = text.split('\n\n')  # Разделяем текст на абзацы
+    paragraphs = text.split('\n\n')
     return ''.join(f'<p>{paragraph.strip()}</p>' for paragraph in paragraphs)
 
 
