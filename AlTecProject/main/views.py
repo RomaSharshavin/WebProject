@@ -52,7 +52,6 @@ def service(request):
 
 def service_detail(request, id_prod):
     service = get_object_or_404(Service, id_prod=id_prod)
-    print(service.characteristics)
     # Убираем табуляции и заменяем их на пробелы
     cleaned_text = service.characteristics.replace('\t', ' ').strip()
 
@@ -60,8 +59,6 @@ def service_detail(request, id_prod):
     characteristics_list = [
         line.strip() for line in cleaned_text.split('|') if line.strip()
     ]
-
-    print(characteristics_list)  # Выводим для проверки
 
     return render(request, 'main/service_detail.html', {
         'service': service,
