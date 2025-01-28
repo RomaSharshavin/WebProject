@@ -1,5 +1,16 @@
+.service-title {
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
 .service-detail {
-    max-width: 800px; /* Максимальная ширина контейнера */
+    max-width: 90%; /* Максимальная ширина контейнера */
     margin: 20px auto; /* Центрируем контейнер */
     padding: 20px; /* Внутренние отступы */
     border: 1px solid #ddd; /* Обводка */
@@ -12,38 +23,70 @@ h1, h2 {
     color: #333; /* Цвет заголовков */
 }
 
-img {
+.service-image {
     display: block; /* Отображаем изображение как блок */
+    max-width: 100%; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота */
     margin: 0 auto 20px; /* Центрируем и добавляем отступ снизу */
-}
-
-table {
-    width: 100%; /* Ширина таблицы 100% */
-    border-collapse: collapse; /* Убираем двойные границы */
-    margin-top: 20px; /* Отступ сверху от других элементов */
 }
 
 table, th, td {
     border: 1px solid #ddd; /* Граница таблицы */
 }
 
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
 th, td {
-    padding: 8px; /* Внутренние отступы ячеек */
-    text-align: left; /* Выравнивание по левому краю */
+    border: 1px solid #ddd;
+    padding: 8px;
 }
-
 th {
-    background-color: #f2f2f2; /* Фоновый цвет заголовков */
-    color: #333; /* Цвет текста заголовков */
+    background-color: #f4f4f4;
+    text-align: left;
 }
 
-a {
+.back-link {
     display: inline-block; /* Отображаем ссылку как блок */
     margin-top: 20px; /* Отступ сверху */
     color: #007BFF; /* Цвет ссылки */
     text-decoration: none; /* Убираем подчеркивание */
 }
 
-a:hover {
+.back-link:hover {
     text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.service-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.service-image {
+    flex: 1; /* Изображение занимает 1 часть */
+    margin-right: 20px; /* Отступ между колонками */
+}
+
+.service-description {
+    flex: 1.5; /* Описание занимает 1.5 части */
+    margin-right: 20px; /* Отступ между колонками */
+}
+
+.service-characteristics {
+    flex: 2.5; /* Характеристики занимают 2.5 части */
+}
+
+/* Дополнительные стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #c7c7c7;
+    padding: 8px;
+    text-align: left;
 }
