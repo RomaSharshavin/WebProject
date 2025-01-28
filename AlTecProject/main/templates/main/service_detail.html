@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block links %}
-    <link rel="stylesheet" href="{% static 'css/stylesServiceDetail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylesServiceDetai.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,39 @@
     <h2>Описание</h2>
     <p>{{ service.description }}</p>
     <h2>Характеристики</h2>
-    <p>{{ service.characteristics }}</p>
+
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+    </style>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Component</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Вывод каждой строки из списка characteristics -->
+            {% for characteristic in characteristics %}
+                <tr>
+                    <td>{{ characteristic }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     <a href="{% url 'service' %}">Назад к услугам</a>
 </div>
 {% endblock %}

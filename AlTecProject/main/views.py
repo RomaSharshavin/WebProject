@@ -7,6 +7,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from .models import Service
 
+
 def index(request):
     return render(request, 'main/index.html')
 
@@ -51,7 +52,21 @@ def service(request):
 
 def service_detail(request, id_prod):
     service = get_object_or_404(Service, id_prod=id_prod)
-    return render(request, 'main/service_detail.html', {'service': service})
+    print(service.characteristics)
+    # Убираем табуляции и заменяем их на пробелы
+    cleaned_text = service.characteristics.replace('\t', ' ').strip()
+
+    # Разделяем по символу |
+    characteristics_list = [
+        line.strip() for line in cleaned_text.split('|') if line.strip()
+    ]
+
+    print(characteristics_list)  # Выводим для проверки
+
+    return render(request, 'main/service_detail.html', {
+        'service': service,
+        'characteristics': characteristics_list
+    })
 
 
 def sertificate(request):
