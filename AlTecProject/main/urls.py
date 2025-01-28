@@ -19,6 +19,7 @@ urlpatterns = [
     path('write/', views.write, name='write'),
     path('send-email/', sendEmail, name='send_email'),
     path('sertificate/', views.sertificate, name='sertificate'),
+    path('search', views.search_page, name="search"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

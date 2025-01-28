@@ -124,3 +124,7 @@ def partners_page(request):
 
 def views_about(request):
     return render(request, 'main/about.html')
+
+
+def search_page(request):
+    return render(request,'main/search.html')
