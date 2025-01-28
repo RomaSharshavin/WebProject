@@ -117,3 +117,108 @@
         background-color: #999999;
         transform: scale(1.1);
     }
+
+
+
+    .container {
+        display: flex;
+    }
+    /* Стили для меню */
+    .menu {
+    height: 445px; /* Высота меню */
+    width: 410px; /* Ширина меню */
+    max-width: 100%; /* Ограничение ширины для мобильных устройств */
+    position: fixed; /* Фиксируем меню при прокрутке */
+    top: 118px; /* Расположение сверху */
+    left: 0px; /* Расположение слева */
+    background-color: #fff; /* Цвет фона */
+    padding: 20px; /* Внутренний отступ */
+    border-radius: 5px; /* Скругление углов */
+    margin-bottom: 100px; /* Значение можно изменить по необходимости */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
+    overflow-y: auto; /* Добавляем прокрутку по вертикали */
+    }
+
+    /* Стилизация скроллбара для WebKit-браузеров (Chrome, Safari) */
+    .menu::-webkit-scrollbar {
+        width: 1px; /* Ширина скроллбара */
+    }
+
+    .menu::-webkit-scrollbar-track {
+        background: transparent; /* Цвет фона трека */
+    }
+
+    .menu::-webkit-scrollbar-thumb {
+        background: #ccc; /* Цвет ползунка */
+        border-radius: 40px; /* Скругление ползунка */
+    }
+
+    .menu::-webkit-scrollbar-thumb:hover {
+        background: #aaa; /* Цвет ползунка при наведении */
+    }
+
+    /* Стили для Firefox */
+    .menu {
+        scrollbar-width: thin; /* Тонкий скроллбар */
+        scrollbar-color: #ccc transparent; /* Цвет ползунка и трека */
+    }
+
+    .menu-item {
+        cursor: pointer; /* Указатель при наведении */
+        padding: 8px; /* Отступ в меню */
+        margin-top: 20px;
+        border-bottom: 1px solid #ccc; /* Разделитель между элементами */
+        white-space: normal; /* Позволяет переносить текст на следующую строку */
+    }
+
+    .dropdown {
+        display: none; /* Изначально скрыто */
+        margin-top: 5px; /* Отступ сверху для выпадающего списка */
+        padding-left: 10px; /* Отступ для вложенных элементов */
+    }
+    .dropdown-item {
+        padding: 5px; /* Отступ для элементов выпадающего списка */
+        white-space: normal; /* Позволяет переносить текст на следующую строку */
+    }
+
+    /*Стрелки меню */
+    .arrow {
+        display: inline-block;
+        margin-left: 5px;
+        transition: transform 0.3s;
+        width: 1px; /* Уменьшение ширины стрелки */
+        height:  1px; /* Уменьшение высоты стрелки */
+        font-weight: normal; /* Уменьшение жирности */
+        color: #777; /* Изменение цвета стрелки */
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .dropdown.show {
+        display: block;
+    }
+
+    .arrow.up {
+        transform: rotate(180deg);
+    }
+
+
+    /* Кнопка подробнее */
+    .button {
+        display: block; /* Делает ссылку блочным элементом */
+        width: 380px; /* Ширина кнопки равна ширине контейнера */
+        padding: 10px; /* Отступ внутри кнопки */
+        background-color: #a9def5; /* Цвет фона кнопки */
+        color: black; /* Цвет текста */
+        text-align: center; /* Центрирование текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        border-radius: 5px; /* Скругление углов */
+        margin-bottom: 0px;
+        transition: background-color 0.3s; /* Плавный переход цвета фона */
+        }
+
+    .button:hover {
+        background-color: #c7c7c7; /* Цвет фона при наведении */
+    }

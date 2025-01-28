@@ -7,107 +7,6 @@
 
 {% block links %}
     <link rel="stylesheet" href="{% static 'css/stylesService.css' %}">
-    <style>
-    .container {
-        display: flex;
-    }
-    /* Стили для меню */
-    .menu {
-    height: 445px; /* Высота меню */
-    width: 410px; /* Ширина меню */
-    max-width: 100%; /* Ограничение ширины для мобильных устройств */
-    position: fixed; /* Фиксируем меню при прокрутке */
-    top: 118px; /* Расположение сверху */
-    left: 0px; /* Расположение слева */
-    background-color: #fff; /* Цвет фона */
-    padding: 20px; /* Внутренний отступ */
-    border-radius: 5px; /* Скругление углов */
-    margin-bottom: 100px; /* Значение можно изменить по необходимости */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
-    overflow-y: auto; /* Добавляем прокрутку по вертикали */
-    }
-
-    /* Стилизация скроллбара для WebKit-браузеров (Chrome, Safari) */
-    .menu::-webkit-scrollbar {
-        width: 1px; /* Ширина скроллбара */
-    }
-
-    .menu::-webkit-scrollbar-track {
-        background: transparent; /* Цвет фона трека */
-    }
-
-    .menu::-webkit-scrollbar-thumb {
-        background: #ccc; /* Цвет ползунка */
-        border-radius: 40px; /* Скругление ползунка */
-    }
-
-    .menu::-webkit-scrollbar-thumb:hover {
-        background: #aaa; /* Цвет ползунка при наведении */
-    }
-
-    /* Стили для Firefox */
-    .menu {
-        scrollbar-width: thin; /* Тонкий скроллбар */
-        scrollbar-color: #ccc transparent; /* Цвет ползунка и трека */
-    }
-
-    .menu-item {
-        cursor: pointer; /* Указатель при наведении */
-        padding: 8px; /* Отступ в меню */
-        margin-top: 20px;
-        border-bottom: 1px solid #ccc; /* Разделитель между элементами */
-        white-space: normal; /* Позволяет переносить текст на следующую строку */
-    }
-
-    .dropdown {
-        display: none; /* Изначально скрыто */
-        margin-top: 5px; /* Отступ сверху для выпадающего списка */
-        padding-left: 10px; /* Отступ для вложенных элементов */
-    }
-    .dropdown-item {
-        padding: 5px; /* Отступ для элементов выпадающего списка */
-        white-space: normal; /* Позволяет переносить текст на следующую строку */
-    }
-    .arrow {
-        display: inline-block;
-        margin-left: 5px;
-        transition: transform 0.3s;
-        width: 1px; /* Уменьшение ширины стрелки */
-        height:  1px; /* Уменьшение высоты стрелки */
-        font-weight: normal; /* Уменьшение жирности */
-        color: #777; /* Изменение цвета стрелки */
-    }
-
-    .dropdown {
-        display: none;
-    }
-
-    .dropdown.show {
-        display: block;
-    }
-
-    .arrow.up {
-        transform: rotate(180deg);
-    }
-
-    .button {
-        display: block; /* Делает ссылку блочным элементом */
-        width: 380px; /* Ширина кнопки равна ширине контейнера */
-        padding: 10px; /* Отступ внутри кнопки */
-        background-color: #a9def5; /* Цвет фона кнопки */
-        color: black; /* Цвет текста */
-        text-align: center; /* Центрирование текста */
-        text-decoration: none; /* Убираем подчеркивание */
-        border-radius: 5px; /* Скругление углов */
-        margin-bottom: 0px;
-        transition: background-color 0.3s; /* Плавный переход цвета фона */
-        }
-
-    .button:hover {
-        background-color: #c7c7c7; /* Цвет фона при наведении */
-    }
-</style>
-
 {% endblock %}
 
 {% block content %}
@@ -116,18 +15,22 @@
           <div class="menu-item" onclick="toggleDropdown('category1', true)">Мойки для транспорта TAMMERMATIC
                 <span class="arrow" id="arrow1">►</span>
                 <div id="category1" class="dropdown">
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory1')">Автоматические мойки для легкового транспорта</div>
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory2')">Автоматические мойки для грузовых машин</div>
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory3')">Автоматические мойки для поездов метро</div>
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory4')">Автоматические мойки для ж/д транспорта</div>
-                    <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory4')">Мойки InterClean</div>
+                    <ul>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory1')">Автоматические мойки для легкового транспорта</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory2')">Автоматические мойки для грузовых машин</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory3')">Автоматические мойки для поездов метро</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory4')">Автоматические мойки для ж/д транспорта</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory5')">Мойки InterClean</li>
+                    </ul>
                 </div>
             </div>
             <div class="menu-item" onclick="toggleDropdown('category2', true)">Производство АЛ-ТЕК
                 <span class="arrow" id="arrow2">►</span>
                 <div id="category2" class="dropdown">
-                    <div class="dropdown-item">Промышленные ворота "Идеал"</div>
-                    <div class="dropdown-item">Система отчистки воды</div>
+                    <ul>
+                        <li  class="dropdown-item">Промышленные ворота "Идеал"</li>
+                        <li  class="dropdown-item">Система отчистки воды</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -144,9 +47,9 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
+        </div>
 
-           <div class="pagination" style="text-align: center;">
+        <div class="pagination" style="text-align: center;">
         {% if total_pages > 1 %}
             <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>  <!-- Кнопка стрелка назад -->
             <span class="page-number" onclick="loadPage(1)" {% if current_page == 1 %}style="font-weight: bold;"{% endif %}>1</span>  <!-- Кнопка первая страница -->
@@ -159,9 +62,9 @@
 
             <span class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>&gt;</span>  <!-- Кнопка стрелка вперед -->
         {% endif %}
-    </div>
         </div>
     </div>
+</div>
 
 
 {% block scripts %}
