@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Оптимизация Продукты">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Комментарии Продукты">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesService.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesService.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -463,7 +465,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738075861354</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Комментарии Продукты">
+      <option name="closed" value="true" />
+      <created>1738076717716</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1738076717716</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
     <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
     <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
@@ -506,6 +515,7 @@
     <MESSAGE value="Замена логотипа" />
     <MESSAGE value="Замена логотипа1" />
     <MESSAGE value="Оптимизация Продукты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Оптимизация Продукты" />
+    <MESSAGE value="Комментарии Продукты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Комментарии Продукты" />
   </component>
 </project>

@@ -22,17 +22,19 @@
         justify-content: center; /* Центрируем содержимое */
         gap: 20px; /* Промежуток между контейнерами */
         margin-top: 5px;
-        width: 380px;
-        margin-left: 570px;
+        width: 280px;
+        height: 350px;
+        margin-left: 600px;
+        position: relative;
 
     }
 
-    .partner {
+   .partner {
         display: flex;
         flex-direction: column; /* Вертикальное расположение */
         align-items: center; /* Центрируем элементы */
-        max-width: 380px; /* Максимальная ширина для удобства */
-        height: auto;
+        max-width: 280px; /* Максимальная ширина для удобства */
+        height: 350px; /* Высота контейнера */
         margin: 10px; /* Отступы по бокам */
         text-align: center; /* Центрирование текста */
         border: 2px solid #a9def5;
@@ -42,6 +44,7 @@
         transition: transform 0.3s, box-shadow 0.3s; /* Анимация для трансформации и тени */
         opacity: 0; /* Начальное значение для анимации */
         animation: fade-in 0.6s forwards; /* Применяем анимацию */
+        position: relative; /* Устанавливаем относительное позиционирование для дочерних элементов */
     }
 
     /* Анимация появления */
@@ -62,8 +65,8 @@
     }
 
     .partner img {
-        width: 350px; /* Уменьшаем ширину изображения */
-        height: 200px; /* Высота авто для пропорций */
+        width: 250px; /* Уменьшаем ширину изображения */
+        height: 150px; /* Высота авто для пропорций */
         object-fit: contain;
         border-radius: 2px;
         margin-bottom: 5px;
@@ -124,20 +127,21 @@
         display: flex;
     }
     /* Стили для меню */
-    .menu {
-    height: 445px; /* Высота меню */
-    width: 410px; /* Ширина меню */
-    max-width: 100%; /* Ограничение ширины для мобильных устройств */
-    position: fixed; /* Фиксируем меню при прокрутке */
-    top: 118px; /* Расположение сверху */
-    left: 0px; /* Расположение слева */
-    background-color: #fff; /* Цвет фона */
-    padding: 20px; /* Внутренний отступ */
-    border-radius: 5px; /* Скругление углов */
-    margin-bottom: 100px; /* Значение можно изменить по необходимости */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
-    overflow-y: auto; /* Добавляем прокрутку по вертикали */
-    }
+    .menu
+    {
+        height: 445px; /* Высота меню */
+        width: 370px; /* Ширина меню */
+        max-width: 100%; /* Ограничение ширины для мобильных устройств */
+        position: fixed; /* Фиксируем меню при прокрутке */
+        top: 118px; /* Расположение сверху */
+        left: 0px; /* Расположение слева */
+        background-color: #fff; /* Цвет фона */
+        padding: 20px; /* Внутренний отступ */
+        border-radius: 5px; /* Скругление углов */
+        margin-bottom: 100px; /* Значение можно изменить по необходимости */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
+        overflow-y: auto; /* Добавляем прокрутку по вертикали */
+        }
 
     /* Стилизация скроллбара для WebKit-браузеров (Chrome, Safari) */
     .menu::-webkit-scrollbar {
@@ -208,17 +212,19 @@
     /* Кнопка подробнее */
     .button {
         display: block; /* Делает ссылку блочным элементом */
-        width: 380px; /* Ширина кнопки равна ширине контейнера */
+        width: 278px;
         padding: 10px; /* Отступ внутри кнопки */
         background-color: #a9def5; /* Цвет фона кнопки */
         color: black; /* Цвет текста */
         text-align: center; /* Центрирование текста */
         text-decoration: none; /* Убираем подчеркивание */
         border-radius: 5px; /* Скругление углов */
-        margin-bottom: 0px;
+        position: absolute; /* Абсолютное позиционирование */
+        bottom: 0px; /* Отступ от нижней границы контейнера */
+        left: 50%; /* Центрируем кнопку по горизонтали */
+        transform: translateX(-50%); /* Сдвигаем кнопку назад на половину её ширины */
         transition: background-color 0.3s; /* Плавный переход цвета фона */
-        }
-
+    }
     .button:hover {
         background-color: #c7c7c7; /* Цвет фона при наведении */
     }

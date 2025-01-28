@@ -37,7 +37,7 @@ def partners(request):
 
 def service(request):
     services = Service.objects.all()
-    paginator = Paginator(services, 2)
+    paginator = Paginator(services, 3)
     current_page = int(request.GET.get('page', 1))
     page_obj = paginator.get_page(current_page)
 
