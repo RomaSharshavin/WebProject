@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настрено отображение характеристик в формате таблицы">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Макет продукции">
+      <change beforePath="$PROJECT_DIR$/.idea/AlTec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AlTec.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_027_27_01_25_23_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_027_27_01_25_23_14__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2025_23_15__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2025_23_15__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -455,15 +464,7 @@
       <option name="project" value="LOCAL" />
       <updated>1737531177409</updated>
     </task>
-    <task id="LOCAL-00042" summary="Настрено отображение характеристик в формате таблицы">
-      <option name="closed" value="true" />
-      <created>1738048560070</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1738048560070</updated>
-    </task>
-    <option name="localTasksCounter" value="43" />
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,6 +482,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Добавлены сертификаты на страницу им настроено изх увеличение" />
     <MESSAGE value="Настроено отображаение сертификатов в модальном окне" />
     <MESSAGE value="Настроены отступы в модальном окне сертификатов" />
     <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
@@ -505,7 +507,6 @@
     <MESSAGE value="Оптимизация кода" />
     <MESSAGE value="Замена логотипа" />
     <MESSAGE value="Замена логотипа1" />
-    <MESSAGE value="Настрено отображение характеристик в формате таблицы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Настрено отображение характеристик в формате таблицы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Замена логотипа1" />
   </component>
 </project>
