@@ -8,112 +8,105 @@
 {% block links %}
     <link rel="stylesheet" href="{% static 'css/stylesService.css' %}">
     <style>
-    .container {
-        display: flex;
-    }
-    /* Стили для меню */
-    .menu {
-    height: 445px; /* Высота меню */
-    width: 410px; /* Ширина меню */
-    max-width: 100%; /* Ограничение ширины для мобильных устройств */
-    position: fixed; /* Фиксируем меню при прокрутке */
-    top: 118px; /* Расположение сверху */
-    left: 0px; /* Расположение слева */
-    background-color: #fff; /* Цвет фона */
-    padding: 20px; /* Внутренний отступ */
-    border-radius: 5px; /* Скругление углов */
-    margin-bottom: 100px; /* Значение можно изменить по необходимости */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
-    overflow-y: auto; /* Добавляем прокрутку по вертикали */
-    }
-
-    /* Стилизация скроллбара для WebKit-браузеров (Chrome, Safari) */
-    .menu::-webkit-scrollbar {
-        width: 1px; /* Ширина скроллбара */
-    }
-
-    .menu::-webkit-scrollbar-track {
-        background: transparent; /* Цвет фона трека */
-    }
-
-    .menu::-webkit-scrollbar-thumb {
-        background: #ccc; /* Цвет ползунка */
-        border-radius: 40px; /* Скругление ползунка */
-    }
-
-    .menu::-webkit-scrollbar-thumb:hover {
-        background: #aaa; /* Цвет ползунка при наведении */
-    }
-
-    /* Стили для Firefox */
-    .menu {
-        scrollbar-width: thin; /* Тонкий скроллбар */
-        scrollbar-color: #ccc transparent; /* Цвет ползунка и трека */
-    }
-
-    .menu-item {
-        cursor: pointer; /* Указатель при наведении */
-        padding: 8px; /* Отступ в меню */
-        margin-top: 20px;
-        border-bottom: 1px solid #ccc; /* Разделитель между элементами */
-        white-space: normal; /* Позволяет переносить текст на следующую строку */
-    }
-
-    .dropdown {
-        display: none; /* Изначально скрыто */
-        margin-top: 5px; /* Отступ сверху для выпадающего списка */
-        padding-left: 10px; /* Отступ для вложенных элементов */
-    }
-    .dropdown-item {
-        padding: 5px; /* Отступ для элементов выпадающего списка */
-        white-space: normal; /* Позволяет переносить текст на следующую строку */
-    }
-    .arrow {
-        display: inline-block;
-        margin-left: 5px;
-        transition: transform 0.3s;
-        width: 1px; /* Уменьшение ширины стрелки */
-        height:  1px; /* Уменьшение высоты стрелки */
-        font-weight: normal; /* Уменьшение жирности */
-        color: #777; /* Изменение цвета стрелки */
-    }
-
-    .dropdown {
-        display: none;
-    }
-
-    .dropdown.show {
-        display: block;
-    }
-
-    .arrow.up {
-        transform: rotate(180deg);
-    }
-
-    .button {
-        display: block; /* Делает ссылку блочным элементом */
-        width: 380px; /* Ширина кнопки равна ширине контейнера */
-        padding: 10px; /* Отступ внутри кнопки */
-        background-color: #a9def5; /* Цвет фона кнопки */
-        color: black; /* Цвет текста */
-        text-align: center; /* Центрирование текста */
-        text-decoration: none; /* Убираем подчеркивание */
-        border-radius: 5px; /* Скругление углов */
-        margin-bottom: 0px;
-        transition: background-color 0.3s; /* Плавный переход цвета фона */
+        .container {
+            display: flex;
         }
 
-    .button:hover {
-        background-color: #c7c7c7; /* Цвет фона при наведении */
-    }
-</style>
+        .menu {
+            height: 445px;
+            width: 410px;
+            max-width: 100%;
+            position: fixed;
+            top: 118px;
+            left: 0px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 100px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
 
+        .menu::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        .menu::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .menu::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 40px;
+        }
+
+        .menu::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+
+        .menu {
+            scrollbar-width: thin;
+            scrollbar-color: #ccc transparent;
+        }
+
+        .menu-item {
+            cursor: pointer;
+            padding: 8px;
+            margin-top: 20px;
+            border-bottom: 1px solid #ccc;
+            white-space: normal;
+        }
+
+        .dropdown {
+            display: none;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
+
+        .dropdown-item {
+            padding: 5px;
+            white-space: normal;
+        }
+
+        .arrow {
+            display: inline-block;
+            margin-left: 5px;
+            transition: transform 0.3s;
+            color: #777;
+        }
+
+        .dropdown.show {
+            display: block;
+        }
+
+        .arrow.up {
+            transform: rotate(180deg);
+        }
+
+        .button {
+            display: block;
+            width: 380px;
+            padding: 10px;
+            background-color: #a9def5;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 0px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c7c7c7;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="menu">
-          <div class="menu-item" onclick="toggleDropdown('category1', true)">Мойки для транспорта TAMMERMATIC
+            <div class="menu-item" onclick="toggleDropdown('category1', true)">
+                Мойки для транспорта TAMMERMATIC
                 <span class="arrow" id="arrow1">►</span>
                 <div id="category1" class="dropdown">
                     <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory1')">Автоматические мойки для легкового транспорта</div>
@@ -123,7 +116,8 @@
                     <div class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory4')">Мойки InterClean</div>
                 </div>
             </div>
-            <div class="menu-item" onclick="toggleDropdown('category2', true)">Производство АЛ-ТЕК
+            <div class="menu-item" onclick="toggleDropdown('category2', true)">
+                Производство АЛ-ТЕК
                 <span class="arrow" id="arrow2">►</span>
                 <div id="category2" class="dropdown">
                     <div class="dropdown-item">Промышленные ворота "Идеал"</div>
@@ -133,85 +127,76 @@
         </div>
 
         <div class="partners-container">
-        {% for service in services %}
-            <div class="partner">
-                <div class="partner-description">
-                    {{ service.prod_name }}  <!-- Используйте правильное имя поля -->
+            {% for service in services %}
+                <div class="partner">
+                    <div class="partner-description">
+                        {{ service.prod_name }}
+                    </div>
+                    <img src="{{ service.image_path }}" alt="{{ service.alt }}">
+                    <div class="partner-description">
+                        <a href="{% url 'service_detail' service.id_prod %}" class="button">ПОДРОБНЕЕ</a>
+                    </div>
                 </div>
-                <img src="{{ service.image_path }}" alt="{{ service.alt }}">
-                <div class="partner-description">
-                    <a href="{% url 'service_detail' service.id_prod %}" class="button">ПОДРОБНЕЕ</a>
-                </div>
+            {% endfor %}
+
+            <div class="pagination" style="text-align: center;">
+                {% if total_pages > 1 %}
+                    <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>
+                    <span class="page-number" onclick="loadPage(1)" {% if current_page == 1 %}style="font-weight: bold;"{% endif %}>1</span>
+                    {% if total_pages > 3 %}
+                        <span>...</span>
+                    {% endif %}
+                    <span class="page-number" onclick="loadPage({ total_pages })" {% if current_page == total_pages %}style="font-weight: bold;"{% endif %}>{{ total_pages }}</span>
+                    <span class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>&gt;</span>
+                {% endif %}
             </div>
-        {% endfor %}
-    </div>
-
-           <div class="pagination" style="text-align: center;">
-        {% if total_pages > 1 %}
-            <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>  <!-- Кнопка стрелка назад -->
-            <span class="page-number" onclick="loadPage(1)" {% if current_page == 1 %}style="font-weight: bold;"{% endif %}>1</span>  <!-- Кнопка первая страница -->
-
-            {% if total_pages > 3 %}
-                <span>...</span>  <!-- Точки -->
-            {% endif %}
-
-            <span class="page-number" onclick="loadPage({{ total_pages }})" {% if current_page == total_pages %}style="font-weight: bold;"{% endif %}>{{ total_pages }}</span>  <!-- Кнопка последняя страница -->
-
-            <span class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>&gt;</span>  <!-- Кнопка стрелка вперед -->
-        {% endif %}
-    </div>
         </div>
     </div>
-
+{% endblock %}
 
 {% block scripts %}
     <script>
-    function loadPage(pageNumber) {
-        const url = `{% url 'service' %}?page=` + pageNumber;
-        window.location.href = url; // Переход на новую страницу.
-    }
+        function loadPage(pageNumber) {
+            const url = `{% url 'service' %}?page=` + pageNumber;
+            window.location.href = url;
+        }
 
-    function toggleDropdown(dropdownId, isMainCategory = false) {
-        const dropdown = document.getElementById(dropdownId);
-        const arrow = document.getElementById('arrow' + dropdownId.charAt(dropdownId.length - 1));
+        function toggleDropdown(dropdownId, isMainCategory = false) {
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = document.getElementById('arrow' + dropdownId.charAt(dropdownId.length - 1));
 
-        if (dropdown) {
-            // Переключение класса 'show' для дропдауна
-            if (dropdown.classList.contains('show')) {
-                dropdown.classList.remove('show');
-                if (isMainCategory) {
+            if (dropdown) {
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                    if (isMainCategory) {
+                        arrow.classList.remove('down');
+                        arrow.innerHTML = '►';
+                    }
+                    dropdown.style.display = 'none';
+                } else {
+                    dropdown.classList.add('show');
+                    if (isMainCategory) {
+                        arrow.classList.add('down');
+                        arrow.innerHTML = '▼';
+                    }
+                    dropdown.style.display = 'block';
+                }
+            }
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-item') && !event.target.matches('.dropdown-item')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = "none";
+                }
+
+                const mainArrows = document.querySelectorAll('.arrow');
+                mainArrows.forEach((arrow) => {
+                    arrow.innerHTML = '►';
                     arrow.classList.remove('down');
-                    arrow.innerHTML = '►'; // Стрелка вправо
-                }
-                dropdown.style.display = 'none'; // Скрываем дропдаун
-            } else {
-                dropdown.classList.add('show');
-                if (isMainCategory) {
-                    arrow.classList.add('down');
-                    arrow.innerHTML = '▼'; // Стрелка вниз
-                }
-                dropdown.style.display = 'block'; // Показываем дропдаун
+                });
             }
         }
-    }
-
-    // Закрывать выпадающий список, если пользователь кликает вне его
-    window.onclick = function(event) {
-        if (!event.target.matches('.menu-item') && !event.target.matches('.dropdown-item')) {
-            var dropdowns = document.getElementsByClassName("dropdown");
-            for (var i = 0; i < dropdowns.length; i++) {
-                dropdowns[i].style.display = "none";
-            }
-            // Сбросить стрелки основных категорий
-            const mainArrows = document.querySelectorAll('.arrow');
-            mainArrows.forEach((arrow) => {
-                arrow.innerHTML = '►'; // Сброс стрелки вправо
-                arrow.classList.remove('down'); // Удалить класс вниз
-            });
-        }
-    }
-</script>
-
-{% endblock %}
-
+    </script>
 {% endblock %}

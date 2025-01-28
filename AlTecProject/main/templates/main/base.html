@@ -42,16 +42,35 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная</a></li>
-                    {% if request.path == '/partners/' %}
-                        <li class="breadcrumb-item active" aria-current="page">Партнёры</li>
-                    {% elif request.path == '/service/' %}
+
+                    {% if request.path == '/service/' %}
                         <li class="breadcrumb-item active" aria-current="page">Продукция</li>
+
+                        {% if 'category1' in request.path %}
+                            <li class="breadcrumb-item active" aria-current="page">Мойки для транспорта TAMMERMATIC</li>
+                            {% if 'subcategory1' in request.path %}
+                                <li class="breadcrumb-item active" aria-current="page">Автоматические мойки для легкового транспорта</li>
+                            {% elif 'subcategory2' in request.path %}
+                                <li class="breadcrumb-item active" aria-current="page">Автоматические мойки для грузовых машин</li>
+                            {% elif 'subcategory3' in request.path %}
+                                <li class="breadcrumb-item active" aria-current="page">Автоматические мойки для поездов метро</li>
+                            {% elif 'subcategory4' in request.path %}
+                                <li class="breadcrumb-item active" aria-current="page">Автоматические мойки для ж/д транспорта</li>
+                            {% endif %}
+                        {% elif 'category2' in request.path %}
+                            <li class="breadcrumb-item active" aria-current="page">Производство АЛ-ТЕК</li>
+                            {% if 'subcategory1' in request.path %}
+                                <li class="breadcrumb-item active" aria-current="page">Промышленные ворота "Идеал"</li>
+                            {% elif 'subcategory2' in request.path %}
+                                <li class="breadcrumb-item active" aria-current="page">Система отчистки воды</li>
+                            {% endif %}
+                        {% endif %}
                     {% elif request.path == '/sertificate/' %}
                         <li class="breadcrumb-item active" aria-current="page">Сертификаты</li>
                     {% elif request.path == '/news/' %}
                         <li class="breadcrumb-item active" aria-current="page">Новости</li>
                     {% elif request.path == '/about/' %}
-                    <li class="breadcrumb-item active" aria-current="page">О компании</li>
+                        <li class="breadcrumb-item active" aria-current="page">О компании</li>
                     {% elif request.path == '/contact/' %}
                         <li class="breadcrumb-item active" aria-current="page">Контакты</li>
                     {% elif request.path == '/write/' %}
