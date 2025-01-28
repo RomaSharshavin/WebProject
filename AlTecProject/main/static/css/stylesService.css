@@ -1,3 +1,4 @@
+    /* Настройка контейнера */
     .partners-title {
         font-size: 36px; /* Увеличенный размер заголовка */
         margin: 40px 0 20px; /* Отступы со всех сторон */
@@ -45,7 +46,7 @@
         opacity: 0; /* Начальное значение для анимации */
         animation: fade-in 0.6s forwards; /* Применяем анимацию */
         position: relative; /* Устанавливаем относительное позиционирование для дочерних элементов */
-    }
+   }
 
     /* Анимация появления */
     @keyframes fade-in {
@@ -89,7 +90,29 @@
 
 
 
-    /* настройка перехода медлу страницами */
+    /* Кнопка подробнее */
+    .button {
+        display: block; /* Делает ссылку блочным элементом */
+        width: 278px;
+        padding: 10px; /* Отступ внутри кнопки */
+        background-color: #a9def5; /* Цвет фона кнопки */
+        color: black; /* Цвет текста */
+        text-align: center; /* Центрирование текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        border-radius: 5px; /* Скругление углов */
+        position: absolute; /* Абсолютное позиционирование */
+        bottom: 0px; /* Отступ от нижней границы контейнера */
+        left: 50%; /* Центрируем кнопку по горизонтали */
+        transform: translateX(-50%); /* Сдвигаем кнопку назад на половину её ширины */
+        transition: background-color 0.3s; /* Плавный переход цвета фона */
+    }
+    .button:hover {
+        background-color: #c7c7c7; /* Цвет фона при наведении */
+    }
+
+
+
+    /* настройка навигации */
     .pagination {
         display: flex; /* Используйте flexbox для выравнивания */
 
@@ -100,32 +123,37 @@
         left: 62%; /* Сдвиг по горизонтали */
         transform: translateX(-50%); /* Центрирование */
         z-index: 1000; /* Убедитесь, что он выше других элементов */
-        }
+    }
 
-        .page-number {
+    .page-number {
         display: inline-block;
-        border-radius: 50%;
         width: 40px;
         height: 40px;
-        background-color: #cccccc;
-        color: #000000;
+
+        color: #003d7a;
         text-align: center;
-        line-height: 40px;
+
         margin: 0 5px;
         cursor: pointer;
-        transition: background-color 0.3s, transform 0.2s;
-         }
 
-    .page-number:hover {
-        background-color: #999999;
-        transform: scale(1.1);
+    }
+
+     .page-number, .pagination a {
+        color: #003d7a; /* Замените на нужный вам цвет */
+        text-decoration: none;
+        margin: 0 5px; /* Отступы между элементами */
+    }
+
+    .page-number:hover, .pagination a:hover {
+        text-decoration: underline; /* Подчеркивание при наведении */
+    }
+
+    .page-number[style*="font-weight: bold;"] {
+        font-weight: bold; /* Сохранение жирного шрифта для активной страницы */
     }
 
 
 
-    .container {
-        display: flex;
-    }
     /* Стили для меню */
     .menu
     {
@@ -141,7 +169,7 @@
         margin-bottom: 100px; /* Значение можно изменить по необходимости */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
         overflow-y: auto; /* Добавляем прокрутку по вертикали */
-        }
+    }
 
     /* Стилизация скроллбара для WebKit-браузеров (Chrome, Safari) */
     .menu::-webkit-scrollbar {
@@ -209,22 +237,3 @@
     }
 
 
-    /* Кнопка подробнее */
-    .button {
-        display: block; /* Делает ссылку блочным элементом */
-        width: 278px;
-        padding: 10px; /* Отступ внутри кнопки */
-        background-color: #a9def5; /* Цвет фона кнопки */
-        color: black; /* Цвет текста */
-        text-align: center; /* Центрирование текста */
-        text-decoration: none; /* Убираем подчеркивание */
-        border-radius: 5px; /* Скругление углов */
-        position: absolute; /* Абсолютное позиционирование */
-        bottom: 0px; /* Отступ от нижней границы контейнера */
-        left: 50%; /* Центрируем кнопку по горизонтали */
-        transform: translateX(-50%); /* Сдвигаем кнопку назад на половину её ширины */
-        transition: background-color 0.3s; /* Плавный переход цвета фона */
-    }
-    .button:hover {
-        background-color: #c7c7c7; /* Цвет фона при наведении */
-    }

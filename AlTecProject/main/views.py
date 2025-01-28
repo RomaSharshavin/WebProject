@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .models import News
 from .models import FAQ
 import requests
