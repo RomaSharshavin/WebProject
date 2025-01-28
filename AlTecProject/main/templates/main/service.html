@@ -11,10 +11,12 @@
 
 {% block content %}
     <div class="container">
+        <!-- Меню страницы  -->
         <div class="menu">
           <div class="menu-item" onclick="toggleDropdown('category1', true)">Мойки для транспорта TAMMERMATIC
                 <span class="arrow" id="arrow1">►</span>
                 <div id="category1" class="dropdown">
+                    <!-- Выпадающий список для 1 пункта меню  -->
                     <ul>
                         <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory1')">Автоматические мойки для легкового транспорта</li>
                         <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory2')">Автоматические мойки для грузовых машин</li>
@@ -27,6 +29,7 @@
             <div class="menu-item" onclick="toggleDropdown('category2', true)">Производство АЛ-ТЕК
                 <span class="arrow" id="arrow2">►</span>
                 <div id="category2" class="dropdown">
+                    <!-- Выпадающий список для 2 пункта меню  -->
                     <ul>
                         <li  class="dropdown-item">Промышленные ворота "Идеал"</li>
                         <li  class="dropdown-item">Система отчистки воды</li>
@@ -34,12 +37,12 @@
                 </div>
             </div>
         </div>
-
+        <!-- Контейнер для продуктов  -->
         <div class="partners-container">
         {% for service in services %}
             <div class="partner">
                 <div class="partner-description">
-                    {{ service.prod_name }}  <!-- Используйте правильное имя поля -->
+                    {{ service.prod_name }}
                 </div>
                 <img src="{{ service.image_path }}" alt="{{ service.alt }}">
                 <div class="partner-description">
@@ -49,6 +52,7 @@
         {% endfor %}
         </div>
 
+        <!-- Навигация  -->
         <div class="pagination" style="text-align: center;">
         {% if total_pages > 1 %}
             <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>  <!-- Кнопка стрелка назад -->
