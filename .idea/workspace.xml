@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Изменение контейнера Продукты">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_028_28_01_25_17_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_028_28_01_25_17_46__Changes_.xml" afterDir="false" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Редактирование данных для подробнее">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesServiceDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesServiceDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -481,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738080408319</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Редактирование данных для подробнее">
+      <option name="closed" value="true" />
+      <created>1738101036471</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1738101036471</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +508,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
     <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
     <MESSAGE value="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
     <MESSAGE value="Добавлены кооментарии к коду" />
@@ -524,6 +532,7 @@
     <MESSAGE value="Оптимизация Продукты" />
     <MESSAGE value="Комментарии Продукты" />
     <MESSAGE value="Изменение контейнера Продукты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменение контейнера Продукты" />
+    <MESSAGE value="Редактирование данных для подробнее" />
+    <option name="LAST_COMMIT_MESSAGE" value="Редактирование данных для подробнее" />
   </component>
 </project>
