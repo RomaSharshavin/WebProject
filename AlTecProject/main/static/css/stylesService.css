@@ -9,7 +9,7 @@
 
     .partner-description {
         font-size: 20px; /* Увеличенный размер заголовка */
-        margin: 10px 0 10px; /* Отступы со всех сторон */
+        margin: 5px 0 5px; /* Отступы со всех сторон */
         text-align: center;
         font-weight: 700;
         color: #333; /* Цвет текста */
@@ -22,7 +22,8 @@
         justify-content: center; /* Центрируем содержимое */
         gap: 20px; /* Промежуток между контейнерами */
         margin-top: 5px;
-        margin-left: 320px;
+        width: 380px;
+        margin-left: 570px;
 
     }
 
@@ -61,13 +62,12 @@
     }
 
     .partner img {
-        width: auto; /* Уменьшаем ширину изображения */
-        height: auto; /* Высота авто для пропорций */
-        max-height: 190px; /* Максимальная высота */
+        width: 350px; /* Уменьшаем ширину изображения */
+        height: 200px; /* Высота авто для пропорций */
         object-fit: contain;
         border-radius: 2px;
-        margin-bottom: 15px;
-        margin-top: 15px /* Увеличиваем отступ снизу */
+        margin-bottom: 5px;
+        margin-top: 5px /* Увеличиваем отступ снизу */
     }
 
     .partner a {
@@ -86,40 +86,8 @@
 
 
 
-
-        /* Добавляем стиль для блока content */
-        .content-scroll {
-            max-height: 600px; /* Установите нужную вам высоту */
-            overflow-y: auto;  /* Включаем вертикальную прокрутку */
-            padding: 20px;     /* Добавляем немного внутреннего отступа */
-            border-radius: 5px; /* Необязательно, для скругления углов */
-        }
-
-        /* Стилизация полосы прокрутки для Webkit-браузеров (Chrome, Safari) */
-        .content-scroll::-webkit-scrollbar {
-            width: 8px; /* Ширина полосы прокрутки */
-        }
-
-        .content-scroll::-webkit-scrollbar-track {
-            background: #f1f1f1; /* Цвет фона полосы прокрутки */
-            border-radius: 5px; /* Скругление углов фона */
-        }
-
-        .content-scroll::-webkit-scrollbar-thumb {
-            background: #888; /* Цвет самой полосы прокрутки */
-            border-radius: 5px; /* Скругление углов полосы прокрутки */
-        }
-
-        .content-scroll::-webkit-scrollbar-thumb:hover {
-            background: #555; /* Цвет полосы прокрутки при наведении */
-        }
-
-        /* Стилизация полосы прокрутки для Firefox */
-        .content-scroll {
-            scrollbar-width: thin; /* Узкая полоса прокрутки */
-            scrollbar-color: #888 #f1f1f1; /* Цвет полосы и фона */
-        }
-        .pagination {
+    /* настройка перехода медлу страницами */
+    .pagination {
         display: flex; /* Используйте flexbox для выравнивания */
 
         justify-content: center; /* Центрируйте все номера страниц */

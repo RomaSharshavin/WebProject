@@ -89,6 +89,23 @@
     .arrow.up {
         transform: rotate(180deg);
     }
+
+    .button {
+        display: block; /* Делает ссылку блочным элементом */
+        width: 380px; /* Ширина кнопки равна ширине контейнера */
+        padding: 10px; /* Отступ внутри кнопки */
+        background-color: #a9def5; /* Цвет фона кнопки */
+        color: black; /* Цвет текста */
+        text-align: center; /* Центрирование текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        border-radius: 5px; /* Скругление углов */
+        margin-bottom: 0px;
+        transition: background-color 0.3s; /* Плавный переход цвета фона */
+        }
+
+    .button:hover {
+        background-color: #c7c7c7; /* Цвет фона при наведении */
+    }
 </style>
 
 {% endblock %}
@@ -116,26 +133,33 @@
         </div>
 
         <div class="partners-container">
-            {% for service in services %}
-                <div class="partner">
-                    <div class="partner-description">
-                        {{ service.prod_name }}  <!-- Используйте правильное имя поля -->
-                    </div>
-                    <img src="{{ service.image_path }}" alt="{{ service.alt }}">
-                    <div class="partner-description">
-                        <a href="{% url 'service_detail' service.id_prod %}">ПОДРОБНЕЕ</a>
-                    </div>
+        {% for service in services %}
+            <div class="partner">
+                <div class="partner-description">
+                    {{ service.prod_name }}  <!-- Используйте правильное имя поля -->
                 </div>
-            {% endfor %}
-        </div>
-
-            <div class="pagination" style="text-align: center;">
-                <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>
-                {% for page_num in products.paginator.page_range %}
-                    <span class="page-number" onclick="loadPage({{ page_num }})" {% if page_num == current_page %}style="font-weight: bold;"{% endif %}>{{ page_num }}</span>
-                {% endfor %}
-                <span class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>&gt;</span>
+                <img src="{{ service.image_path }}" alt="{{ service.alt }}">
+                <div class="partner-description">
+                    <a href="{% url 'service_detail' service.id_prod %}" class="button">ПОДРОБНЕЕ</a>
+                </div>
             </div>
+        {% endfor %}
+    </div>
+
+           <div class="pagination" style="text-align: center;">
+        {% if total_pages > 1 %}
+            <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>  <!-- Кнопка стрелка назад -->
+            <span class="page-number" onclick="loadPage(1)" {% if current_page == 1 %}style="font-weight: bold;"{% endif %}>1</span>  <!-- Кнопка первая страница -->
+
+            {% if total_pages > 3 %}
+                <span>...</span>  <!-- Точки -->
+            {% endif %}
+
+            <span class="page-number" onclick="loadPage({{ total_pages }})" {% if current_page == total_pages %}style="font-weight: bold;"{% endif %}>{{ total_pages }}</span>  <!-- Кнопка последняя страница -->
+
+            <span class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>&gt;</span>  <!-- Кнопка стрелка вперед -->
+        {% endif %}
+    </div>
         </div>
     </div>
 
