@@ -93,6 +93,16 @@
                     sendButton.disabled = false; // разблокируем кнопку
                 });
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productName = urlParams.get('product');
+            const questionInput = document.getElementById('question');
+
+            if (productName) {
+                questionInput.value = "Я хочу задать вопрос о " + productName; // Заполняем текстовое поле
+            }
+        });
     </script>
 {% endblock %}
 {% endblock %}

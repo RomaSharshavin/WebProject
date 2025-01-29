@@ -68,7 +68,9 @@
     }
 
     function orderCalculation() {
-        alert("Функция 'Заказать расчет' находится в разработке.");
+        const productName = "{{ service.prod_name|escapejs }}"; // Получаем название продукта из шаблона
+        window.location.href = "{% url 'write' %}?product=" + encodeURIComponent(productName);
     }
+
 </script>
 {% endblock %}
