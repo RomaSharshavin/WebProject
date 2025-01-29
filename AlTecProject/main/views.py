@@ -43,16 +43,35 @@ def partners(request):
 
 def service(request):
     services = Service.objects.all()
-    paginator = Paginator(services, 3)
+
+    # Сопоставление категорий с id_prod
+    category_map = {
+        'subcategory1': [1, 2, 3, 4, 5, 6],
+        'subcategory2': [7],
+        'subcategory3': [8],
+        'subcategory4': [9],
+        'subcategory5': [10, 11],
+        'subcategory6': [12],
+        'subcategory7': [13],
+    }
+
+    category_id = request.GET.get('category')  # Получаем id категории из запроса
+    if category_id and category_id in category_map:
+        services = services.filter(id_prod__in=category_map[category_id])  # Фильтруем по id_prod
+
+    paginator = Paginator(services, 3)  # Указываем количество сервисов на странице
     current_page = int(request.GET.get('page', 1))
     page_obj = paginator.get_page(current_page)
 
     total_pages = paginator.num_pages
+    pages = list(range(1, total_pages + 1))  # Создаем список страниц
 
     return render(request, 'main/service.html', {
         'services': page_obj,
         'total_pages': total_pages,
-        'current_page': current_page,  # Отправляем как целое
+        'current_page': current_page,
+        'pages': pages,  # Передаем список страниц в шаблон
+        'category_id': category_id,  # Передаем id категории
     })
 
 

@@ -10,35 +10,36 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <!-- Меню страницы  -->
-        <div class="menu">
-              <div class="menu-item" onclick="toggleDropdown('category1', true)">Мойки для транспорта TAMMERMATIC
-                    <span class="arrow" id="arrow1">►</span>
-                    <div id="category1" class="dropdown">
-                        <!-- Выпадающий список для 1 пункта меню  -->
-                        <ul>
-                            <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory1')">Автоматические мойки для легкового транспорта</li>
-                            <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory2')">Автоматические мойки для грузовых машин</li>
-                            <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory3')">Автоматические мойки для поездов метро</li>
-                            <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory4')">Автоматические мойки для ж/д транспорта</li>
-                            <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory5')">Мойки InterClean</li>
-                        </ul>
-                    </div>
-              </div>
-              <div class="menu-item" onclick="toggleDropdown('category2', true)">Производство АЛ-ТЕК
-                    <span class="arrow" id="arrow2">►</span>
-                    <div id="category2" class="dropdown">
-                        <!-- Выпадающий список для 2 пункта меню  -->
-                        <ul>
-                            <li  class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory6')">Промышленные ворота "Идеал"</li>
-                            <li  class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory7')">Система отчистки воды</li>
-                        </ul>
-                    </div>
-              </div>
+<div class="container">
+    <!-- Меню страницы  -->
+    <div class="menu">
+        <div class="menu-item" onclick="toggleDropdown('category1', true)">Мойки для транспорта TAMMERMATIC
+            <span class="arrow" id="arrow1">►</span>
+            <div id="category1" class="dropdown">
+                <!-- Выпадающий список для 1 пункта меню  -->
+                <ul>
+                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory1')">Автоматические мойки для легкового транспорта</li>
+                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory2')">Автоматические мойки для грузовых машин</li>
+                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory3')">Автоматические мойки для поездов метро</li>
+                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory4')">Автоматические мойки для ж/д транспорта</li>
+                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory5')">Мойки InterClean</li>
+                </ul>
+            </div>
         </div>
-        <!-- Контейнер для продуктов  -->
-        <div class="partners-container">
+        <div class="menu-item" onclick="toggleDropdown('category2', true)">Производство АЛ-ТЕК
+            <span class="arrow" id="arrow2">►</span>
+            <div id="category2" class="dropdown">
+                <!-- Выпадающий список для 2 пункта меню  -->
+                <ul>
+                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory6')">Промышленные ворота "Идеал"</li>
+                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory7')">Система отчистки воды</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контейнер для продуктов  -->
+    <div class="partners-container">
         {% for service in services %}
             <div class="partner">
                 <div class="partner-description">
@@ -52,56 +53,49 @@
         {% endfor %}
     </div>
 
-       <!-- Навигация  -->
-     <div class="pagination">
+    <!-- Навигация  -->
+    <div class="pagination">
         {% if total_pages > 1 %}
-            <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;&lt;назад</a>  <!-- Кнопка стрелка назад -->
+            <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'-1' }}, '{{ category_id }}')" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;&lt;назад</a>
 
-            {% if total_pages >= 1 %}<span class="page-number" onclick="loadPage(1)" {% if 1 == current_page %}style="font-weight: bold;"{% endif %}>1</span>{% endif %}
-            {% if total_pages >= 2 %}<span class="page-number" onclick="loadPage(2)" {% if 2 == current_page %}style="font-weight: bold;"{% endif %}>2</span>{% endif %}
-            {% if total_pages >= 3 %}<span class="page-number" onclick="loadPage(3)" {% if 3 == current_page %}style="font-weight: bold;"{% endif %}>3</span>{% endif %}
-            {% if total_pages >= 4 %}<span class="page-number" onclick="loadPage(4)" {% if 4 == current_page %}style="font-weight: bold;"{% endif %}>4</span>{% endif %}
+            {% for page in pages %}
+                <span class="page-number" onclick="loadPage({{ page }}, '{{ category_id }}')" {% if page == current_page %}style="font-weight: bold;"{% endif %}>{{ page }}</span>
+            {% endfor %}
 
-            {% if total_pages >= total_pages %}<span class="page-number" onclick="loadPage({{ total_pages }})" {% if total_pages == current_page %}style="font-weight: bold;"{% endif %}>{{ total_pages }}</span>{% endif %}
-
-            <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>вперед&gt;&gt;</a>  <!-- Кнопка стрелка вперед -->
+            <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'1' }}, '{{ category_id }}')" {% if current_page == total_pages %}style="display: none;"{% endif %}>вперед&gt;&gt;</a>
         {% endif %}
     </div>
+</div>
 
-    {% block scripts %}
-        <script>
-            function loadPage(pageNumber) {
-                const url = `{% url 'service' %}?page=` + pageNumber;
-                window.location.href = url; // Переход на новую страницу.
-            }
+{% block scripts %}
+<script>
+    function loadPage(pageNumber, categoryId) {
+        const url = `{% url 'service' %}?page=` + pageNumber + (categoryId ? `&category=${categoryId}` : '');
+        window.location.href = url; // Переход на новую страницу.
+    }
 
-            function toggleDropdown(dropdownId, isMainCategory = false) {
-                const dropdown = document.getElementById(dropdownId);
-                const arrow = document.getElementById('arrow' + dropdownId.charAt(dropdownId.length - 1));
+    function toggleDropdown(dropdownId, isMainCategory = false) {
+        const dropdown = document.getElementById(dropdownId);
+        const arrow = document.getElementById('arrow' + dropdownId.charAt(dropdownId.length - 1));
 
-                if (dropdown) {
-                    // Переключение класса 'show' для дропдауна
-                    if (dropdown.classList.contains('show')) {
-                        dropdown.classList.remove('show');
-                        if (isMainCategory) {
-                            arrow.classList.remove('down');
-                            arrow.innerHTML = '►'; // Стрелка вправо
-                        }
-                        dropdown.style.display = 'none'; // Скрываем дропдаун
-                    } else {
-                        dropdown.classList.add('show');
-                        if (isMainCategory) {
-                            arrow.classList.add('down');
-                            arrow.innerHTML = '▼'; // Стрелка вниз
-                        }
-                        dropdown.style.display = 'block'; // Показываем дропдаун
-                    }
+        if (dropdown) {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+                if (isMainCategory) {
+                    arrow.classList.remove('down');
+                    arrow.innerHTML = '►'; // Стрелка вправо
                 }
+                dropdown.style.display = 'none'; // Скрываем дропдаун
+            } else {
+                dropdown.classList.add('show');
+                if (isMainCategory) {
+                    arrow.classList.add('down');
+                    arrow.innerHTML = '▼'; // Стрелка вниз
+                }
+                dropdown.style.display = 'block'; // Показываем дропдаун
             }
-
-            window.onclick = function(event) {
-            }
-        </script>
-    {% endblock %}
-
+        }
+    }
+</script>
+{% endblock %}
 {% endblock %}

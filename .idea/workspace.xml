@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлена логика поиска в статических html и в моделях">
-      <change afterPath="$PROJECT_DIR$/AlTecProject/main/static/images/json/titles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_022_22_01_25_10_21_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_022_22_01_25_10_21__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_10_23_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_10_23__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_10_33_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_01_2025_10_33__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_9_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_9_05__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +25,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -501,15 +504,7 @@
       <option name="project" value="LOCAL" />
       <updated>1738132720181</updated>
     </task>
-    <task id="LOCAL-00047" summary="Добавлена логика поиска в статических html и в моделях">
-      <option name="closed" value="true" />
-      <created>1738143420019</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1738143420019</updated>
-    </task>
-    <option name="localTasksCounter" value="48" />
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
