@@ -5,17 +5,122 @@
 Результаты поиска
 {% endblock %}
 
-{% block breadcrumb %}
-{% endblock %}
-
-{% block links %}
-    <link rel="stylesheet" href="{% static 'css/stylesSearch.css' %}">
-{% endblock %}
-
 {% block content %}
     <h1>Результаты поиска</h1>
 
-    <p>По запросу .... найдено страниц: ...</p>
+    <!-- фильтры -->
+    <div class="filters">
+        <button class="filter-btn" onclick="showResults('news')">Новости</button>
+        <button class="filter-btn" onclick="showResults('service')">Сервисы</button>
+        <button class="filter-btn" onclick="showResults('faq')">FAQ</button>
+        <button class="filter-btn" onclick="showResults('html')">Статические страницы</button>
+    </div>
 
+    <!-- новости -->
+    <div id="news" class="search-results" style="display: none;">
+        {% if news_results %}
+            <p>По запросу <strong>"{{ query }}"</strong> найдены следующие новости:</p>
+            <ul>
+                {% for item in news_results %}
+                    <li>
+                        <a href="#"><strong>{{ item.title }}</strong></a><br>
+                        <p>{{ item.text|truncatechars:150|safe }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Новостей не найдено.</p>
+        {% endif %}
+    </div>
 
+    <!-- услуги -->
+    <div id="service" class="search-results" style="display: none;">
+        {% if service_results %}
+            <p>По запросу <strong>"{{ query }}"</strong> найдены следующие сервисы:</p>
+            <ul>
+                {% for item in service_results %}
+                    <li>
+                        <a href="#"><strong>{{ item.prod_name }}</strong></a><br>
+                        <p>{{ item.description|truncatechars:150|safe }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Сервисов не найдено.</p>
+        {% endif %}
+    </div>
+
+    <!-- FAQ -->
+    <div id="faq" class="search-results" style="display: none;">
+        {% if faq_results %}
+            <p>По запросу <strong>"{{ query }}"</strong> найдены следующие вопросы и ответы:</p>
+            <ul>
+                {% for item in faq_results %}
+                    <li>
+                        <strong>Вопрос:</strong> {{ item.question }}<br>
+                        <strong>Ответ:</strong> {{ item.answer|truncatechars:150|safe }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>FAQ не найдено.</p>
+        {% endif %}
+    </div>
+
+    <!-- статиченский html -->
+    <div id="html" class="search-results" style="display: none;">
+        {% if html_results %}
+            <p>По запросу <strong>"{{ query }}"</strong> найдены следующие страницы:</p>
+            <ul>
+                {% for result in html_results %}
+                    <li>
+                        <a href="{{ result.url }}"><strong>{{ result.file_name }}</strong></a>
+                        <p>
+                            {% for match in result.matches %}
+                                ...{{ match|safe }}...
+                            {% endfor %}
+                        </p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Статических страниц не найдено.</p>
+        {% endif %}
+    </div>
+
+    {% if not news_results and not service_results and not faq_results and not html_results %}
+        <p>По запросу <strong>"{{ query }}"</strong> ничего не найдено.</p>
+    {% endif %}
+
+    {% block scripts %}
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                function showResults(category) {
+                    // Скрываем все результаты
+                    let results = document.querySelectorAll('.search-results');
+                    results.forEach(function(result) {
+                        result.style.display = 'none';
+                    });
+
+                    // Показываем выбранную категорию
+                    let selectedCategory = document.getElementById(category);
+                    if (selectedCategory) {
+                        selectedCategory.style.display = 'block';
+                    }
+                }
+
+                // Изначальнsq фильтр
+                showResults('news');
+
+                // выделение запрорса в тексте
+                let query = "{{ query }}";
+                if (query) {
+                    let regex = new RegExp(query, "gi");
+                    document.body.innerHTML = document.body.innerHTML.replace(regex, function(matched) {
+                        return '<span style="background-color: yellow; font-weight: bold;">' + matched + '</span>';
+                    });
+                }
+            });
+        </script>
+    {% endblock %}
 {% endblock %}
