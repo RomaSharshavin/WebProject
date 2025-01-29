@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроена появление карточек через меню">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Изменение контейнера Продукты">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2025_22_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2025_22_49__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_0_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_0_24__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_13_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_13_39__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_15_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_15_24__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_9_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_9_05__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesFAQ.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesFAQ.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -480,31 +488,7 @@
       <option name="project" value="LOCAL" />
       <updated>1738080408319</updated>
     </task>
-    <task id="LOCAL-00045" summary="Редактирование данных для подробнее">
-      <option name="closed" value="true" />
-      <created>1738101036471</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1738101036471</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Добавлена логика поиска в статических html и в моделях">
-      <option name="closed" value="true" />
-      <created>1738132720181</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1738132720181</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Настроена появление карточек через меню">
-      <option name="closed" value="true" />
-      <created>1738162559590</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1738162559590</updated>
-    </task>
-    <option name="localTasksCounter" value="48" />
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,6 +506,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Настроено от ображение файлов на странице Партнёры" />
+    <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
+    <MESSAGE value="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
     <MESSAGE value="Добавлены кооментарии к коду" />
     <MESSAGE value="Переработана разсетка страницы &quot;Контакты&quot;" />
     <MESSAGE value="Добавлена анимация появления на странице &quot;Контакты&quot;" />
@@ -544,9 +531,6 @@
     <MESSAGE value="Оптимизация Продукты" />
     <MESSAGE value="Комментарии Продукты" />
     <MESSAGE value="Изменение контейнера Продукты" />
-    <MESSAGE value="Редактирование данных для подробнее" />
-    <MESSAGE value="Добавлена логика поиска в статических html и в моделях" />
-    <MESSAGE value="Настроена появление карточек через меню" />
-    <option name="LAST_COMMIT_MESSAGE" value="Настроена появление карточек через меню" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменение контейнера Продукты" />
   </component>
 </project>

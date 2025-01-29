@@ -10,36 +10,35 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <!-- Меню страницы  -->
-    <div class="menu">
-        <div class="menu-item" onclick="toggleDropdown('category1', true)">Мойки для транспорта TAMMERMATIC
-            <span class="arrow" id="arrow1">►</span>
-            <div id="category1" class="dropdown">
-                <!-- Выпадающий список для 1 пункта меню  -->
-                <ul>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory1')">Автоматические мойки для легкового транспорта</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory2')">Автоматические мойки для грузовых машин</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory3')">Автоматические мойки для поездов метро</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory4')">Автоматические мойки для ж/д транспорта</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory5')">Мойки InterClean</li>
-                </ul>
-            </div>
+    <div class="container">
+        <!-- Меню страницы  -->
+        <div class="menu">
+          <div class="menu-item" onclick="toggleDropdown('category1', true)">Мойки для транспорта TAMMERMATIC
+                <span class="arrow" id="arrow1">►</span>
+                <div id="category1" class="dropdown">
+                    <!-- Выпадающий список для 1 пункта меню  -->
+                    <ul>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory1')">Автоматические мойки для легкового транспорта</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory2')">Автоматические мойки для грузовых машин</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory3')">Автоматические мойки для поездов метро</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory4')">Автоматические мойки для ж/д транспорта</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory5')">Мойки InterClean</li>
+                    </ul>
+                </div>
+          </div>
+          <div class="menu-item" onclick="toggleDropdown('category2', true)">Производство АЛ-ТЕК
+                <span class="arrow" id="arrow2">►</span>
+                <div id="category2" class="dropdown">
+                    <!-- Выпадающий список для 2 пункта меню  -->
+                    <ul>
+                        <li  class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory6')">Промышленные ворота "Идеал"</li>
+                        <li  class="dropdown-item" onclick="event.stopPropagation(); toggleDropdown('subcategory7')">Система отчистки воды</li>
+                    </ul>
+                </div>
+          </div>
         </div>
-        <div class="menu-item" onclick="toggleDropdown('category2', true)">Производство АЛ-ТЕК
-            <span class="arrow" id="arrow2">►</span>
-            <div id="category2" class="dropdown">
-                <!-- Выпадающий список для 2 пункта меню  -->
-                <ul>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory6')">Промышленные ворота "Идеал"</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory7')">Система отчистки воды</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Контейнер для продуктов  -->
-    <div class="partners-container">
+        <!-- Контейнер для продуктов  -->
+        <div class="partners-container">
         {% for service in services %}
             <div class="partner">
                 <div class="partner-description">
@@ -53,8 +52,8 @@
         {% endfor %}
     </div>
 
-    <!-- Навигация  -->
-    <div class="pagination">
+       <!-- Навигация  -->
+     <div class="pagination">
         {% if total_pages > 1 %}
             <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'-1' }}, '{{ category_id }}')" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;&lt;назад</a>
 
@@ -65,12 +64,14 @@
             <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'1' }}, '{{ category_id }}')" {% if current_page == total_pages %}style="display: none;"{% endif %}>вперед&gt;&gt;</a>
         {% endif %}
     </div>
-</div>
+
+
+
 
 {% block scripts %}
-<script>
-    function loadPage(pageNumber, categoryId) {
-        const url = `{% url 'service' %}?page=` + pageNumber + (categoryId ? `&category=${categoryId}` : '');
+    <script>
+    function loadPage(pageNumber) {
+        const url = `{% url 'service' %}?page=` + pageNumber;
         window.location.href = url; // Переход на новую страницу.
     }
 
@@ -79,6 +80,7 @@
         const arrow = document.getElementById('arrow' + dropdownId.charAt(dropdownId.length - 1));
 
         if (dropdown) {
+            // Переключение класса 'show' для дропдауна
             if (dropdown.classList.contains('show')) {
                 dropdown.classList.remove('show');
                 if (isMainCategory) {
@@ -96,6 +98,10 @@
             }
         }
     }
+
+    window.onclick = function(event) {
+    }
 </script>
 {% endblock %}
+
 {% endblock %}

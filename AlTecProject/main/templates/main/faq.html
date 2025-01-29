@@ -39,20 +39,17 @@
         </div>
     </div>
 
-    <div class="pagination" style="text-align: center;">
-        {% if total_pages > 1 %}
-            <span class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;</span>  <!-- Кнопка стрелка назад -->
-            <span class="page-number" onclick="loadPage(1)" {% if current_page == 1 %}style="font-weight: bold;"{% endif %}>1</span>  <!-- Кнопка первая страница -->
+  <div class="pagination" >
+    {% if total_pages > 1 %}
+        <a class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;&lt;назад </a>  <!-- Кнопка стрелка назад -->
 
-            {% if total_pages > 3 %}
-                <span>...</span>  <!-- Точки -->
-            {% endif %}
+        {% for page in page_numbers %}
+            <span class="page-number {% if page == 1 %}first-page{% endif %}" onclick="loadPage({{ page }})" {% if current_page == page %}style="font-weight: bold;"{% endif %}>{{ page }}</span>
+        {% endfor %}
 
-            <span class="page-number" onclick="loadPage({{ total_pages }})" {% if current_page == total_pages %}style="font-weight: bold;"{% endif %}>{{ total_pages }}</span>  <!-- Кнопка последняя страница -->
-
-            <span class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>&gt;</span>  <!-- Кнопка стрелка вперед -->
-        {% endif %}
-    </div>
+        <a class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>вперед&gt;&gt;</a>  <!-- Кнопка стрелка вперед -->
+    {% endif %}
+  </div>
 
     <div id="faqModal" class="modal" style="display: none;">
         <div class="modal-content">

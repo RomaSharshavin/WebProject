@@ -141,32 +141,47 @@
     color: #000; /* Изменение цвета при наведении, для лучшего визуального эффекта */
 }
 
-.pagination {
-    display: flex; /* Используйте flexbox для выравнивания */
-    justify-content: center; /* Центрируйте все номера страниц */
-    margin: 20px 0; /* Отступы сверху и снизу */
-    position: fixed; /* Закрепите в нижней части страницы */
-    bottom: 70px; /* Отступ от нижней части страницы */
-    left: 50%; /* Сдвиг по горизонтали */
-    transform: translateX(-50%); /* Центрирование */
-    z-index: 1000; /* Убедитесь, что он выше других элементов */
-}
 
-.page-number {
-    display: inline-block;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: #cccccc;
-    color: #000000;
-    text-align: center;
-    line-height: 40px;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
 
-.page-number:hover {
-    background-color: #999999;
-    transform: scale(1.1);
-}
+/* настройка навигации */
+    .pagination {
+        display: flex; /* Используйте flexbox для выравнивания */
+
+        justify-content: center; /* Центрируйте все номера страниц */
+        margin: 20px 0; /* Отступы сверху и снизу */
+        position: fixed; /* Закрепите в нижней части страницы */
+        bottom: 65px; /* Отступ от нижней части страницы */
+        left: 50%; /* Сдвиг по горизонтали */
+        transform: translateX(-50%); /* Центрирование */
+        z-index: 1000; /* Убедитесь, что он выше других элементов */
+    }
+
+    .page-number {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+
+        color: #003d7a;
+        text-align: center;
+
+        margin: 0 5px;
+        cursor: pointer;
+
+    }
+
+     .page-number, .pagination a {
+        color: #003d7a; /* Замените на нужный вам цвет */
+        text-decoration: none;
+        margin: 0 5px; /* Отступы между элементами */
+    }
+
+    .page-number:hover, .pagination a:hover {
+        text-decoration: underline; /* Подчеркивание при наведении */
+    }
+
+    .page-number[style*="font-weight: bold;"] {
+        font-weight: bold; /* Сохранение жирного шрифта для активной страницы */
+    }
+    .first-page {
+        margin-left: 25px; /* Увеличьте значение по необходимости */
+    }

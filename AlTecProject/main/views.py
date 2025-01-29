@@ -29,13 +29,14 @@ def faq_view(request):
     page_obj = paginator.get_page(current_page)
 
     total_pages = paginator.num_pages
+    page_numbers = list(range(1, total_pages + 1))  # Create a list of page numbers
 
     return render(request, 'main/faq.html', {
         'faqs': page_obj,
         'total_pages': total_pages,
-        'current_page': current_page,  # Отправляем как целое
+        'current_page': current_page,
+        'page_numbers': page_numbers,  # Pass the list of page numbers to the template
     })
-
 
 def partners(request):
     return render(request, 'main/partners.html')
