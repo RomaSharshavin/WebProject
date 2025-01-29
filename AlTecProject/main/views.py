@@ -10,6 +10,8 @@ from django.db.models import Q
 import os
 import re
 from django.conf import settings
+from bs4 import BeautifulSoup
+import json
 
 
 def index(request):
@@ -157,9 +159,17 @@ def search_page(request):
 
 
 def search_in_static_html(query):
-    """Поиск текста в статических HTML-страницах и вывод только нужного фрагмента"""
+    """Поиск текста в статических HTML-страницах и вывод нужного фрагмента"""
     html_results = []
-    static_dir = os.path.join(settings.BASE_DIR, 'main/templates/main')  # Папка с HTML-файлами
+    static_dir = os.path.join(settings.BASE_DIR, 'main/templates/main')  # HTML-файлы
+    titles_path = os.path.join(settings.BASE_DIR, 'main/static/images/json/titles.json')  # Путь к JSON
+
+    # Загружаем заголовки из JSON
+    try:
+        with open(titles_path, 'r', encoding='utf-8') as f:
+            page_titles = json.load(f)
+    except FileNotFoundError:
+        page_titles = {}
 
     for file_name in os.listdir(static_dir):
         if file_name.endswith('.html'):
@@ -167,12 +177,22 @@ def search_in_static_html(query):
             with open(file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
 
+                # Используем BeautifulSoup для извлечения текста
+                soup = BeautifulSoup(content, 'html.parser')
+
+                # Оставляем только текст из заголовков и параграфов
+                visible_text = ' '.join(tag.get_text(" ", strip=True) for tag in
+                                        soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'strong']))
+
+                # Получаем заголовок только из JSON
+                page_title = page_titles.get(file_name, file_name.replace('.html', ''))
+
                 # Регулярное выражение для поиска слова + 50 символов до и после
-                matches = re.findall(rf'(.{{0,50}}{re.escape(query)}.{{0,50}})', content, re.IGNORECASE)
+                matches = re.findall(rf'(.{{0,50}}{re.escape(query)}.{{0,50}})', visible_text, re.IGNORECASE)
 
                 if matches:
                     html_results.append({
-                        'file_name': file_name,
+                        'page_title': page_title,
                         'matches': matches,
                         'url': f'/{file_name.replace(".html", "")}/'
                     })
