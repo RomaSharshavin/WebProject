@@ -1,24 +1,37 @@
  .search-result {
             background-color: #e0f7fa;
             padding: 15px;
+            height: 90px;
+             max-width: 100vw;
             margin: 10px 0 20px;
             border-radius: 5px;
             margin-left: 20px;
+            overflow: hidden;  /* Скрывает переполнение */
+            position: relative;
+            box-sizing: border-box;
+ }
 
-        }
-        .search-title {
+ .search-result p {
+    overflow: hidden;              /* Скрывает переполнение текста */
+    text-overflow: ellipsis;      /* Обозначает переполнение */
+    white-space: nowrap;           /* Запрещает перенос строки */
+    margin: 10px 0 0;             /* Отступы сверху и снизу для параграфа */
+}
+
+ .search-title {
             font-family: 'Jura', sans-serif;
             margin-bottom: 20px;
             margin-left: 20px; /* Отступ снизу заголовка */
             margin-top: 20px;
-        }
-        .search-query {
+ }
+ .search-query {
             margin-bottom: 15px; /* Отступ снизу блока с запросом */
             font-size: 1.2em;
             margin-left: 20px;/* Увеличенный размер шрифта для выделения */
-        }
+ }
 
-        /* настройка навигации */
+
+ /* настройка навигации */
     .pagination {
         display: flex; /* Используйте flexbox для выравнивания */
 

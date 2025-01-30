@@ -2,7 +2,7 @@ from .models import News
 from .models import FAQ
 import requests
 from django.http import JsonResponse
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from .models import Service
 
@@ -150,13 +150,10 @@ def views_about(request):
 
 
 def search_page(request):
-    """Поиск в моделях и статических файлах"""
     query = request.GET.get('search', '').strip()
+    page_number = request.GET.get('page', 1)
 
-    news_results = []
-    service_results = []
-    faq_results = []
-    html_results = []
+    all_results = []  # Список для объединения всех результатов
 
     if query:
         # Поиск в моделях базы данных
@@ -165,16 +162,23 @@ def search_page(request):
             Q(prod_name__icontains=query) | Q(description__icontains=query) | Q(characteristics__icontains=query)
         )
         faq_results = FAQ.objects.filter(Q(question__icontains=query) | Q(answer__icontains=query))
-
-        # Поиск в статических HTML-страницах
         html_results = search_in_static_html(query)
+
+        all_results.extend(news_results)
+        all_results.extend(service_results)
+        all_results.extend(faq_results)
+        all_results.extend(html_results)
+
+    # Пагинация для всех результатов
+    paginator = Paginator(all_results, 3)  # Ограничение до 4 блоков
+    current_page = paginator.get_page(page_number)
 
     return render(request, 'main/search.html', {
         'query': query,
-        'news_results': news_results,
-        'service_results': service_results,
-        'faq_results': faq_results,
-        'html_results': html_results
+        'results': current_page,  # Все результаты в одной переменной
+        'total_pages': paginator.num_pages,
+        'current_page': page_number,
+        'page_numbers': range(1, paginator.num_pages + 1),
     })
 
 

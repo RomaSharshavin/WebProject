@@ -5,68 +5,62 @@
 Результаты поиска
 {% endblock %}
 
+
 {% block breadcrumb %}
 {% endblock %}
 
 {% block links %}
     <link rel="stylesheet" href="{% static 'css/stylesSearch.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap">
-
 {% endblock %}
 
 {% block content %}
     <h1 class="search-title">Результаты поиска</h1>
 
-    {% if news_results or service_results or faq_results or html_results %}
+    {% if results %}
         <p class="search-query">По запросу <strong>"{{ query }}"</strong> найдены следующие результаты:</p>
 
         <div class="search-results">
-            <!-- Новости -->
-            {% for item in news_results %}
+            {% for item in results %}
                 <div class="search-result">
-                    <a href="{% url 'news' %}#news-{{ item.id }}"><strong>{{ item.title }}</strong></a><br>
-                    <p>{{ item.text|truncatechars:150|safe }}</p>
-                </div>
-            {% endfor %}
-
-            <!-- Продукция -->
-            {% for item in service_results %}
-                <div class="search-result">
-                    <a href="{% url 'service_detail' item.id_prod %}"><strong>{{ item.prod_name }}</strong></a><br>
-                    <p>{{ item.description|truncatechars:150|safe }}</p>
-                </div>
-            {% endfor %}
-
-
-            <!-- FAQ -->
-            {% for item in faq_results %}
-                <div class="search-result">
-                    <a href="{% url 'faq' %}">
-                        <strong>Вопрос:</strong> {{ item.question }}
-                    </a><br>
-                    <strong>Ответ:</strong> {{ item.answer|truncatechars:150|safe }}
-                </div>
-            {% endfor %}
-
-
-            <!-- Статический текст -->
-            {% for result in html_results %}
-                <div class="search-result">
-                    <a href="{{ result.url }}"><strong>{{ result.page_title }}</strong></a>
-                    <p>
-                        {% for match in result.matches %}
-                            ...{{ match|safe }}...
-                        {% endfor %}
-                    </p>
+                    {% if item.title %}
+                        <a href="{% url 'news' %}#news-{{ item.id }}"><strong>{{ item.title }}</strong></a><br>
+                        <p>{{ item.text|truncatechars:150|safe }}</p>
+                    {% elif item.prod_name %}
+                        <a href="{% url 'service_detail' item.id_prod %}"><strong>{{ item.prod_name }}</strong></a><br>
+                        <p>{{ item.description|truncatechars:150|safe }}</p>
+                    {% elif item.question %}
+                        <a href="{% url 'faq' %}">
+                            <strong>Вопрос:</strong> {{ item.question }}
+                        </a><br>
+                        <strong>Ответ:</strong> {{ item.answer|truncatechars:150|safe }}
+                    {% elif item.page_title %}
+                        <a href="{{ item.url }}"><strong>{{ item.page_title }}</strong></a>
+                        <p>
+                            {% for match in item.matches %}
+                                ...{{ match|safe }}...
+                            {% endfor %}
+                        </p>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
 
+        <!-- Пагинация -->
+        <div class="pagination">
+            {% if total_pages > 1 %}
+                {% if current_page|add:'-1' > 0 %}
+                    <a href="?search={{ query }}&page={{ current_page|add:'-1' }}"><< назад</a>
+                {% endif %}
+                {% for page in page_numbers %}
+                    <a href="?search={{ query }}&page={{ page }}">{{ page }}</a>
+                {% endfor %}
+                {% if current_page|add:'1' <= total_pages %}
+                    <a href="?search={{ query }}&page={{ current_page|add:'1' }}">вперед >> </a>
+                {% endif %}
+            {% endif %}
+        </div>
     {% else %}
         <p class="search-query">По запросу <strong>"{{ query }}"</strong> ничего не найдено.</p>
     {% endif %}
-
-    {% block scripts %}
-
-    {% endblock %}
 {% endblock %}
