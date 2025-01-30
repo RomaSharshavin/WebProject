@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="{% static 'css/stylesNews.css' %}">
 {% endblock %}
 
-
 {% block content %}
 <h5 class="news-title">Новости</h5>
     <div>
         {% if page_obj.has_other_pages %}
             <div id="news-container">
                 {% for news in page_obj.object_list %}
-                    <div class="news-item" draggable="true">
+                    <div class="news-item" id="news-{{ news.id }}" draggable="true">
                         <div class="news-image">
                             <img src="{% static 'images/iconNews.webm' %}" alt="Новость" />
                         </div>
@@ -36,7 +35,6 @@
                 <button class="next-button {% if not page_obj.has_next %}disabled-button{% endif %}"
                         onclick="navigate(1)" {% if not page_obj.has_next %}disabled{% endif %}>&#8594;</button>
             </div>
-
 
         {% else %}
             <p>Нет новостей на данный момент.</p>
@@ -68,13 +66,34 @@
                 }, 500); // Задержка в 500 мс (время анимации)
             }
 
+            // Функция плавного скролла к найденной новости
+            function scrollToNews() {
+                const hash = window.location.hash;
+                if (hash) {
+                    const target = document.querySelector(hash);
+                    if (target) {
+                        setTimeout(() => {
+                            target.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }, 700); // Задержка, чтобы страница успела загрузиться
+                    }
+                }
+            }
+
             // Анимация появления новостей при загрузке
             window.onload = () => {
                 const newsItems = document.querySelectorAll('.news-item');
                 newsItems.forEach(item => {
                     item.classList.add('visible');
                 });
+
+                // Прокрутка к нужной новости после загрузки страницы
+                scrollToNews();
             };
+
+            // Если пользователь попал на страницу и hash уже есть (без перезагрузки), то сразу скроллим
+            if (window.location.hash) {
+                scrollToNews();
+            }
         </script>
     {% endblock %}
 

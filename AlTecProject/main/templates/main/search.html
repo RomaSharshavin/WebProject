@@ -23,10 +23,11 @@
     <div class="search-results">
         {% for item in news_results %}
             <div class="search-result">
-                <a href="#"><strong>{{ item.title }}</strong></a><br>
+                <a href="{% url 'news' %}#news-{{ item.id }}"><strong>{{ item.title }}</strong></a><br>
                 <p>{{ item.text|truncatechars:150|safe }}</p>
             </div>
         {% endfor %}
+
 
         {% for item in service_results %}
             <div class="search-result">
