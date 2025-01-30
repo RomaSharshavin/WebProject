@@ -10,80 +10,80 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <!-- Заголовок страницы -->
-    <h5 class="service-title">Продукция</h5>
+    <div class="container">
+        <!-- Заголовок страницы -->
+        <h5 class="service-title">Продукция</h5>
 
-    <!-- Меню страницы  -->
-    <div class="menu">
-        <h6 class="catalog-title">Каталог</h6>
-        <div class="menu-item" onclick="toggleDropdown('category1')">
-            <div class="menu-text">Мойки для транспорта TAMMERMATIC</div>
-            <div id="category1" class="dropdown show">
-                <ul>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory1')">➙ Автоматические мойки для легкового транспорта</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory2')">➙ Автоматические мойки для грузовых машин</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory3')">➙ Автоматические мойки для поездов метро</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory4')">➙ Автоматические мойки для ж/д транспорта</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory5')">➙ Мойки InterClean</li>
-                </ul>
+        <!-- Меню страницы  -->
+        <div class="menu">
+            <h6 class="catalog-title">Каталог</h6>
+            <div class="menu-item" onclick="toggleDropdown('category1')">
+                <div class="menu-text"><p>Мойки для транспорта TAMMERMATIC</p></div>
+                <div id="category1" class="dropdown show">
+                    <ul>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory1')">➙ Автоматические мойки для легкового транспорта</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory2')">➙ Автоматические мойки для грузовых машин</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory3')">➙ Автоматические мойки для поездов метро</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory4')">➙ Автоматические мойки для ж/д транспорта</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory5')">➙ Мойки InterClean</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleDropdown('category2')">
+                <div class="menu-text"><p>Производство АЛ-ТЕК</p></div>
+                <div id="category2" class="dropdown show">
+                    <ul>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory6')">➙ Промышленные ворота "Идеал"</li>
+                        <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory7')">➙ Система отчистки воды</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <div class="menu-item" onclick="toggleDropdown('category2')">
-            <div class="menu-text">Производство АЛ-ТЕК</div>
-            <div id="category2" class="dropdown show">
-                <ul>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory6')">➙ Промышленные ворота "Идеал"</li>
-                    <li class="dropdown-item" onclick="event.stopPropagation(); loadPage(1, 'subcategory7')">➙ Система отчистки воды</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Контейнер для продуктов  -->
-    <div class="service-container {% if category_id == 'subcategory2' %}align-left{% endif %} {% if category_id == 'subcategory3' %}
-    align-left{% endif %} {% if category_id == 'subcategory4' %}align-left{% endif %} {% if category_id == 'subcategory5' %}
-    align-lefty{% endif %} {% if category_id == 'subcategory6' %}
-    align-left{% endif %} {% if category_id == 'subcategory7' %}align-left{% endif %}" >
-        {% for service in services %}
-            <div class="service">
-                <div class="service-description">
-                    {{ service.prod_name }}
+        <!-- Контейнер для продуктов  -->
+        <div class="service-container {% if category_id == 'subcategory2' %}align-left{% endif %} {% if category_id == 'subcategory3' %}
+        align-left{% endif %} {% if category_id == 'subcategory4' %}align-left{% endif %} {% if category_id == 'subcategory5' %}
+        align-lefty{% endif %} {% if category_id == 'subcategory6' %}
+        align-left{% endif %} {% if category_id == 'subcategory7' %}align-left{% endif %}" >
+            {% for service in services %}
+                <div class="service">
+                    <div class="service-description">
+                        {{ service.prod_name }}
+                    </div>
+                    <img src="{{ service.image_path }}" alt="{{ service.alt }}">
+                    <div class="service-description">
+                        <a href="{% url 'service_detail' service.id_prod %}" class="button">ПОДРОБНЕЕ</a>
+                    </div>
                 </div>
-                <img src="{{ service.image_path }}" alt="{{ service.alt }}">
-                <div class="service-description">
-                    <a href="{% url 'service_detail' service.id_prod %}" class="button">ПОДРОБНЕЕ</a>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-
-    <!-- Навигация  -->
-    <div class="pagination">
-        {% if total_pages > 1 %}
-            <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'-1' }}, '{{ category_id }}')" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;&lt;назад</a>
-
-            {% for page in pages %}
-                <span class="page-number" onclick="loadPage({{ page }}, '{{ category_id }}')" {% if page == current_page %}style="font-weight: bold;"{% endif %}>{{ page }}</span>
             {% endfor %}
+        </div>
 
-            <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'1' }}, '{{ category_id }}')" {% if current_page == total_pages %}style="display: none;"{% endif %}>вперед&gt;&gt;</a>
-        {% endif %}
+        <!-- Навигация  -->
+        <div class="pagination">
+            {% if total_pages > 1 %}
+                <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'-1' }}, '{{ category_id }}')" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;&lt;назад</a>
+
+                {% for page in pages %}
+                    <span class="page-number" onclick="loadPage({{ page }}, '{{ category_id }}')" {% if page == current_page %}style="font-weight: bold;"{% endif %}>{{ page }}</span>
+                {% endfor %}
+
+                <a href="javascript:void(0);" onclick="loadPage({{ current_page|add:'1' }}, '{{ category_id }}')" {% if current_page == total_pages %}style="display: none;"{% endif %}>вперед&gt;&gt;</a>
+            {% endif %}
+        </div>
     </div>
-</div>
 
-{% block scripts %}
-<script>
-    function loadPage(pageNumber, categoryId) {
-        const url = `{% url 'service' %}?page=` + pageNumber + (categoryId ? `&category=${categoryId}` : '');
-        window.location.href = url; // Переход на новую страницу.
-    }
+    {% block scripts %}
+    <script>
+        function loadPage(pageNumber, categoryId) {
+            const url = `{% url 'service' %}?page=` + pageNumber + (categoryId ? `&category=${categoryId}` : '');
+            window.location.href = url; // Переход на новую страницу.
+        }
 
-    function toggleDropdown(dropdownId) {
-        const dropdown = document.getElementById(dropdownId);
-        dropdown.classList.toggle('show'); // Переключение класса для отображения
-    }
-</script>
-{% endblock %}
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.classList.toggle('show'); // Переключение класса для отображения
+        }
+    </script>
+    {% endblock %}
 {% endblock %}

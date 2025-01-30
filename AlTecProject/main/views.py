@@ -202,7 +202,7 @@ def search_in_static_html(query):
 
                 # Оставляем только текст из заголовков и параграфов
                 visible_text = ' '.join(tag.get_text(" ", strip=True) for tag in
-                                        soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'strong']))
+                                        soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong', 'td', 'th', 'label']))
 
                 # Получаем заголовок только из JSON
                 page_title = page_titles.get(file_name, file_name.replace('.html', ''))
