@@ -15,51 +15,58 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="search-title">Результаты поиска</h1>
+    <h1 class="search-title">Результаты поиска</h1>
 
-{% if news_results or service_results or faq_results or html_results %}
-    <p class="search-query">По запросу <strong>"{{ query }}"</strong> найдены следующие результаты:</p>
+    {% if news_results or service_results or faq_results or html_results %}
+        <p class="search-query">По запросу <strong>"{{ query }}"</strong> найдены следующие результаты:</p>
 
-    <div class="search-results">
-        {% for item in news_results %}
-            <div class="search-result">
-                <a href="{% url 'news' %}#news-{{ item.id }}"><strong>{{ item.title }}</strong></a><br>
-                <p>{{ item.text|truncatechars:150|safe }}</p>
-            </div>
-        {% endfor %}
+        <div class="search-results">
+            <!-- Новости -->
+            {% for item in news_results %}
+                <div class="search-result">
+                    <a href="{% url 'news' %}#news-{{ item.id }}"><strong>{{ item.title }}</strong></a><br>
+                    <p>{{ item.text|truncatechars:150|safe }}</p>
+                </div>
+            {% endfor %}
+
+            <!-- Продукция -->
+            {% for item in service_results %}
+                <div class="search-result">
+                    <a href="{% url 'service_detail' item.id_prod %}"><strong>{{ item.prod_name }}</strong></a><br>
+                    <p>{{ item.description|truncatechars:150|safe }}</p>
+                </div>
+            {% endfor %}
 
 
-        {% for item in service_results %}
-            <div class="search-result">
-                <a href="#"><strong>{{ item.prod_name }}</strong></a><br>
-                <p>{{ item.description|truncatechars:150|safe }}</p>
-            </div>
-        {% endfor %}
+            <!-- FAQ -->
+            {% for item in faq_results %}
+                <div class="search-result">
+                    <a href="{% url 'faq' %}">
+                        <strong>Вопрос:</strong> {{ item.question }}
+                    </a><br>
+                    <strong>Ответ:</strong> {{ item.answer|truncatechars:150|safe }}
+                </div>
+            {% endfor %}
 
-        {% for item in faq_results %}
-            <div class="search-result">
-                <strong>Вопрос:</strong> {{ item.question }}<br>
-                <strong>Ответ:</strong> {{ item.answer|truncatechars:150|safe }}
-            </div>
-        {% endfor %}
 
-        {% for result in html_results %}
-            <div class="search-result">
-                <a href="{{ result.url }}"><strong>{{ result.page_title }}</strong></a>
-                <p>
-                    {% for match in result.matches %}
-                        ...{{ match|safe }}...
-                    {% endfor %}
-                </p>
-            </div>
-        {% endfor %}
-    </div>
+            <!-- Статический текст -->
+            {% for result in html_results %}
+                <div class="search-result">
+                    <a href="{{ result.url }}"><strong>{{ result.page_title }}</strong></a>
+                    <p>
+                        {% for match in result.matches %}
+                            ...{{ match|safe }}...
+                        {% endfor %}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
 
-{% else %}
-    <p class="search-query">По запросу <strong>"{{ query }}"</strong> ничего не найдено.</p>
-{% endif %}
+    {% else %}
+        <p class="search-query">По запросу <strong>"{{ query }}"</strong> ничего не найдено.</p>
+    {% endif %}
 
-{% block scripts %}
+    {% block scripts %}
 
-{% endblock %}
+    {% endblock %}
 {% endblock %}

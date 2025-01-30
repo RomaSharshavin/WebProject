@@ -39,17 +39,15 @@
         </div>
     </div>
 
-  <div class="pagination" >
-    {% if total_pages > 1 %}
-        <a class="page-number" onclick="loadPage({{ current_page|add:'-1' }})" {% if current_page == 1 %}style="display: none;"{% endif %}>&lt;&lt;назад </a>  <!-- Кнопка стрелка назад -->
-
-        {% for page in page_numbers %}
-            <span class="page-number {% if page == 1 %}first-page{% endif %}" onclick="loadPage({{ page }})" {% if current_page == page %}style="font-weight: bold;"{% endif %}>{{ page }}</span>
-        {% endfor %}
-
-        <a class="page-number" onclick="loadPage({{ current_page|add:'1' }})" {% if current_page == total_pages %}style="display: none;"{% endif %}>вперед&gt;&gt;</a>  <!-- Кнопка стрелка вперед -->
-    {% endif %}
-  </div>
+    <div class="pagination">
+        {% if total_pages > 1 %}
+            <a href="?q={{ request.GET.q }}&page={{ current_page|add:'-1' }}"><< назад</a>
+            {% for page in page_numbers %}
+                <a href="?q={{ request.GET.q }}&page={{ page }}">{{ page }}</a>
+            {% endfor %}
+            <a href="?q={{ request.GET.q }}&page={{ current_page|add:'1' }}">вперед >> </a>
+        {% endif %}
+    </div>
 
     <div id="faqModal" class="modal" style="display: none;">
         <div class="modal-content">
@@ -61,6 +59,7 @@
 
     {% block scripts %}
         <script>
+            // Функция для открытия/закрытия ответа
             function toggleAnswer(questionElement) {
                 const answerElement = questionElement.nextElementSibling;
                 const arrowElement = questionElement.querySelector('.arrow');
@@ -102,12 +101,20 @@
                 }
             }
 
-            function loadPage(pageNumber) {
-                const url = `{% url 'faq' %}?page=` + pageNumber; // Измените на ваш URL.
-                window.location.href = url; // Переход на новую страницу.
-            }
-
+            // Прокрутка к элементу, соответствующему поисковому запросу
             document.addEventListener("DOMContentLoaded", function() {
+                const searchQuery = new URLSearchParams(window.location.search).get('q');
+                if (searchQuery) {
+                    const faqItems = document.querySelectorAll('.faq-item');
+                    faqItems.forEach(item => {
+                        const questionText = item.querySelector('.faq-question h6').textContent.toLowerCase();
+                        if (questionText.includes(searchQuery.toLowerCase())) {
+                            item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            item.classList.add('highlight');  // Подсветка найденных вопросов
+                        }
+                    });
+                }
+
                 const faqItems = document.querySelectorAll('.faq-item');
                 faqItems.forEach((item, index) => {
                     setTimeout(() => {
