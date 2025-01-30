@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load compress %}
 
 {% block title %}
 Продукция
@@ -74,16 +75,18 @@
     </div>
 
     {% block scripts %}
-    <script>
-        function loadPage(pageNumber, categoryId) {
-            const url = `{% url 'service' %}?page=` + pageNumber + (categoryId ? `&category=${categoryId}` : '');
-            window.location.href = url; // Переход на новую страницу.
-        }
+        {% compress js %}
+            <script>
+                function loadPage(pageNumber, categoryId) {
+                    const url = `{% url 'service' %}?page=` + pageNumber + (categoryId ? `&category=${categoryId}` : '');
+                    window.location.href = url; // Переход на новую страницу.
+                }
 
-        function toggleDropdown(dropdownId) {
-            const dropdown = document.getElementById(dropdownId);
-            dropdown.classList.toggle('show'); // Переключение класса для отображения
-        }
-    </script>
+                function toggleDropdown(dropdownId) {
+                    const dropdown = document.getElementById(dropdownId);
+                    dropdown.classList.toggle('show'); // Переключение класса для отображения
+                }
+            </script>
+        {% endcompress %}
     {% endblock %}
 {% endblock %}

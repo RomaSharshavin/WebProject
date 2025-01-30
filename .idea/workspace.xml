@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Изменение навигации FAQ">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_23_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2025_23_03__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2025_9_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2025_9_05__Changes_.xml" afterDir="false" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроенр переход при поиске для динамически сформированных страниц">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/static/css/stylesSearch.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -131,38 +130,6 @@
       <workItem from="1737386408608" duration="2665000" />
       <workItem from="1737525216812" duration="2785000" />
       <workItem from="1737912514630" duration="8493000" />
-    </task>
-    <task id="LOCAL-00001" summary="Start Project">
-      <option name="closed" value="true" />
-      <created>1727970290911</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1727970290911</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Добавлена главная страница">
-      <option name="closed" value="true" />
-      <created>1727973199891</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1727973199891</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Добавлен шаблон для сайта и страница контакты">
-      <option name="closed" value="true" />
-      <created>1727974624030</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1727974624030</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Настроено отображение переходов">
-      <option name="closed" value="true" />
-      <created>1727975706066</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1727975706066</updated>
     </task>
     <task id="LOCAL-00005" summary="Добавлены информацинные блоки на страницу контакты">
       <option name="closed" value="true" />
@@ -484,15 +451,79 @@
       <option name="project" value="LOCAL" />
       <updated>1738080408319</updated>
     </task>
-    <task id="LOCAL-00045" summary="Изменение навигации FAQ">
+    <task id="LOCAL-00045" summary="Редактирование данных для подробнее">
       <option name="closed" value="true" />
-      <created>1738177242358</created>
+      <created>1738101036471</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1738177242358</updated>
+      <updated>1738101036471</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Добавлена логика поиска в статических html и в моделях">
+      <option name="closed" value="true" />
+      <created>1738132720181</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1738132720181</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Добавлена логика поиска в статических html и в моделях">
+      <option name="closed" value="true" />
+      <created>1738143420019</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1738143420019</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Формирование крошки на Продукции">
+      <option name="closed" value="true" />
+      <created>1738218262473</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1738218262473</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Добавлена стилизация для крошки">
+      <option name="closed" value="true" />
+      <created>1738219238865</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1738219238865</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Добавлена стилизация для крошки">
+      <option name="closed" value="true" />
+      <created>1738220466224</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1738220466224</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Настроенр переход при поиске для динамически сформированных страниц">
+      <option name="closed" value="true" />
+      <created>1738224593843</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1738224593843</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Настроенр переход при поиске для динамически сформированных страниц">
+      <option name="closed" value="true" />
+      <created>1738224958636</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1738224958636</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Настроенр переход при поиске для динамически сформированных страниц">
+      <option name="closed" value="true" />
+      <created>1738225581396</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1738225581396</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,10 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Установленна ассинхранная подгрузка файла js для отображения карты, добавлена задержка отображения карты" />
-    <MESSAGE value="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
-    <MESSAGE value="Добавлены кооментарии к коду" />
-    <MESSAGE value="Переработана разсетка страницы &quot;Контакты&quot;" />
     <MESSAGE value="Добавлена анимация появления на странице &quot;Контакты&quot;" />
     <MESSAGE value="Изменены стили для отсеживания перемещения по сайту чсерез панель навигации" />
     <MESSAGE value="Добавлена анимация между элементами на странице &quot;Партнёры&quot;" />
@@ -534,7 +561,11 @@
     <MESSAGE value="Оптимизация Продукты" />
     <MESSAGE value="Комментарии Продукты" />
     <MESSAGE value="Изменение контейнера Продукты" />
-    <MESSAGE value="Изменение навигации FAQ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменение навигации FAQ" />
+    <MESSAGE value="Редактирование данных для подробнее" />
+    <MESSAGE value="Добавлена логика поиска в статических html и в моделях" />
+    <MESSAGE value="Формирование крошки на Продукции" />
+    <MESSAGE value="Добавлена стилизация для крошки" />
+    <MESSAGE value="Настроенр переход при поиске для динамически сформированных страниц" />
+    <option name="LAST_COMMIT_MESSAGE" value="Настроенр переход при поиске для динамически сформированных страниц" />
   </component>
 </project>

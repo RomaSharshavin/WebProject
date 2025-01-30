@@ -220,5 +220,4 @@ def search_in_static_html(query):
                         'matches': matches,
                         'url': f'/{file_name.replace(".html", "")}/'
                     })
-
     return html_results

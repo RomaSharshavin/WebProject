@@ -1,0 +1,2 @@
+function loadPage(pageNumber,categoryId){const url=`/service/?page=`+pageNumber+(categoryId?`&category=${categoryId}`:'');window.location.href=url;}
+function toggleDropdown(dropdownId){const dropdown=document.getElementById(dropdownId);dropdown.classList.toggle('show');};
