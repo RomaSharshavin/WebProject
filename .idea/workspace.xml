@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлена логика поиска в статических html и в моделях">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_01_2025_9_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_01_2025_9_03__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлена стилизация для крошки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" afterDir="false" />
     </list>
@@ -508,7 +505,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738143420019</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Формирование крошки на Продукции">
+      <option name="closed" value="true" />
+      <created>1738218262473</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1738218262473</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Добавлена стилизация для крошки">
+      <option name="closed" value="true" />
+      <created>1738219238865</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1738219238865</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,8 +539,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправлена ошибка на странице &quot;Контакты&quot; поздней загрузки подвала" />
-    <MESSAGE value="Добавлены кооментарии к коду" />
     <MESSAGE value="Переработана разсетка страницы &quot;Контакты&quot;" />
     <MESSAGE value="Добавлена анимация появления на странице &quot;Контакты&quot;" />
     <MESSAGE value="Изменены стили для отсеживания перемещения по сайту чсерез панель навигации" />
@@ -551,6 +562,8 @@
     <MESSAGE value="Изменение контейнера Продукты" />
     <MESSAGE value="Редактирование данных для подробнее" />
     <MESSAGE value="Добавлена логика поиска в статических html и в моделях" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена логика поиска в статических html и в моделях" />
+    <MESSAGE value="Формирование крошки на Продукции" />
+    <MESSAGE value="Добавлена стилизация для крошки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена стилизация для крошки" />
   </component>
 </project>

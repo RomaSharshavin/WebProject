@@ -96,14 +96,51 @@ img {
 .breadcrumb-container {
     margin-top: -28px;  /* отступ сверху */
     margin-bottom: -10px;  /* отступ снизу */
+    background-color: #f8f9fa;
 }
 
 .breadcrumb {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+    font-size: 14px;
 }
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #007bff; /* Синий цвет ссылок */
+    transition: color 0.3s ease-in-out;
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3; /* Темно-синий при наведении */
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d; /* Серый цвет */
+    font-weight: bold;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "➤"; /* символ разделитель */
+    padding: 0 8px;
+    color: #6c757d;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb {
+        font-size: 12px;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        padding: 0 5px;
+    }
+}
+
 
 /* поисковик */
 * {box-sizing: border-box;}

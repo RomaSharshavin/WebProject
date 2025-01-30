@@ -44,11 +44,14 @@
                     <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная</a></li>
 
                     {% if '/service/' in request.path %}
-                        <li class="breadcrumb-item"><a href="{% url 'service' %}">Продукция</a></li>
-
                         {% if service %}
+                            <li class="breadcrumb-item"><a href="{% url 'service' %}">Продукция</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ service.prod_name }}</li>
+                        {% else %}
+                            <li class="breadcrumb-item active" aria-current="page">Продукция</li>
                         {% endif %}
+                    {% elif '/partners/' in request.path %}
+                        <li class="breadcrumb-item active" aria-current="page">Партнёры</li>
                     {% elif '/sertificate/' in request.path %}
                         <li class="breadcrumb-item active" aria-current="page">Сертификаты</li>
                     {% elif '/news/' in request.path %}
