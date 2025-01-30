@@ -1,35 +1,84 @@
-.header {
-    text-align: center; /* Выравнивание по центру */
-    padding: 20px 0; /* Отступы сверху и снизу */
+.partners-title {
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 .partners-container {
     display: flex;
-    justify-content: center; /* Центрируем содержимое по горизонтали */
-    gap: 20px; /* Промежуток между элементами */
-    padding: 20px 0; /* Отступы сверху и снизу */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
 }
 
 .partner {
-    text-align: center; /* Выравнивание текста по центру */
-    flex: 1; /* Занимает равное пространство */
-    max-width: 150px; /* Максимальная ширина для всех партнеров */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    height: auto;
+    margin: 10px;
+    text-align: center;
+    border: 2px solid #a9def5;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fade-in 0.6s forwards;
+    text-decoration: none;
+}
+
+/* Анимация появления */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.partner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Тень при наведении */
 }
 
 .partner img {
-    width: 100%; /* Занимает 100% ширины родительского контейнера */
-    height: 100px; /* Фиксированная высота */
-    object-fit: contain; /* Обеспечивает сохранение пропорций */
-    border-radius: 10px; /* Закругленные углы у изображений */
+    width: 80%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.partner-description {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000; /* Цвет текста в контейнере черный */
 }
 
 .partner a {
-    display: block; /* Блоковый элемент для ссылки */
-    margin-top: 10px; /* Отступ сверху */
-    color: #0056b3; /* Цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+    color: #0056b3;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    display: block;
+    width: 100%;
 }
 
 .partner a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+    color: #0056b3;
 }

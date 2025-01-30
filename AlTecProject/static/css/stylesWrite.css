@@ -1,13 +1,12 @@
-.write-to-us {
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 30px;
-    max-width: 700px;
-    margin: 70px auto;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s forwards;
+.write-title {
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 /* Глобальные стили для анимации */
@@ -22,45 +21,6 @@
     }
 }
 
-/* Стили для групп полей ввода */
-.form-group {
-    margin-bottom: 3px;
-}
-
-/* Стили для меток полей ввода */
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Стили для различных типов полей ввода и текстовой области */
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #DDDDDD;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: border-color 0.3s;
-}
-
-/* Эффект фокуса на полях ввода */
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    border-color: #4A90E2;
-}
-
-/* Стили для текстовой области */
-textarea {
-    height: 100px;
-    resize: none;
-}
-
 /* Стили для кнопки отправки */
 .send-button {
     background-color: #4A90E2;
@@ -72,6 +32,10 @@ textarea {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 16px;
+    display: block;
+    width: calc(100% - 20px); /* Учитываем отступы */
+    margin: 10px auto;
+    max-width: 200px;
 }
 
 /* Эффект изменения цвета фона кнопки при наведении */
@@ -79,16 +43,65 @@ textarea {
     background-color: #357ABD;
 }
 
-/* Стили для группы полей ввода на одной строке */
-.flex-group {
-    display: flex;
-    justify-content: space-between;
+.write-to-us {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    animation: fadeInUp 0.6s forwards;
 }
 
-/* Стили для элементов внутри флекс-группы */
+/* Стили для меток полей ввода, чтобы они не имели отступов */
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.flex-group {
+    display: flex; /* Используем Flexbox для размещения элементов в ряд */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+}
+
 .flex-item {
-    flex: 1;
-    margin-right: 10px;
+    flex: 1; /* Каждый элемент занимает равное пространство */
+    margin-right: 10px; /* Отступ между элементами */
+}
+
+.flex-item:last-child {
+    margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    padding: 12px; /* Увеличиваем внутренние отступы для более удобного ввода */
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    width: 100%; /* Поля занимают всю ширину родителя */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем легкую тень для глубины */
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #4A90E2; /* Изменяем цвет рамки при фокусе */
+    outline: none; /* Убираем обводку по умолчанию */
+}
+
+textarea {
+    height: 100px; /* Чуть увеличиваем высоту текстового поля для вопроса */
+}
+
+.captcha-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 

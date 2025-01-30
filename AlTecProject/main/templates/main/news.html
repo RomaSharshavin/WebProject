@@ -1,4 +1,6 @@
 {% extends 'main/base.html' %}
+{% load static %}
+{% load compress %}
 
 {% block title %}
 Новости
@@ -42,59 +44,61 @@
     </div>
 
     {% block scripts %}
-        <script>
-            function navigate(direction) {
-                // Получаем текущую страницу из URL
-                const currentPage = new URLSearchParams(window.location.search).get('page') || 1;
-                const nextPage = parseInt(currentPage) + direction;
+        {% compress js %}
+            <script>
+                function navigate(direction) {
+                    // Получаем текущую страницу из URL
+                    const currentPage = new URLSearchParams(window.location.search).get('page') || 1;
+                    const nextPage = parseInt(currentPage) + direction;
 
-                // Плавная анимация исчезновения текущих новостей
-                const newsItems = document.querySelectorAll('.news-item');
-                newsItems.forEach(item => {
-                    item.classList.remove('visible'); // Убираем класс видимости
-                });
+                    // Плавная анимация исчезновения текущих новостей
+                    const newsItems = document.querySelectorAll('.news-item');
+                    newsItems.forEach(item => {
+                        item.classList.remove('visible'); // Убираем класс видимости
+                    });
 
-                // Анимация смены цвета для кнопок
-                const buttons = document.querySelectorAll('.pagination-buttons button');
-                buttons.forEach(button => {
-                    button.classList.add('color-transition'); // Добавляем класс анимации
-                });
+                    // Анимация смены цвета для кнопок
+                    const buttons = document.querySelectorAll('.pagination-buttons button');
+                    buttons.forEach(button => {
+                        button.classList.add('color-transition'); // Добавляем класс анимации
+                    });
 
-                // Переход к новой странице после завершения анимации
-                setTimeout(() => {
-                    window.location.href = `?page=${nextPage}`;
-                }, 500); // Задержка в 500 мс (время анимации)
-            }
+                    // Переход к новой странице после завершения анимации
+                    setTimeout(() => {
+                        window.location.href = `?page=${nextPage}`;
+                    }, 500); // Задержка в 500 мс (время анимации)
+                }
 
-            // Функция плавного скролла к найденной новости
-            function scrollToNews() {
-                const hash = window.location.hash;
-                if (hash) {
-                    const target = document.querySelector(hash);
-                    if (target) {
-                        setTimeout(() => {
-                            target.scrollIntoView({ behavior: "smooth", block: "start" });
-                        }, 700); // Задержка, чтобы страница успела загрузиться
+                // Функция плавного скролла к найденной новости
+                function scrollToNews() {
+                    const hash = window.location.hash;
+                    if (hash) {
+                        const target = document.querySelector(hash);
+                        if (target) {
+                            setTimeout(() => {
+                                target.scrollIntoView({ behavior: "smooth", block: "start" });
+                            }, 700); // Задержка, чтобы страница успела загрузиться
+                        }
                     }
                 }
-            }
 
-            // Анимация появления новостей при загрузке
-            window.onload = () => {
-                const newsItems = document.querySelectorAll('.news-item');
-                newsItems.forEach(item => {
-                    item.classList.add('visible');
-                });
+                // Анимация появления новостей при загрузке
+                window.onload = () => {
+                    const newsItems = document.querySelectorAll('.news-item');
+                    newsItems.forEach(item => {
+                        item.classList.add('visible');
+                    });
 
-                // Прокрутка к нужной новости после загрузки страницы
-                scrollToNews();
-            };
+                    // Прокрутка к нужной новости после загрузки страницы
+                    scrollToNews();
+                };
 
-            // Если пользователь попал на страницу и hash уже есть (без перезагрузки), то сразу скроллим
-            if (window.location.hash) {
-                scrollToNews();
-            }
-        </script>
+                // Если пользователь попал на страницу и hash уже есть (без перезагрузки), то сразу скроллим
+                if (window.location.hash) {
+                    scrollToNews();
+                }
+            </script>
+        {% endcompress %}
     {% endblock %}
 
 {% endblock %}

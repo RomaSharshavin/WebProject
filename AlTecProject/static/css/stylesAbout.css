@@ -1,78 +1,88 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.main-container {
-    display: flex;
-    height: calc(100vh - 60px);
-    position: relative;
-    overflow: hidden; /* Скрываем переполнение, чтобы избежать отображения элементов вне контейнера */
-}
-
-.text-container {
-    flex: 1;
-    padding: 20px;
-    background-color: white;
-    font-family: "Ubuntu", serif;
-    font-size: 20px;
-    text-align: justify;
-    position: relative; /* Для управления позиционированием текста */
-    overflow: hidden; /* Скрываем переполнение так, чтобы текст не выходил за границы */
-}
-
-.text-item {
-    width: 100%;
-    position: absolute; /* Позволяет текстам накладываться друг на друга */
-    transition: transform 0.5s ease; /* Плавный переход для трансформации */
-    left: 0; /* Выравнивание по левому краю */
-    padding-left: 40px;
-}
-
-.image-container {
-    flex: 1;
-    bottom: 80px;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden; /* Скрываем переполнение */
-    width: 100%; /* Убедитесь, что ширина определена */
-    height: 100%; /* Убедитесь, что высота определена */
-}
-
-.image-container img {
-    width: 100%;
-    height: auto; /* Измените на auto для сохранения пропорций */
-    max-width: 100%; /* Добавьте это для ограничения ширины */
-    max-height: 100%; /* Добавьте это для ограничения высоты */
-    object-fit: cover;
-    position: absolute; /* Позволяет изображениям накладываться друг на друга */
-    transition: transform 0.5s ease; /* Плавный переход для трансформации */
-}
-
-.button-container {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%); /* Центрируем кнопки */
-    display: flex;
-    gap: 10px;
-}
-
-button {
-    width: 70px;
-    height: 50px;
+.title-text {
+    font-family: 'Jura', sans-serif;
     font-size: 30px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #a8d9ff;
-    color: white;
-    transition: background-color 0.3s;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-    background-color: #0056b3;
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.about-text {
+    width: 70%; /* ширина текстовой части */
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.9;
+    background-color: white; /* Белый фон */
+    text-align: right; /* Выравнивание текста вправо */
+    border-radius: 15px; /* Радиус скругления */
+    height: 230px; /* Установите фиксированную высоту для контейнера */
+    overflow: hidden; /* Скрываем лишний текст */
+}
+
+.about-image {
+    width: 50%; /* ширина части с изображением */
+    height: 230px; /* Установите ту же высоту, что и у about-text */
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%; /* Установить height на 100% для заполнения контейнера */
+    object-fit: cover; /* Сохранение пропорций изображения, обрезая лишнее */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-container {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #a9def5;
+    border-radius: 15px;
+    width: 80%;
+    margin: 20px auto; /* Уменьшено значение на 10px для поднятия карусели */
+    background-color: #EFFBFF;
+    padding: 10px 0;
+}
+
+.scroll-item {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 25px;
+    text-align: center;
+    color: #1b1b1b;
+}
+
+.scroll-content {
+    display: flex;
+    animation: scroll linear infinite;
+}
+
+.scroll-item img {
+    width: 200px;
+    height: 140px;
+    object-fit: initial;
+    margin-bottom: 5px;
+    border: 2px solid #000;
+    border-radius: 15px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

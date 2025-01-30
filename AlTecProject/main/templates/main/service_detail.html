@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load compress %}
 
 {% block title %}
 {{ service.prod_name }} - Подробности
@@ -13,64 +14,68 @@
 {% endblock %}
 
 {% block content %}
-<div class="service-detail">
-    <div class="header-container">
-        <a href="{% url 'service' %}" class="back-link">Назад к каталогу</a>
-        <h1 class="service-title">{{ service.prod_name }}</h1>
-    </div>
-
-    <div class="service-content">
-        <div class="service-image">
-            <img src="{{ service.image_path }}" alt="{{ service.prod_name }}" />
+    <div class="service-detail">
+        <div class="header-container">
+            <a href="{% url 'service' %}" class="back-link">Назад к каталогу</a>
+            <h1 class="service-title">{{ service.prod_name }}</h1>
         </div>
 
-        <div class="service-description" style="display: block;">
-            <p>{{ service.description }}</p>
+        <div class="service-content">
+            <div class="service-image">
+                <img src="{{ service.image_path }}" alt="{{ service.prod_name }}" />
+            </div>
+
+            <div class="service-description" style="display: block;">
+                <p>{{ service.description }}</p>
+            </div>
+
+            <div class="service-characteristics">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Характеристика</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for characteristic in characteristics %}
+                        <tr>
+                            <td>{{ characteristic }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="service-characteristics">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Характеристика</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for characteristic in characteristics %}
-                    <tr>
-                        <td>{{ characteristic }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <div class="service-buttons">
+            <button id="toggle-characteristics" onclick="toggleCharacteristics()">Посмотреть характеристики</button>
+            <button id="order-calculation" onclick="orderCalculation()">Заказать расчет</button>
         </div>
     </div>
 
-    <div class="service-buttons">
-        <button id="toggle-characteristics" onclick="toggleCharacteristics()">Посмотреть характеристики</button>
-        <button id="order-calculation" onclick="orderCalculation()">Заказать расчет</button>
-    </div>
-</div>
+    {% block scripts %}
+        {% compress js %}
+            <script>
+                function toggleCharacteristics() {
+                    var descriptionElem = document.querySelector('.service-description');
+                    var characteristicsElem = document.querySelector('.service-characteristics');
+                    if (characteristicsElem.style.display === "none") {
+                        characteristicsElem.style.display = "block"; // Показываем характеристики
+                        descriptionElem.style.display = "none"; // Скрываем описание
+                        document.getElementById('toggle-characteristics').innerText = "Скрыть характеристики"; // Меняем текст кнопки
+                    } else {
+                        characteristicsElem.style.display = "none"; // Скрываем характеристики
+                        descriptionElem.style.display = "block"; // Возвращаем описание
+                        document.getElementById('toggle-characteristics').innerText = "Посмотреть характеристики"; // Меняем текст кнопки обратно
+                    }
+                }
 
-<script>
-    function toggleCharacteristics() {
-        var descriptionElem = document.querySelector('.service-description');
-        var characteristicsElem = document.querySelector('.service-characteristics');
-        if (characteristicsElem.style.display === "none") {
-            characteristicsElem.style.display = "block"; // Показываем характеристики
-            descriptionElem.style.display = "none"; // Скрываем описание
-            document.getElementById('toggle-characteristics').innerText = "Скрыть характеристики"; // Меняем текст кнопки
-        } else {
-            characteristicsElem.style.display = "none"; // Скрываем характеристики
-            descriptionElem.style.display = "block"; // Возвращаем описание
-            document.getElementById('toggle-characteristics').innerText = "Посмотреть характеристики"; // Меняем текст кнопки обратно
-        }
-    }
+                function orderCalculation() {
+                    const productName = "{{ service.prod_name|escapejs }}"; // Получаем название продукта из шаблона
+                    window.location.href = "{% url 'write' %}?product=" + encodeURIComponent(productName);
+                }
 
-    function orderCalculation() {
-        const productName = "{{ service.prod_name|escapejs }}"; // Получаем название продукта из шаблона
-        window.location.href = "{% url 'write' %}?product=" + encodeURIComponent(productName);
-    }
-
-</script>
+            </script>
+        {% endcompress %}
+    {% endblock %}
 {% endblock %}

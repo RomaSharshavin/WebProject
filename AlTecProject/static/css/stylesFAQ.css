@@ -1,0 +1,187 @@
+.faq-title {
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.ask-question-button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.ask-question-button:hover {
+    background-color: #357ABD;
+}
+
+.faq-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.faq-description {
+    flex: 1; /* Занимает оставшееся пространство */
+    text-align: center;
+    position: fixed; /* Фиксированное позиционирование */
+    top: 180px; /* Отступ сверху, отрегулируйте по необходимости */
+    left: 400px; /* Отступ слева, отрегулируйте по необходимости */
+    right: 400px; /* Отступ справа */
+    background-color: rgba(255, 255, 255, 0.7); /* Прозрачный белый цвет */
+    z-index: 1; /* Убедитесь, что он выше других элементов */
+    padding: 10px;
+}
+
+.faq-container {
+    flex: 2; /* Оставшаяся часть контейнера FAQ */
+    margin-left: 20px;
+    margin-top: 90px; /* Отступ сверху, чтобы избежать наложения */
+    overflow-y: auto; /* Включает прокрутку */
+    max-height: calc(100vh - 200px); /* Ограничивает максимальную высоту */
+}
+
+.faq-item {
+    background-color: #f5f5dc; /* Цвет фона на молочный */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s; /* Плавный переход только для фона */
+    opacity: 0; /* Начальная прозрачность для анимации появления */
+    transform: translateY(10px); /* Начальная позиция для анимации появления */
+}
+
+/* Окрашивание блока при наведении */
+.faq-item:hover {
+    background-color: #357ABD; /* Цвет фона при наведении - синий */
+}
+
+/* Изменение цвета текста вопроса при наведении */
+.faq-item:hover .faq-question {
+    color: #fff; /* Цвет текста при наведении (например, белый) */
+    transition: color 0.3s; /* Плавный переход изменения цвета текста */
+}
+
+/* Анимация при загрузке страницы */
+.faq-item.visible {
+    opacity: 1; /* Прозрачность при появлении */
+    transform: translateY(0); /* Вернуть в исходное положение */
+}
+
+/* Другие стили остаются без изменений */
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333; /* Изменён цвет текста на тёмный для лучшей читабельности */
+}
+
+.faq-question {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.arrow {
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Добавлено свойство курсора */
+}
+
+.close:hover {
+    color: #000; /* Изменение цвета при наведении, для лучшего визуального эффекта */
+}
+
+
+
+/* настройка навигации */
+    .pagination {
+        display: flex; /* Используйте flexbox для выравнивания */
+
+        justify-content: center; /* Центрируйте все номера страниц */
+        margin: 20px 0; /* Отступы сверху и снизу */
+        position: fixed; /* Закрепите в нижней части страницы */
+        bottom: 65px; /* Отступ от нижней части страницы */
+        left: 50%; /* Сдвиг по горизонтали */
+        transform: translateX(-50%); /* Центрирование */
+        z-index: 1000; /* Убедитесь, что он выше других элементов */
+    }
+
+    .page-number {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+
+        color: #003d7a;
+        text-align: center;
+
+        margin: 0 5px;
+        cursor: pointer;
+
+    }
+
+     .page-number, .pagination a {
+        color: #003d7a; /* Замените на нужный вам цвет */
+        text-decoration: none;
+        margin: 0 5px; /* Отступы между элементами */
+    }
+
+    .page-number:hover, .pagination a:hover {
+        text-decoration: underline; /* Подчеркивание при наведении */
+    }
+
+    .page-number[style*="font-weight: bold;"] {
+        font-weight: bold; /* Сохранение жирного шрифта для активной страницы */
+    }
+    .first-page {
+        margin-left: 25px; /* Увеличьте значение по необходимости */
+    }

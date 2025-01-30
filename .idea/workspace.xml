@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроенр переход при поиске для динамически сформированных страниц">
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Улучшение поиска">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/sertificate.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/sertificate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/service_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/service_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/write.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/static/css/stylesAbout.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/static/css/stylesAbout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/static/css/stylesContact.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/static/css/stylesContact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/static/css/stylesNews.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/static/css/stylesNews.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/static/css/stylesPartners.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/static/css/stylesPartners.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/static/css/stylesSertificate.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/static/css/stylesSertificate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/static/css/stylesWrite.css" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/static/css/stylesWrite.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,14 +146,6 @@
       <workItem from="1737386408608" duration="2665000" />
       <workItem from="1737525216812" duration="2785000" />
       <workItem from="1737912514630" duration="8493000" />
-    </task>
-    <task id="LOCAL-00005" summary="Добавлены информацинные блоки на страницу контакты">
-      <option name="closed" value="true" />
-      <created>1728229008194</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1728229008194</updated>
     </task>
     <task id="LOCAL-00006" summary="Исправлено отображение страницы, изменена карта">
       <option name="closed" value="true" />
@@ -523,7 +531,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738225581396</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Улучшение поиска">
+      <option name="closed" value="true" />
+      <created>1738226718086</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1738226718086</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена анимация появления на странице &quot;Контакты&quot;" />
     <MESSAGE value="Изменены стили для отсеживания перемещения по сайту чсерез панель навигации" />
     <MESSAGE value="Добавлена анимация между элементами на странице &quot;Партнёры&quot;" />
     <MESSAGE value="Изменены стили кнопок навигации по сайту, стили перенесены в отдельный файл" />
@@ -566,6 +581,7 @@
     <MESSAGE value="Формирование крошки на Продукции" />
     <MESSAGE value="Добавлена стилизация для крошки" />
     <MESSAGE value="Настроенр переход при поиске для динамически сформированных страниц" />
-    <option name="LAST_COMMIT_MESSAGE" value="Настроенр переход при поиске для динамически сформированных страниц" />
+    <MESSAGE value="Улучшение поиска" />
+    <option name="LAST_COMMIT_MESSAGE" value="Улучшение поиска" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load compress %}
 
 {% block title %}
 Написать нам
@@ -10,99 +11,100 @@
 {% endblock %}
 
 {% block content %}
-<h5 class="write-title">Написать нам</h5>
-<div class="write-to-us">
-    <form action="{% url 'send_email' %}" method="post" id="contact-form" onsubmit="sendEmail(event)">
-        {% csrf_token %}
+    <h5 class="write-title">Написать нам</h5>
+    <div class="write-to-us">
+        <form action="{% url 'send_email' %}" method="post" id="contact-form" onsubmit="sendEmail(event)">
+            {% csrf_token %}
 
-        <div class="form-group flex-group">
-            <div class="flex-item">
-                <label for="name">Ваше имя</label>
-                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+            <div class="form-group flex-group">
+                <div class="flex-item">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="flex-item">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
+                </div>
+                <div class="flex-item">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" name="email" placeholder="Введите вашу почту" required>
+                </div>
             </div>
-            <div class="flex-item">
-                <label for="phone">Телефон</label>
-                <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
+
+            <div class="form-group">
+                <label for="question">Ваш вопрос</label>
+                <textarea id="question" name="question" placeholder="Введите ваш вопрос" required></textarea>
             </div>
-            <div class="flex-item">
-                <label for="email">Электронная почта</label>
-                <input type="email" id="email" name="email" placeholder="Введите вашу почту" required>
+
+            <div class="captcha-container">
+                <div class="g-recaptcha" data-sitekey="6LeeccIqAAAAADm_xHHxravkDddlz5Jw97gjpxxi"></div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="question">Ваш вопрос</label>
-            <textarea id="question" name="question" placeholder="Введите ваш вопрос" required></textarea>
-        </div>
+            <button type="submit" class="send-button" id="sendButton">Отправить</button>
+        </form>
+    </div>
 
-        <div class="captcha-container">
-            <div class="g-recaptcha" data-sitekey="6LeeccIqAAAAADm_xHHxravkDddlz5Jw97gjpxxi"></div>
-        </div>
+    {% block script %}
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        {% compress js %}
+            <script type="text/javascript">
+                (function() {
+                    emailjs.init("cFdxvAOZutfnLnRyJ"); // Вставьте ваш Public Key из EmailJS
+                })();
 
-        <button type="submit" class="send-button" id="sendButton">Отправить</button>
-    </form>
-</div>
+                function sendEmail(event) {
+                    event.preventDefault(); // предотвращаем стандартное отправление формы
 
-{% block script %}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                    const form = document.getElementById("contact-form");
+                    const sendButton = document.getElementById('sendButton');
 
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("cFdxvAOZutfnLnRyJ"); // Вставьте ваш Public Key из EmailJS
-        })();
+                    // Блокируем кнопку, чтобы избежать множественных отправок
+                    sendButton.disabled = true;
 
-        function sendEmail(event) {
-            event.preventDefault(); // предотвращаем стандартное отправление формы
+                    // Получаем ответ reCAPTCHA
+                    const recaptchaResponse = grecaptcha.getResponse();
 
-            const form = document.getElementById("contact-form");
-            const sendButton = document.getElementById('sendButton');
+                    // Проверяем, была ли пройдена reCAPTCHA
+                    if (recaptchaResponse.length === 0) {
+                        alert("Пожалуйста, подтвердите, что вы не робот.");
+                        sendButton.disabled = false; // Разблокируем кнопку
+                        return; // Не отправляем форму
+                    }
 
-            // Блокируем кнопку, чтобы избежать множественных отправок
-            sendButton.disabled = true;
+                    const formData = {
+                        name: form.elements["name"].value,
+                        email: form.elements["email"].value,
+                        phone: form.elements["phone"].value,
+                        message: form.elements["question"].value,
+                    };
 
-            // Получаем ответ reCAPTCHA
-            const recaptchaResponse = grecaptcha.getResponse();
+                    // Отправка письма через EmailJS
+                    emailjs.send("service_ff5uksc", "template_qo1cyv8", formData)
+                        .then(response => {
+                            alert("Сообщение успешно отправлено!");
+                            form.reset(); // сбрасываем форму
+                            grecaptcha.reset(); // Сбрасываем CAPTCHA после успешной отправки
+                        })
+                        .catch(error => {
+                            console.error("Ошибка при отправке:", error);
+                            alert("Не удалось отправить сообщение. Попробуйте позже.");
+                        })
+                        .finally(() => {
+                            sendButton.disabled = false; // разблокируем кнопку
+                        });
+                }
 
-            // Проверяем, была ли пройдена reCAPTCHA
-            if (recaptchaResponse.length === 0) {
-                alert("Пожалуйста, подтвердите, что вы не робот.");
-                sendButton.disabled = false; // Разблокируем кнопку
-                return; // Не отправляем форму
-            }
+                document.addEventListener("DOMContentLoaded", function() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const productName = urlParams.get('product');
+                    const questionInput = document.getElementById('question');
 
-            const formData = {
-                name: form.elements["name"].value,
-                email: form.elements["email"].value,
-                phone: form.elements["phone"].value,
-                message: form.elements["question"].value,
-            };
-
-            // Отправка письма через EmailJS
-            emailjs.send("service_ff5uksc", "template_qo1cyv8", formData)
-                .then(response => {
-                    alert("Сообщение успешно отправлено!");
-                    form.reset(); // сбрасываем форму
-                    grecaptcha.reset(); // Сбрасываем CAPTCHA после успешной отправки
-                })
-                .catch(error => {
-                    console.error("Ошибка при отправке:", error);
-                    alert("Не удалось отправить сообщение. Попробуйте позже.");
-                })
-                .finally(() => {
-                    sendButton.disabled = false; // разблокируем кнопку
+                    if (productName) {
+                        questionInput.value = "Я хочу задать вопрос о " + productName; // Заполняем текстовое поле
+                    }
                 });
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const productName = urlParams.get('product');
-            const questionInput = document.getElementById('question');
-
-            if (productName) {
-                questionInput.value = "Я хочу задать вопрос о " + productName; // Заполняем текстовое поле
-            }
-        });
-    </script>
-{% endblock %}
+            </script>
+        {% endcompress %}
+    {% endblock %}
 {% endblock %}
