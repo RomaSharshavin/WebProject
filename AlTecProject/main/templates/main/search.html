@@ -30,10 +30,8 @@
                         <a href="{% url 'service_detail' item.id_prod %}"><strong>{{ item.prod_name }}</strong></a><br>
                         <p>{{ item.description|truncatechars:150|safe }}</p>
                     {% elif item.question %}
-                        <a href="{% url 'faq' %}">
-                            <strong>Вопрос:</strong> {{ item.question }}
-                        </a><br>
-                        <strong>Ответ:</strong> {{ item.answer|truncatechars:150|safe }}
+                        <a href="{% url 'faq' %}"><strong>FAQ</strong></a><br>
+                        <strong>Вопрос:</strong> {{ item.question }}
                     {% elif item.page_title %}
                         <a href="{{ item.url }}"><strong>{{ item.page_title }}</strong></a>
                         <p>
