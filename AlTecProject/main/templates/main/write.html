@@ -37,7 +37,7 @@
             </div>
 
             <div class="captcha-container">
-                <div class="g-recaptcha" data-sitekey="6LeeccIqAAAAADm_xHHxravkDddlz5Jw97gjpxxi"></div>
+                <div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>
             </div>
 
             <button type="submit" class="send-button" id="sendButton">Отправить</button>
@@ -50,7 +50,7 @@
         {% compress js %}
             <script type="text/javascript">
                 (function() {
-                    emailjs.init("cFdxvAOZutfnLnRyJ"); // Вставьте ваш Public Key из EmailJS
+                    emailjs.init("{{ emailjs_public_key }}"); // Вставляем Public Key из EmailJS
                 })();
 
                 function sendEmail(event) {
@@ -77,10 +77,11 @@
                         email: form.elements["email"].value,
                         phone: form.elements["phone"].value,
                         message: form.elements["question"].value,
+                        recaptcha_response: recaptchaResponse
                     };
 
                     // Отправка письма через EmailJS
-                    emailjs.send("service_ff5uksc", "template_qo1cyv8", formData)
+                    emailjs.send("{{ emailjs_service_id }}", "{{ emailjs_template_id }}", formData)
                         .then(response => {
                             alert("Сообщение успешно отправлено!");
                             form.reset(); // сбрасываем форму

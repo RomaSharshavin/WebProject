@@ -97,7 +97,14 @@ def sertificate(request):
 
 
 def write(request):
-    return render(request, 'main/write.html')
+    context = {
+        'recaptcha_site_key': '6LeeccIqAAAAADm_xHHxravkDddlz5Jw97gjpxxi',  # ключ для reCAPTCHA
+        'emailjs_public_key': 'cFdxvAOZutfnLnRyJ',  # public key для EmailJS
+        'emailjs_service_id': 'service_ff5uksc',  # service ID для EmailJS
+        'emailjs_template_id': 'template_qo1cyv8',  # template ID для EmailJS
+    }
+    return render(request, 'main/write.html', context)
+
 
 
 def sendEmail(request):
