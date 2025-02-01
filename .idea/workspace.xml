@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Настроенр переход при поиске для динамически сформированных страниц">
-      <change beforePath="$PROJECT_DIR$/.idea/AlTec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AlTec.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/999d87f1-d6ab-47fa-8589-281acb42b7dd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_01_2025_17_38_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_01_2025_17_38__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2025_10_34_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2025_10_34__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2025_9_32_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2025_9_32__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Ключи перенесены на серверную часть">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/AlTecProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,15 +130,8 @@
       <workItem from="1737525216812" duration="2785000" />
       <workItem from="1737912514630" duration="8493000" />
       <workItem from="1738342048996" duration="1256000" />
-      <workItem from="1738410954429" duration="960000" />
-    </task>
-    <task id="LOCAL-00005" summary="Добавлены информацинные блоки на страницу контакты">
-      <option name="closed" value="true" />
-      <created>1728229008194</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1728229008194</updated>
+      <workItem from="1738410954429" duration="1171000" />
+      <workItem from="1738412709749" duration="2093000" />
     </task>
     <task id="LOCAL-00006" summary="Исправлено отображение страницы, изменена карта">
       <option name="closed" value="true" />
@@ -533,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738225581396</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Ключи перенесены на серверную часть">
+      <option name="closed" value="true" />
+      <created>1738411993385</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1738411993385</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена анимация появления на странице &quot;Контакты&quot;" />
     <MESSAGE value="Изменены стили для отсеживания перемещения по сайту чсерез панель навигации" />
     <MESSAGE value="Добавлена анимация между элементами на странице &quot;Партнёры&quot;" />
     <MESSAGE value="Изменены стили кнопок навигации по сайту, стили перенесены в отдельный файл" />
@@ -576,6 +567,7 @@
     <MESSAGE value="Формирование крошки на Продукции" />
     <MESSAGE value="Добавлена стилизация для крошки" />
     <MESSAGE value="Настроенр переход при поиске для динамически сформированных страниц" />
-    <option name="LAST_COMMIT_MESSAGE" value="Настроенр переход при поиске для динамически сформированных страниц" />
+    <MESSAGE value="Ключи перенесены на серверную часть" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ключи перенесены на серверную часть" />
   </component>
 </project>

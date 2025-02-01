@@ -19,7 +19,7 @@ body {
 /* стили для названия страниц */
 h2, h5 {
     font-family: 'Jura', sans-serif;
-    margin-left: 20px
+    margin-left: 20px;
 }
 
 /* отключение выделения изображений */
@@ -139,8 +139,24 @@ img {
     .breadcrumb-item + .breadcrumb-item::before {
         padding: 0 5px;
     }
-}
 
+    .equipment-description {
+        font-size: 30px; /* уменьшаем размер шрифта */
+        margin-bottom: 80px; /* уменьшаем нижний отступ */
+    }
+
+    .styled-gif {
+        max-height: 60vh; /* уменьшаем максимальную высоту для мобильных */
+    }
+
+    .full-width-container {
+        height: calc(100vh - 90px); /* учитываем высоту подвала */
+    }
+
+    .footer {
+        height: 60px; /* уменьшаем высоту подвала для мобильных */
+    }
+}
 
 /* поисковик */
 * {box-sizing: border-box;}
@@ -176,4 +192,11 @@ img {
     font-family: FontAwesome;
     font-size: 16px;
     color: #fdfdfd;
+}
+
+@media (max-width: 768px) {
+    .d1 {
+        width: 100%; /* делаем поисковик шире на мобильных */
+        margin: 20px 0; /* добавляем отступы */
+    }
 }
