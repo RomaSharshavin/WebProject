@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Ключи перенесены на серверную часть">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/static/js/map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/AlTecProject/main/templates/main/contact.html" afterDir="false" />
-    </list>
+    <list default="true" id="6f696253-39e3-4d8e-a9dd-70c34222bf6f" name="Changes" comment="Добавлено отображение больших новостей в модальном окне" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,39 +127,8 @@
       <workItem from="1737912514630" duration="8493000" />
       <workItem from="1738342048996" duration="1256000" />
       <workItem from="1738410954429" duration="1171000" />
-      <workItem from="1738412709749" duration="2093000" />
-    </task>
-    <task id="LOCAL-00006" summary="Исправлено отображение страницы, изменена карта">
-      <option name="closed" value="true" />
-      <created>1728633273524</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1728633273524</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1728633318961</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1728633318961</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Добавлены файлы стилей и js код вынесен в отдельный файл">
-      <option name="closed" value="true" />
-      <created>1728635670090</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1728635670090</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Добавлена связь модели с страницой &quot;Новости&quot;, настроено расположение файлов">
-      <option name="closed" value="true" />
-      <created>1728637687054</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1728637687054</updated>
+      <workItem from="1738412709749" duration="2934000" />
+      <workItem from="1738590238851" duration="2068000" />
     </task>
     <task id="LOCAL-00010" summary="Добавлены сертификаты на страницу им настроено изх увеличение">
       <option name="closed" value="true" />
@@ -525,7 +490,39 @@
       <option name="project" value="LOCAL" />
       <updated>1738411993385</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Исправлено отображение 2 карт на странице Контакты">
+      <option name="closed" value="true" />
+      <created>1738417006445</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1738417006445</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Добавлено отображение больших новостей в модыльном окне">
+      <option name="closed" value="true" />
+      <created>1738592105141</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1738592105141</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Добавлено отображение больших новостей в модальном окне">
+      <option name="closed" value="true" />
+      <created>1738592233580</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1738592233580</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Добавлено отображение больших новостей в модальном окне">
+      <option name="closed" value="true" />
+      <created>1738592286356</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1738592286356</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,9 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Изменены стили для отсеживания перемещения по сайту чсерез панель навигации" />
-    <MESSAGE value="Добавлена анимация между элементами на странице &quot;Партнёры&quot;" />
-    <MESSAGE value="Изменены стили кнопок навигации по сайту, стили перенесены в отдельный файл" />
     <MESSAGE value="Настроены отступы на странице &quot;Партнёры&quot; для блока с текстом" />
     <MESSAGE value="Убранны названия страниц со всех вкладок написанных параграфом" />
     <MESSAGE value="Ипзменены форматы файлов изображений" />
@@ -568,6 +562,9 @@
     <MESSAGE value="Добавлена стилизация для крошки" />
     <MESSAGE value="Настроенр переход при поиске для динамически сформированных страниц" />
     <MESSAGE value="Ключи перенесены на серверную часть" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ключи перенесены на серверную часть" />
+    <MESSAGE value="Исправлено отображение 2 карт на странице Контакты" />
+    <MESSAGE value="Добавлено отображение больших новостей в модыльном окне" />
+    <MESSAGE value="Добавлено отображение больших новостей в модальном окне" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено отображение больших новостей в модальном окне" />
   </component>
 </project>

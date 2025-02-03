@@ -24,11 +24,22 @@
                         </div>
                         <div class="news-content">
                             <h2>{{ news.title }}</h2>
-                            <p>{{ news.text }}</p>
+                            <p class="news-preview">{{ news.text }}</p>
+                            <button class="read-more" onclick="showFullText('{{ news.id }}', `{{ news.text|escapejs }}`)">
+                                Подробнее
+                            </button>
                             <small>Дата написания: {{ news.date_written|date:"d.m.Y H:i" }}</small>
                         </div>
                     </div>
                 {% endfor %}
+            </div>
+
+            <!-- Модальное окно -->
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="full-text-modal" id="fullTextModal">
+                <h2 id="modalTitle">Полный текст</h2>
+                <p id="modalContent"></p>
+                <button class="close-modal" onclick="closeModal()">Закрыть</button>
             </div>
 
             <div class="pagination-buttons">
@@ -96,6 +107,17 @@
                 // Если пользователь попал на страницу и hash уже есть (без перезагрузки), то сразу скроллим
                 if (window.location.hash) {
                     scrollToNews();
+                }
+
+                function showFullText(newsId, fullText) {
+                    document.getElementById('modalContent').innerText = fullText;
+                    document.getElementById('modalOverlay').style.display = 'block';
+                    document.getElementById('fullTextModal').style.display = 'block';
+                }
+
+                function closeModal() {
+                    document.getElementById('modalOverlay').style.display = 'none';
+                    document.getElementById('fullTextModal').style.display = 'none';
                 }
             </script>
         {% endcompress %}
